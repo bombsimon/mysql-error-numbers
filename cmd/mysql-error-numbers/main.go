@@ -121,6 +121,15 @@ func main() {
 		seenLiterals   = map[string]struct{}{}
 	)
 
+	// Always add the unknown error.
+	numberLiterals = append(numberLiterals, Literal{
+		Number:       -1,
+		NumberString: "-1",
+		Symbol:       "ER_UNKNOWN_MYSQL_ERROR",
+		Constant:     "ErrUnknownMySQLError",
+		Extra:        "Unknown MySQL error",
+	})
+
 	// Fetch every item in the list from '.itemizedlist'.
 	document.Find(".itemizedlist li").Each(func(index int, element *goquery.Selection) {
 		literal := Literal{}
@@ -140,7 +149,13 @@ func main() {
 				text := element.Text()
 
 				literal.Symbol = text
-				literal.Constant = strcase.ToCamel(strings.ToLower(text))
+				literal.Constant = strcase.ToCamel(
+					strings.ToLower(
+						// Use 'ERR' instead of 'ER' to follow Go naming
+						// convention.
+						strings.Replace(text, "ER", "ERR", 1),
+					),
+				)
 			case 2:
 				literal.State = element.Text()
 			default:
