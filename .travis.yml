@@ -1,0 +1,19 @@
+---
+language: go
+
+go:
+  - "1.12"
+
+env:
+  global:
+    - GO111MODULE=on
+
+script:
+  - go test -race -v -coverprofile c.out ./...
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
+
+# vim: set ts=2 sw=2 et:
