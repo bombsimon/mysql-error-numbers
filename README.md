@@ -10,6 +10,15 @@ potentially help describe the errors.
 The name and number are fetched from version 8.0 of the [MySQL
 documentation](https://dev.mysql.com/doc/refman/8.0/en/server-error-reference.html).
 
+## Motivation
+
+I had a hard time finding a good way to handle errors and often used a loca map
+with numbers to internal error types. I also found
+[github.com/VividCortex/mysqlerr](https://github.com/VividCortex/mysqlerr) which
+has the error number constants but is not generated (and not maintained?). I
+ended up doing this package and would love feedback and PRs to make it a
+re-usable way to handle MySQL errors with Go.
+
 ## Usage
 
 ```go
