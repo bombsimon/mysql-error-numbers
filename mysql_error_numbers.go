@@ -18,13 +18,18 @@ var (
 )
 
 // FromError takes an error, tries to cast it as a mysql.MySQLError defined by
-// go-sql-driver and return the ErrorNumber corresponding to said number.
+// go-sql-driver and return the ErrorNumber corresponding to said number. If the
+// error is unknown or cannot be parsed, ErrUnknownMySQLError will be returned.
 func FromError(err error) ErrorNumber {
+	if err == nil {
+		return ErrUnknownMySQLError
+	}
+
 	if e, ok := err.(*mysql.MySQLError); ok {
 		return FromNumber(int(e.Number))
 	}
 
-	return FromString(err.Error())
+	return ErrUnknownMySQLError
 }
 
 // FromString tries to parse a string and get the error number from said string.
@@ -40,4 +45,19 @@ func FromString(s string) ErrorNumber {
 	}
 
 	return ErrUnknownMySQLError
+}
+
+// FromErrorOrString will try to execute FromError but if the error isn't a
+// mysql.MySQLError the string returned from err.Error() will be passed to
+// FromString.
+func FromErrorOrString(err error) ErrorNumber {
+	if err == nil {
+		return ErrUnknownMySQLError
+	}
+
+	if fromErrorErr := FromError(err); fromErrorErr != ErrUnknownMySQLError {
+		return fromErrorErr
+	}
+
+	return FromString(err.Error())
 }
