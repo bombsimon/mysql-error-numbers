@@ -124,7 +124,7 @@ const (
 	ErrFutureDate                                          ErrorString = "MY-010114"
 	ErrUnsupportedDate                                     ErrorString = "MY-010115"
 	ErrStartingAs                                          ErrorString = "MY-010116"
-	ErrShuttingDownSlaveThreads                            ErrorString = "MY-010117"
+	ErrShuttingDownSubordinateThreads                            ErrorString = "MY-010117"
 	ErrDisconnectingRemainingClients                       ErrorString = "MY-010118"
 	ErrAborting                                            ErrorString = "MY-010119"
 	ErrBinlogEnd                                           ErrorString = "MY-010120"
@@ -382,12 +382,12 @@ const (
 	ErrTzCantBuildMktimeMap                                ErrorString = "MY-010372"
 	ErrTzOomWhileLoadingTimeZone                           ErrorString = "MY-010373"
 	ErrTzOomWhileSettingTimeZone                           ErrorString = "MY-010374"
-	ErrSlaveSqlThreadStoppedUntilConditionBad              ErrorString = "MY-010375"
-	ErrSlaveSqlThreadStoppedUntilPositionReached           ErrorString = "MY-010376"
-	ErrSlaveSqlThreadStoppedBeforeGtidsAlreadyApplied      ErrorString = "MY-010377"
-	ErrSlaveSqlThreadStoppedBeforeGtidsReached             ErrorString = "MY-010378"
-	ErrSlaveSqlThreadStoppedAfterGtidsReached              ErrorString = "MY-010379"
-	ErrSlaveSqlThreadStoppedGapTrxProcessed                ErrorString = "MY-010380"
+	ErrSubordinateSqlThreadStoppedUntilConditionBad              ErrorString = "MY-010375"
+	ErrSubordinateSqlThreadStoppedUntilPositionReached           ErrorString = "MY-010376"
+	ErrSubordinateSqlThreadStoppedBeforeGtidsAlreadyApplied      ErrorString = "MY-010377"
+	ErrSubordinateSqlThreadStoppedBeforeGtidsReached             ErrorString = "MY-010378"
+	ErrSubordinateSqlThreadStoppedAfterGtidsReached              ErrorString = "MY-010379"
+	ErrSubordinateSqlThreadStoppedGapTrxProcessed                ErrorString = "MY-010380"
 	ErrGroupReplicationPluginNotInstalled                  ErrorString = "MY-010381"
 	ErrGtidAlreadyAddedByUser                              ErrorString = "MY-010382"
 	ErrFailedToDeleteFromGtidExecutedTable                 ErrorString = "MY-010383"
@@ -399,13 +399,13 @@ const (
 	ErrNpipeFailedToInitSecurityDescriptor                 ErrorString = "MY-010389"
 	ErrNpipeFailedToSetSecurityDescriptor                  ErrorString = "MY-010390"
 	ErrNpipePipeAlreadyInUse                               ErrorString = "MY-010391"
-	ErrNdbSlaveSawEpochLowerThanPreviousOnStart            ErrorString = "MY-010392"
-	ErrNdbSlaveSawEpochLowerThanPrevious                   ErrorString = "MY-010393"
-	ErrNdbSlaveSawAlreadyCommittedEpoch                    ErrorString = "MY-010394"
-	ErrNdbSlavePreviousEpochNotCommitted                   ErrorString = "MY-010395"
-	ErrNdbSlaveMissingDataForTimestampColumn               ErrorString = "MY-010396"
-	ErrNdbSlaveLoggingExceptionsTo                         ErrorString = "MY-010397"
-	ErrNdbSlaveLowEpochResolution                          ErrorString = "MY-010398"
+	ErrNdbSubordinateSawEpochLowerThanPreviousOnStart            ErrorString = "MY-010392"
+	ErrNdbSubordinateSawEpochLowerThanPrevious                   ErrorString = "MY-010393"
+	ErrNdbSubordinateSawAlreadyCommittedEpoch                    ErrorString = "MY-010394"
+	ErrNdbSubordinatePreviousEpochNotCommitted                   ErrorString = "MY-010395"
+	ErrNdbSubordinateMissingDataForTimestampColumn               ErrorString = "MY-010396"
+	ErrNdbSubordinateLoggingExceptionsTo                         ErrorString = "MY-010397"
+	ErrNdbSubordinateLowEpochResolution                          ErrorString = "MY-010398"
 	ErrNdbInfoFoundUnexpectedFieldType                     ErrorString = "MY-010399"
 	ErrNdbInfoFailedToCreateNdbinfo                        ErrorString = "MY-010400"
 	ErrNdbInfoFailedToInitNdbinfo                          ErrorString = "MY-010401"
@@ -422,20 +422,20 @@ const (
 	ErrRplChannelsRequireTablesAsInfoRepositories          ErrorString = "MY-010412"
 	ErrRplChannelsRequireNonZeroServerId                   ErrorString = "MY-010413"
 	ErrRplRepoShouldBeTable                                ErrorString = "MY-010414"
-	ErrRplErrorCreatingMasterInfo                          ErrorString = "MY-010415"
-	ErrRplErrorChangingMasterInfoRepoType                  ErrorString = "MY-010416"
+	ErrRplErrorCreatingMainInfo                          ErrorString = "MY-010415"
+	ErrRplErrorChangingMainInfoRepoType                  ErrorString = "MY-010416"
 	ErrRplChangingRelayLogInfoRepoTypeFailedDueToGaps      ErrorString = "MY-010417"
 	ErrRplErrorCreatingRelayLogInfo                        ErrorString = "MY-010418"
 	ErrRplErrorChangingRelayLogInfoRepoType                ErrorString = "MY-010419"
-	ErrRplFailedToDeleteFromSlaveWorkersInfoRepository     ErrorString = "MY-010420"
-	ErrRplFailedToResetStateInSlaveInfoRepository          ErrorString = "MY-010421"
+	ErrRplFailedToDeleteFromSubordinateWorkersInfoRepository     ErrorString = "MY-010420"
+	ErrRplFailedToResetStateInSubordinateInfoRepository          ErrorString = "MY-010421"
 	ErrRplErrorCheckingRepository                          ErrorString = "MY-010422"
-	ErrRplSlaveGenericMessage                              ErrorString = "MY-010423"
-	ErrRplSlaveCouldNotCreateChannelList                   ErrorString = "MY-010424"
+	ErrRplSubordinateGenericMessage                              ErrorString = "MY-010423"
+	ErrRplSubordinateCouldNotCreateChannelList                   ErrorString = "MY-010424"
 	ErrRplMultisourceRequiresTableTypeRepositories         ErrorString = "MY-010425"
-	ErrRplSlaveFailedToInitAMasterInfoStructure            ErrorString = "MY-010426"
-	ErrRplSlaveFailedToInitMasterInfoStructure             ErrorString = "MY-010427"
-	ErrRplSlaveFailedToCreateChannelFromMasterInfo         ErrorString = "MY-010428"
+	ErrRplSubordinateFailedToInitAMainInfoStructure            ErrorString = "MY-010426"
+	ErrRplSubordinateFailedToInitMainInfoStructure             ErrorString = "MY-010427"
+	ErrRplSubordinateFailedToCreateChannelFromMainInfo         ErrorString = "MY-010428"
 	ErrRplFailedToCreateNewInfoFile                        ErrorString = "MY-010429"
 	ErrRplFailedToCreateCacheForInfoFile                   ErrorString = "MY-010430"
 	ErrRplFailedToOpenInfoFile                             ErrorString = "MY-010431"
@@ -470,9 +470,9 @@ const (
 	ErrInitDatadirExistsAndNotWritableWontInitialize       ErrorString = "MY-010460"
 	ErrInitCreatingDd                                      ErrorString = "MY-010461"
 	ErrRplBinlogStartingDump                               ErrorString = "MY-010462"
-	ErrRplBinlogMasterSendsHeartbeat                       ErrorString = "MY-010463"
+	ErrRplBinlogMainSendsHeartbeat                       ErrorString = "MY-010463"
 	ErrRplBinlogSkippingRemainingHeartbeatInfo             ErrorString = "MY-010464"
-	ErrRplBinlogMasterUsesChecksumAndSlaveCant             ErrorString = "MY-010465"
+	ErrRplBinlogMainUsesChecksumAndSubordinateCant             ErrorString = "MY-010465"
 	ErrNdbQueryFailed                                      ErrorString = "MY-010466"
 	ErrKillingThread                                       ErrorString = "MY-010467"
 	ErrDetachingSessionLeftByPlugin                        ErrorString = "MY-010468"
@@ -481,8 +481,8 @@ const (
 	ErrFailedToDecrementNumberOfThreads                    ErrorString = "MY-010471"
 	ErrPluginDidNotDeinitializeThreads                     ErrorString = "MY-010472"
 	ErrKilledThreadsOfPlugin                               ErrorString = "MY-010473"
-	ErrNdbSlaveMaxReplicatedEpochUnknown                   ErrorString = "MY-010474"
-	ErrNdbSlaveMaxReplicatedEpochSetTo                     ErrorString = "MY-010475"
+	ErrNdbSubordinateMaxReplicatedEpochUnknown                   ErrorString = "MY-010474"
+	ErrNdbSubordinateMaxReplicatedEpochSetTo                     ErrorString = "MY-010475"
 	ErrNdbNodeIdAndManagementServerInfo                    ErrorString = "MY-010476"
 	ErrNdbDisconnectInfo                                   ErrorString = "MY-010477"
 	ErrNdbColumnDefaultsDiffer                             ErrorString = "MY-010478"
@@ -490,15 +490,15 @@ const (
 	ErrNdbFieldInfo                                        ErrorString = "MY-010480"
 	ErrNdbColumnInfo                                       ErrorString = "MY-010481"
 	ErrNdbOomInFixUniqueIndexAttrOrder                     ErrorString = "MY-010482"
-	ErrNdbSlaveMalformedEventReceivedOnTable               ErrorString = "MY-010483"
-	ErrNdbSlaveConflictFunctionRequiresRole                ErrorString = "MY-010484"
-	ErrNdbSlaveConflictDetectionRequiresTransactionIds     ErrorString = "MY-010485"
-	ErrNdbSlaveBinlogMissingInfoForConflictDetection       ErrorString = "MY-010486"
+	ErrNdbSubordinateMalformedEventReceivedOnTable               ErrorString = "MY-010483"
+	ErrNdbSubordinateConflictFunctionRequiresRole                ErrorString = "MY-010484"
+	ErrNdbSubordinateConflictDetectionRequiresTransactionIds     ErrorString = "MY-010485"
+	ErrNdbSubordinateBinlogMissingInfoForConflictDetection       ErrorString = "MY-010486"
 	ErrNdbErrorInReadautoincrementvalue                    ErrorString = "MY-010487"
 	ErrNdbFoundUncommittedAutocommit                       ErrorString = "MY-010488"
-	ErrNdbSlaveTooManyRetries                              ErrorString = "MY-010489"
-	ErrNdbSlaveErrorInUpdateCreateInfo                     ErrorString = "MY-010490"
-	ErrNdbSlaveCantAllocateTableShare                      ErrorString = "MY-010491"
+	ErrNdbSubordinateTooManyRetries                              ErrorString = "MY-010489"
+	ErrNdbSubordinateErrorInUpdateCreateInfo                     ErrorString = "MY-010490"
+	ErrNdbSubordinateCantAllocateTableShare                      ErrorString = "MY-010491"
 	ErrNdbBinlogErrorInfoFromDa                            ErrorString = "MY-010492"
 	ErrNdbBinlogCreateTableEvent                           ErrorString = "MY-010493"
 	ErrNdbBinlogFailedCreateTableEventOperations           ErrorString = "MY-010494"
@@ -536,17 +536,17 @@ const (
 	ErrTcHeuristicRecoveryMode                             ErrorString = "MY-010526"
 	ErrTcHeuristicRecoveryFailed                           ErrorString = "MY-010527"
 	ErrTcRestartWithoutTcHeuristicRecover                  ErrorString = "MY-010528"
-	ErrRplSlaveFailedToCreateOrRecoverInfoRepositories     ErrorString = "MY-010529"
-	ErrRplSlaveAutoPositionIs1AndGtidModeIsOff             ErrorString = "MY-010530"
-	ErrRplSlaveCantStartSlaveForChannel                    ErrorString = "MY-010531"
-	ErrRplSlaveCantStopSlaveForChannel                     ErrorString = "MY-010532"
-	ErrRplRecoveryNoRotateEventFromMaster                  ErrorString = "MY-010533"
+	ErrRplSubordinateFailedToCreateOrRecoverInfoRepositories     ErrorString = "MY-010529"
+	ErrRplSubordinateAutoPositionIs1AndGtidModeIsOff             ErrorString = "MY-010530"
+	ErrRplSubordinateCantStartSubordinateForChannel                    ErrorString = "MY-010531"
+	ErrRplSubordinateCantStopSubordinateForChannel                     ErrorString = "MY-010532"
+	ErrRplRecoveryNoRotateEventFromMain                  ErrorString = "MY-010533"
 	ErrRplRecoveryErrorReadRelayLog                        ErrorString = "MY-010534"
 	ErrRplRecoveryErrorFreeingIoCache                      ErrorString = "MY-010535"
 	ErrRplRecoverySkippedGroupReplicationChannel           ErrorString = "MY-010536"
 	ErrRplRecoveryError                                    ErrorString = "MY-010537"
 	ErrRplRecoveryIoErrorReadingRelayLogIndex              ErrorString = "MY-010538"
-	ErrRplRecoveryFileMasterPosInfo                        ErrorString = "MY-010539"
+	ErrRplRecoveryFileMainPosInfo                        ErrorString = "MY-010539"
 	ErrRplRecoveryReplicateSameServerIdRequiresPosition    ErrorString = "MY-010540"
 	ErrRplMtsRecoveryStartingCoordinator                   ErrorString = "MY-010541"
 	ErrRplMtsRecoveryFailedToStartCoordinator              ErrorString = "MY-010542"
@@ -554,61 +554,61 @@ const (
 	ErrRplMtsRecoveryCantOpenRelayLog                      ErrorString = "MY-010544"
 	ErrRplMtsRecoverySuccessful                            ErrorString = "MY-010545"
 	ErrRplServerIdMissing                                  ErrorString = "MY-010546"
-	ErrRplCantCreateSlaveThread                            ErrorString = "MY-010547"
-	ErrRplSlaveIoThreadWasKilled                           ErrorString = "MY-010548"
-	ErrRplSlaveMasterUuidHasChanged                        ErrorString = "MY-010549"
-	ErrRplSlaveUsesChecksumAndMasterPre50                  ErrorString = "MY-010550"
-	ErrRplSlaveSecondsBehindMasterDubious                  ErrorString = "MY-010551"
-	ErrRplSlaveCantFlushMasterInfoFile                     ErrorString = "MY-010552"
-	ErrRplSlaveReportHostTooLong                           ErrorString = "MY-010553"
-	ErrRplSlaveReportUserTooLong                           ErrorString = "MY-010554"
-	ErrRplSlaveReportPasswordTooLong                       ErrorString = "MY-010555"
-	ErrRplSlaveErrorRetrying                               ErrorString = "MY-010556"
-	ErrRplSlaveErrorReadingFromServer                      ErrorString = "MY-010557"
-	ErrRplSlaveDumpThreadKilledByMaster                    ErrorString = "MY-010558"
+	ErrRplCantCreateSubordinateThread                            ErrorString = "MY-010547"
+	ErrRplSubordinateIoThreadWasKilled                           ErrorString = "MY-010548"
+	ErrRplSubordinateMainUuidHasChanged                        ErrorString = "MY-010549"
+	ErrRplSubordinateUsesChecksumAndMainPre50                  ErrorString = "MY-010550"
+	ErrRplSubordinateSecondsBehindMainDubious                  ErrorString = "MY-010551"
+	ErrRplSubordinateCantFlushMainInfoFile                     ErrorString = "MY-010552"
+	ErrRplSubordinateReportHostTooLong                           ErrorString = "MY-010553"
+	ErrRplSubordinateReportUserTooLong                           ErrorString = "MY-010554"
+	ErrRplSubordinateReportPasswordTooLong                       ErrorString = "MY-010555"
+	ErrRplSubordinateErrorRetrying                               ErrorString = "MY-010556"
+	ErrRplSubordinateErrorReadingFromServer                      ErrorString = "MY-010557"
+	ErrRplSubordinateDumpThreadKilledByMain                    ErrorString = "MY-010558"
 	ErrRplMtsStatistics                                    ErrorString = "MY-010559"
 	ErrRplMtsRecoveryComplete                              ErrorString = "MY-010560"
-	ErrRplSlaveCantInitRelayLogPosition                    ErrorString = "MY-010561"
-	ErrRplSlaveConnectedToMasterReplicationStarted         ErrorString = "MY-010562"
-	ErrRplSlaveIoThreadKilled                              ErrorString = "MY-010563"
-	ErrRplSlaveIoThreadCantRegisterOnMaster                ErrorString = "MY-010564"
-	ErrRplSlaveForcingToReconnectIoThread                  ErrorString = "MY-010565"
-	ErrRplSlaveErrorRequestingBinlogDump                   ErrorString = "MY-010566"
-	ErrRplLogEntryExceedsSlaveMaxAllowedPacket             ErrorString = "MY-010567"
-	ErrRplSlaveStoppingAsMasterOom                         ErrorString = "MY-010568"
-	ErrRplSlaveIoThreadAbortedWaitingForRelayLogSpace      ErrorString = "MY-010569"
-	ErrRplSlaveIoThreadExiting                             ErrorString = "MY-010570"
-	ErrRplSlaveCantInitializeSlaveWorker                   ErrorString = "MY-010571"
+	ErrRplSubordinateCantInitRelayLogPosition                    ErrorString = "MY-010561"
+	ErrRplSubordinateConnectedToMainReplicationStarted         ErrorString = "MY-010562"
+	ErrRplSubordinateIoThreadKilled                              ErrorString = "MY-010563"
+	ErrRplSubordinateIoThreadCantRegisterOnMain                ErrorString = "MY-010564"
+	ErrRplSubordinateForcingToReconnectIoThread                  ErrorString = "MY-010565"
+	ErrRplSubordinateErrorRequestingBinlogDump                   ErrorString = "MY-010566"
+	ErrRplLogEntryExceedsSubordinateMaxAllowedPacket             ErrorString = "MY-010567"
+	ErrRplSubordinateStoppingAsMainOom                         ErrorString = "MY-010568"
+	ErrRplSubordinateIoThreadAbortedWaitingForRelayLogSpace      ErrorString = "MY-010569"
+	ErrRplSubordinateIoThreadExiting                             ErrorString = "MY-010570"
+	ErrRplSubordinateCantInitializeSubordinateWorker                   ErrorString = "MY-010571"
 	ErrRplMtsGroupRecoveryRelayLogInfoForWorker            ErrorString = "MY-010572"
 	ErrRplErrorLookingForLog                               ErrorString = "MY-010573"
 	ErrRplMtsGroupRecoveryRelayLogInfo                     ErrorString = "MY-010574"
 	ErrRplCantFindFollowupFile                             ErrorString = "MY-010575"
 	ErrRplMtsCheckpointPeriodDiffersFromCnt                ErrorString = "MY-010576"
-	ErrRplSlaveWorkerThreadCreationFailed                  ErrorString = "MY-010577"
-	ErrRplSlaveWorkerThreadCreationFailedWithErrno         ErrorString = "MY-010578"
-	ErrRplSlaveFailedToInitPartitionsHash                  ErrorString = "MY-010579"
-	ErrRplSlaveNdbTablesNotAvailable                       ErrorString = "MY-010580"
-	ErrRplSlaveSqlThreadStarting                           ErrorString = "MY-010581"
-	ErrRplSlaveSkipCounterExecuted                         ErrorString = "MY-010582"
-	ErrRplSlaveAdditionalErrorInfoFromDa                   ErrorString = "MY-010583"
-	ErrRplSlaveErrorInfoFromDa                             ErrorString = "MY-010584"
-	ErrRplSlaveErrorLoadingUserDefinedLibrary              ErrorString = "MY-010585"
-	ErrRplSlaveErrorRunningQuery                           ErrorString = "MY-010586"
-	ErrRplSlaveSqlThreadExiting                            ErrorString = "MY-010587"
-	ErrRplSlaveReadInvalidEventFromMaster                  ErrorString = "MY-010588"
-	ErrRplSlaveQueueEventFailedInvalidConfiguration        ErrorString = "MY-010589"
-	ErrRplSlaveIoThreadDetectedUnexpectedEventSequence     ErrorString = "MY-010590"
-	ErrRplSlaveCantUseCharset                              ErrorString = "MY-010591"
-	ErrRplSlaveConnectedToMasterReplicationResumed         ErrorString = "MY-010592"
-	ErrRplSlaveNextLogIsActive                             ErrorString = "MY-010593"
-	ErrRplSlaveNextLogIsInactive                           ErrorString = "MY-010594"
-	ErrRplSlaveSqlThreadIoErrorReadingEvent                ErrorString = "MY-010595"
-	ErrRplSlaveErrorReadingRelayLogEvents                  ErrorString = "MY-010596"
-	ErrSlaveChangeMasterToExecuted                         ErrorString = "MY-010597"
-	ErrRplSlaveNewMasterInfoNeedsReposTypeOtherThanFile    ErrorString = "MY-010598"
+	ErrRplSubordinateWorkerThreadCreationFailed                  ErrorString = "MY-010577"
+	ErrRplSubordinateWorkerThreadCreationFailedWithErrno         ErrorString = "MY-010578"
+	ErrRplSubordinateFailedToInitPartitionsHash                  ErrorString = "MY-010579"
+	ErrRplSubordinateNdbTablesNotAvailable                       ErrorString = "MY-010580"
+	ErrRplSubordinateSqlThreadStarting                           ErrorString = "MY-010581"
+	ErrRplSubordinateSkipCounterExecuted                         ErrorString = "MY-010582"
+	ErrRplSubordinateAdditionalErrorInfoFromDa                   ErrorString = "MY-010583"
+	ErrRplSubordinateErrorInfoFromDa                             ErrorString = "MY-010584"
+	ErrRplSubordinateErrorLoadingUserDefinedLibrary              ErrorString = "MY-010585"
+	ErrRplSubordinateErrorRunningQuery                           ErrorString = "MY-010586"
+	ErrRplSubordinateSqlThreadExiting                            ErrorString = "MY-010587"
+	ErrRplSubordinateReadInvalidEventFromMain                  ErrorString = "MY-010588"
+	ErrRplSubordinateQueueEventFailedInvalidConfiguration        ErrorString = "MY-010589"
+	ErrRplSubordinateIoThreadDetectedUnexpectedEventSequence     ErrorString = "MY-010590"
+	ErrRplSubordinateCantUseCharset                              ErrorString = "MY-010591"
+	ErrRplSubordinateConnectedToMainReplicationResumed         ErrorString = "MY-010592"
+	ErrRplSubordinateNextLogIsActive                             ErrorString = "MY-010593"
+	ErrRplSubordinateNextLogIsInactive                           ErrorString = "MY-010594"
+	ErrRplSubordinateSqlThreadIoErrorReadingEvent                ErrorString = "MY-010595"
+	ErrRplSubordinateErrorReadingRelayLogEvents                  ErrorString = "MY-010596"
+	ErrSubordinateChangeMainToExecuted                         ErrorString = "MY-010597"
+	ErrRplSubordinateNewMainInfoNeedsReposTypeOtherThanFile    ErrorString = "MY-010598"
 	ErrRplFailedToStatLogInIndex                           ErrorString = "MY-010599"
 	ErrRplLogNotFoundWhileCountingRelayLogSpace            ErrorString = "MY-010600"
-	ErrSlaveCantUseTempdir                                 ErrorString = "MY-010601"
+	ErrSubordinateCantUseTempdir                                 ErrorString = "MY-010601"
 	ErrRplRelayLogNeedsFileNotDirectory                    ErrorString = "MY-010602"
 	ErrRplRelayLogIndexNeedsFileNotDirectory               ErrorString = "MY-010603"
 	ErrRplPleaseUseOptionRelayLog                          ErrorString = "MY-010604"
@@ -668,7 +668,7 @@ const (
 	ErrNdbBinlogWritingToNdbBinlogIndex                    ErrorString = "MY-010658"
 	ErrNdbBinlogCantCommitToNdbBinlogIndex                 ErrorString = "MY-010659"
 	ErrNdbBinlogWriteToNdbBinlogIndexFailedAfterKill       ErrorString = "MY-010660"
-	ErrNdbBinlogUsingServerId0SlavesWillNot                ErrorString = "MY-010661"
+	ErrNdbBinlogUsingServerId0SubordinatesWillNot                ErrorString = "MY-010661"
 	ErrNdbServerIdReservedOrTooLarge                       ErrorString = "MY-010662"
 	ErrNdbBinlogNdbLogTransactionIdRequiresV2RowEvents     ErrorString = "MY-010663"
 	ErrNdbBinlogNdbLogApplyStatusForcingFullUseWrite       ErrorString = "MY-010664"
@@ -701,7 +701,7 @@ const (
 	ErrNdbRemainingOpenTableInfo                           ErrorString = "MY-010691"
 	ErrNdbCouldNotGetApplyStatusShare                      ErrorString = "MY-010692"
 	ErrNdbBinlogServerShutdownDuringNdbClusterStart        ErrorString = "MY-010693"
-	ErrNdbBinlogClusterRestartedResetMasterSuggested       ErrorString = "MY-010694"
+	ErrNdbBinlogClusterRestartedResetMainSuggested       ErrorString = "MY-010694"
 	ErrNdbBinlogClusterHasReconnected                      ErrorString = "MY-010695"
 	ErrNdbBinlogStartingLogAtEpoch                         ErrorString = "MY-010696"
 	ErrNdbBinlogNdbTablesWritable                          ErrorString = "MY-010697"
@@ -724,20 +724,20 @@ const (
 	ErrWrongCountForOrigin                                 ErrorString = "MY-010714"
 	ErrWrongCountForKey                                    ErrorString = "MY-010715"
 	ErrWrongCountOfElements                                ErrorString = "MY-010716"
-	ErrRplErrorReadingSlaveWorkerConfiguration             ErrorString = "MY-010717"
-	ErrRplErrorWritingSlaveWorkerConfiguration             ErrorString = "MY-010718"
+	ErrRplErrorReadingSubordinateWorkerConfiguration             ErrorString = "MY-010717"
+	ErrRplErrorWritingSubordinateWorkerConfiguration             ErrorString = "MY-010718"
 	ErrRplFailedToOpenRelayLog                             ErrorString = "MY-010719"
 	ErrRplWorkerCantReadRelayLog                           ErrorString = "MY-010720"
 	ErrRplWorkerCantFindNextRelayLog                       ErrorString = "MY-010721"
-	ErrRplMtsSlaveCoordinatorHasWaited                     ErrorString = "MY-010722"
+	ErrRplMtsSubordinateCoordinatorHasWaited                     ErrorString = "MY-010722"
 	ErrBinlogFailedToWriteDropForTempTables                ErrorString = "MY-010723"
 	ErrBinlogOomWritingDeleteWhileOpeningHeapTable         ErrorString = "MY-010724"
 	ErrFailedToRepairTable                                 ErrorString = "MY-010725"
 	ErrFailedToRemoveTempTable                             ErrorString = "MY-010726"
 	ErrSystemTableNotTransactional                         ErrorString = "MY-010727"
-	ErrRplErrorWritingMasterConfiguration                  ErrorString = "MY-010728"
-	ErrRplErrorReadingMasterConfiguration                  ErrorString = "MY-010729"
-	ErrRplSslInfoInMasterInfoIgnored                       ErrorString = "MY-010730"
+	ErrRplErrorWritingMainConfiguration                  ErrorString = "MY-010728"
+	ErrRplErrorReadingMainConfiguration                  ErrorString = "MY-010729"
+	ErrRplSslInfoInMainInfoIgnored                       ErrorString = "MY-010730"
 	ErrPluginFailedDeinitialization                        ErrorString = "MY-010731"
 	ErrPluginHasNonzeroRefcountAfterDeinitialization       ErrorString = "MY-010732"
 	ErrPluginShuttingDownPlugin                            ErrorString = "MY-010733"
@@ -860,7 +860,7 @@ const (
 	ErrBinlogCantDeleteLogFileDoesIndexMatchFiles          ErrorString = "MY-010850"
 	ErrBinlogCantDeleteFileAndReadBinlogIndex              ErrorString = "MY-010851"
 	ErrBinlogFailedToDeleteLogFile                         ErrorString = "MY-010852"
-	ErrBinlogLoggingIncidentToStopSlaves                   ErrorString = "MY-010853"
+	ErrBinlogLoggingIncidentToStopSubordinates                   ErrorString = "MY-010853"
 	ErrBinlogCantFindLogInIndex                            ErrorString = "MY-010854"
 	ErrBinlogRecoveringAfterCrashUsing                     ErrorString = "MY-010855"
 	ErrBinlogCantOpenCrashedBinlog                         ErrorString = "MY-010856"
@@ -902,11 +902,11 @@ const (
 	ErrAuditCantAbortEvent                                 ErrorString = "MY-010892"
 	ErrAuditWarning                                        ErrorString = "MY-010893"
 	ErrNdbNumberOfChannels                                 ErrorString = "MY-010894"
-	ErrNdbSlaveParallelWorkers                             ErrorString = "MY-010895"
+	ErrNdbSubordinateParallelWorkers                             ErrorString = "MY-010895"
 	ErrNdbDistributingErr                                  ErrorString = "MY-010896"
-	ErrRplSlaveInsecureChangeMaster                        ErrorString = "MY-010897"
-	ErrRplSlaveFlushRelayLogsNotAllowed                    ErrorString = "MY-010898"
-	ErrRplSlaveIncorrectChannel                            ErrorString = "MY-010899"
+	ErrRplSubordinateInsecureChangeMain                        ErrorString = "MY-010897"
+	ErrRplSubordinateFlushRelayLogsNotAllowed                    ErrorString = "MY-010898"
+	ErrRplSubordinateIncorrectChannel                            ErrorString = "MY-010899"
 	ErrFailedToFindDlEntry                                 ErrorString = "MY-010900"
 	ErrFailedToOpenSharedLibrary                           ErrorString = "MY-010901"
 	ErrThreadPriorityIgnored                               ErrorString = "MY-010902"
@@ -966,11 +966,11 @@ const (
 	ErrRplTimestampsReturnedToNormal                       ErrorString = "MY-010957"
 	ErrBinlogFileOpenFailed                                ErrorString = "MY-010958"
 	ErrBinlogEventWriteToStmtCacheFailed                   ErrorString = "MY-010959"
-	ErrSlaveRelayLogTruncateInfo                           ErrorString = "MY-010960"
-	ErrSlaveRelayLogPurgeFailed                            ErrorString = "MY-010961"
-	ErrRplSlaveFilterCreateFailed                          ErrorString = "MY-010962"
-	ErrRplSlaveGlobalFiltersCopyFailed                     ErrorString = "MY-010963"
-	ErrRplSlaveResetFilterOptions                          ErrorString = "MY-010964"
+	ErrSubordinateRelayLogTruncateInfo                           ErrorString = "MY-010960"
+	ErrSubordinateRelayLogPurgeFailed                            ErrorString = "MY-010961"
+	ErrRplSubordinateFilterCreateFailed                          ErrorString = "MY-010962"
+	ErrRplSubordinateGlobalFiltersCopyFailed                     ErrorString = "MY-010963"
+	ErrRplSubordinateResetFilterOptions                          ErrorString = "MY-010964"
 	ErrMissingGrantSystemTable                             ErrorString = "MY-010965"
 	ErrMissingAclSystemTable                               ErrorString = "MY-010966"
 	ErrAnonymousAuthIdNotAllowedInMandatoryRoles           ErrorString = "MY-010967"
@@ -1031,11 +1031,11 @@ const (
 	ErrRowDataTooBigToWriteInBinlog                        ErrorString = "MY-011022"
 	ErrFailedToConstructDropEventQuery                     ErrorString = "MY-011023"
 	ErrFailedToBinlogDropEvent                             ErrorString = "MY-011024"
-	ErrFailedToStartSlaveThread                            ErrorString = "MY-011025"
+	ErrFailedToStartSubordinateThread                            ErrorString = "MY-011025"
 	ErrRplIoThreadKilled                                   ErrorString = "MY-011026"
-	ErrSlaveReconnectFailed                                ErrorString = "MY-011027"
-	ErrSlaveKilledAfterReconnect                           ErrorString = "MY-011028"
-	ErrSlaveNotStartedOnSomeChannels                       ErrorString = "MY-011029"
+	ErrSubordinateReconnectFailed                                ErrorString = "MY-011027"
+	ErrSubordinateKilledAfterReconnect                           ErrorString = "MY-011028"
+	ErrSubordinateNotStartedOnSomeChannels                       ErrorString = "MY-011029"
 	ErrFailedToAddRplFilter                                ErrorString = "MY-011030"
 	ErrPerChannelRplFilterConfForGrpRpl                    ErrorString = "MY-011031"
 	ErrRplFiltersNotAttachedToChannel                      ErrorString = "MY-011032"
@@ -1148,13 +1148,13 @@ const (
 	ErrSemisyncReplyBinlogFileTooLarge                     ErrorString = "MY-011139"
 	ErrSemisyncServerReply                                 ErrorString = "MY-011140"
 	ErrSemisyncFunctionCalledTwice                         ErrorString = "MY-011141"
-	ErrSemisyncRplEnabledOnMaster                          ErrorString = "MY-011142"
-	ErrSemisyncMasterOom                                   ErrorString = "MY-011143"
-	ErrSemisyncDisabledOnMaster                            ErrorString = "MY-011144"
+	ErrSemisyncRplEnabledOnMain                          ErrorString = "MY-011142"
+	ErrSemisyncMainOom                                   ErrorString = "MY-011143"
+	ErrSemisyncDisabledOnMain                            ErrorString = "MY-011144"
 	ErrSemisyncForcedShutdown                              ErrorString = "MY-011145"
-	ErrSemisyncMasterGotReplyAtPos                         ErrorString = "MY-011146"
-	ErrSemisyncMasterSignalAllWaitingThreads               ErrorString = "MY-011147"
-	ErrSemisyncMasterTrxWaitPos                            ErrorString = "MY-011148"
+	ErrSemisyncMainGotReplyAtPos                         ErrorString = "MY-011146"
+	ErrSemisyncMainSignalAllWaitingThreads               ErrorString = "MY-011147"
+	ErrSemisyncMainTrxWaitPos                            ErrorString = "MY-011148"
 	ErrSemisyncBinlogReplyIsAhead                          ErrorString = "MY-011149"
 	ErrSemisyncMoveBackWaitPos                             ErrorString = "MY-011150"
 	ErrSemisyncInitWaitPos                                 ErrorString = "MY-011151"
@@ -1167,31 +1167,31 @@ const (
 	ErrSemisyncSyncHeaderUpdateInfo                        ErrorString = "MY-011158"
 	ErrSemisyncFailedToInsertTrxNode                       ErrorString = "MY-011159"
 	ErrSemisyncTrxSkippedAtPos                             ErrorString = "MY-011160"
-	ErrSemisyncMasterFailedOnNetFlush                      ErrorString = "MY-011161"
+	ErrSemisyncMainFailedOnNetFlush                      ErrorString = "MY-011161"
 	ErrSemisyncReceivedAckIsSmaller                        ErrorString = "MY-011162"
 	ErrSemisyncAddAckToSlot                                ErrorString = "MY-011163"
-	ErrSemisyncUpdateExistingSlaveAck                      ErrorString = "MY-011164"
+	ErrSemisyncUpdateExistingSubordinateAck                      ErrorString = "MY-011164"
 	ErrSemisyncFailedToStartAckReceiverThd                 ErrorString = "MY-011165"
 	ErrSemisyncStartingAckReceiverThd                      ErrorString = "MY-011166"
 	ErrSemisyncFailedToWaitOnDumpSocket                    ErrorString = "MY-011167"
 	ErrSemisyncStoppingAckReceiverThread                   ErrorString = "MY-011168"
-	ErrSemisyncFailedRegisterSlaveToReceiver               ErrorString = "MY-011169"
-	ErrSemisyncStartBinlogDumpToSlave                      ErrorString = "MY-011170"
-	ErrSemisyncStopBinlogDumpToSlave                       ErrorString = "MY-011171"
+	ErrSemisyncFailedRegisterSubordinateToReceiver               ErrorString = "MY-011169"
+	ErrSemisyncStartBinlogDumpToSubordinate                      ErrorString = "MY-011170"
+	ErrSemisyncStopBinlogDumpToSubordinate                       ErrorString = "MY-011171"
 	ErrSemisyncUnregisterTrxObserverFailed                 ErrorString = "MY-011172"
 	ErrSemisyncUnregisterBinlogStorageObserverFailed       ErrorString = "MY-011173"
 	ErrSemisyncUnregisterBinlogTransmitObserverFailed      ErrorString = "MY-011174"
 	ErrSemisyncUnregisteredReplicator                      ErrorString = "MY-011175"
 	ErrSemisyncSocketFdTooLarge                            ErrorString = "MY-011176"
-	ErrSemisyncSlaveReply                                  ErrorString = "MY-011177"
+	ErrSemisyncSubordinateReply                                  ErrorString = "MY-011177"
 	ErrSemisyncMissingMagicNoForSemisyncPkt                ErrorString = "MY-011178"
-	ErrSemisyncSlaveStart                                  ErrorString = "MY-011179"
-	ErrSemisyncSlaveReplyWithBinlogInfo                    ErrorString = "MY-011180"
-	ErrSemisyncSlaveNetFlushReplyFailed                    ErrorString = "MY-011181"
-	ErrSemisyncSlaveSendReplyFailed                        ErrorString = "MY-011182"
-	ErrSemisyncExecutionFailedOnMaster                     ErrorString = "MY-011183"
-	ErrSemisyncNotSupportedByMaster                        ErrorString = "MY-011184"
-	ErrSemisyncSlaveSetFailed                              ErrorString = "MY-011185"
+	ErrSemisyncSubordinateStart                                  ErrorString = "MY-011179"
+	ErrSemisyncSubordinateReplyWithBinlogInfo                    ErrorString = "MY-011180"
+	ErrSemisyncSubordinateNetFlushReplyFailed                    ErrorString = "MY-011181"
+	ErrSemisyncSubordinateSendReplyFailed                        ErrorString = "MY-011182"
+	ErrSemisyncExecutionFailedOnMain                     ErrorString = "MY-011183"
+	ErrSemisyncNotSupportedByMain                        ErrorString = "MY-011184"
+	ErrSemisyncSubordinateSetFailed                              ErrorString = "MY-011185"
 	ErrSemisyncFailedToStopAckReceiverThd                  ErrorString = "MY-011186"
 	ErrFirewallFailedToReadFirewallTables                  ErrorString = "MY-011187"
 	ErrFirewallFailedToRegDynamicPrivileges                ErrorString = "MY-011188"
@@ -1268,7 +1268,7 @@ const (
 	ErrSysVarComponentFailedToParseVariableOptions         ErrorString = "MY-011259"
 	ErrSysVarComponentFailedToMakeVariablePersistent       ErrorString = "MY-011260"
 	ErrComponentFilterConfused                             ErrorString = "MY-011261"
-	ErrStopSlaveIoThreadDiskSpace                          ErrorString = "MY-011262"
+	ErrStopSubordinateIoThreadDiskSpace                          ErrorString = "MY-011262"
 	ErrLogFileCannotOpen                                   ErrorString = "MY-011263"
 	ErrPersistOptionStatus                                 ErrorString = "MY-011268"
 	ErrNotImplementedGetTablespaceStatistics               ErrorString = "MY-011269"
@@ -1536,10 +1536,10 @@ const (
 	ErrGrpRplApplierThdStartError                          ErrorString = "MY-011534"
 	ErrGrpRplApplierThdStopError                           ErrorString = "MY-011535"
 	ErrGrpRplFetchTransDataFailed                          ErrorString = "MY-011536"
-	ErrGrpRplSlaveIoThdPrimaryUnknown                      ErrorString = "MY-011537"
+	ErrGrpRplSubordinateIoThdPrimaryUnknown                      ErrorString = "MY-011537"
 	ErrGrpRplSalveIoThdOnSecondaryMember                   ErrorString = "MY-011538"
-	ErrGrpRplSlaveSqlThdPrimaryUnknown                     ErrorString = "MY-011539"
-	ErrGrpRplSlaveSqlThdOnSecondaryMember                  ErrorString = "MY-011540"
+	ErrGrpRplSubordinateSqlThdPrimaryUnknown                     ErrorString = "MY-011539"
+	ErrGrpRplSubordinateSqlThdOnSecondaryMember                  ErrorString = "MY-011540"
 	ErrGrpRplNeedsInnodbTable                              ErrorString = "MY-011541"
 	ErrGrpRplPrimaryKeyNotDefined                          ErrorString = "MY-011542"
 	ErrGrpRplFkWithCascadeUnsupported                      ErrorString = "MY-011543"
@@ -1676,12 +1676,12 @@ const (
 	ErrGrpRplUnableToInitCommunicationEngine               ErrorString = "MY-011674"
 	ErrGrpRplBinlogDisabled                                ErrorString = "MY-011675"
 	ErrGrpRplGtidModeOff                                   ErrorString = "MY-011676"
-	ErrGrpRplLogSlaveUpdatesNotSet                         ErrorString = "MY-011677"
+	ErrGrpRplLogSubordinateUpdatesNotSet                         ErrorString = "MY-011677"
 	ErrGrpRplInvalidTransWriteSetExtractionValue           ErrorString = "MY-011678"
 	ErrGrpRplRelayLogInfoRepoMustBeTable                   ErrorString = "MY-011679"
-	ErrGrpRplMasterInfoRepoMustBeTable                     ErrorString = "MY-011680"
+	ErrGrpRplMainInfoRepoMustBeTable                     ErrorString = "MY-011680"
 	ErrGrpRplIncorrectTypeSetForParallelApplier            ErrorString = "MY-011681"
-	ErrGrpRplSlavePreserveCommitOrderNotSet                ErrorString = "MY-011682"
+	ErrGrpRplSubordinatePreserveCommitOrderNotSet                ErrorString = "MY-011682"
 	ErrGrpRplSinglePrimModeNotAllowedWithUpdateEverywhere  ErrorString = "MY-011683"
 	ErrGrpRplModuleTerminateError                          ErrorString = "MY-011684"
 	ErrGrpRplGrpNameOptionMandatory                        ErrorString = "MY-011685"
@@ -1735,10 +1735,10 @@ const (
 	ErrGrpRplPipelineReinitFailedRead                      ErrorString = "MY-011733"
 	ErrGrpRplStopRepChannel                                ErrorString = "MY-011734"
 	ErrGrpRplGcsGrErrorMsg                                 ErrorString = "MY-011735"
-	ErrGrpRplSlaveIoThreadUnblocked                        ErrorString = "MY-011736"
-	ErrGrpRplSlaveIoThreadErrorOut                         ErrorString = "MY-011737"
-	ErrGrpRplSlaveApplierThreadUnblocked                   ErrorString = "MY-011738"
-	ErrGrpRplSlaveApplierThreadErrorOut                    ErrorString = "MY-011739"
+	ErrGrpRplSubordinateIoThreadUnblocked                        ErrorString = "MY-011736"
+	ErrGrpRplSubordinateIoThreadErrorOut                         ErrorString = "MY-011737"
+	ErrGrpRplSubordinateApplierThreadUnblocked                   ErrorString = "MY-011738"
+	ErrGrpRplSubordinateApplierThreadErrorOut                    ErrorString = "MY-011739"
 	ErrLdapAuthFailedToCreateOrGetConnection               ErrorString = "MY-011740"
 	ErrLdapAuthDeinitFailed                                ErrorString = "MY-011741"
 	ErrLdapAuthSkippingUserGroupSearch                     ErrorString = "MY-011742"
@@ -3094,8 +3094,8 @@ const (
 	ErrIbMsg1268                                           ErrorString = "MY-013093"
 	ErrIbMsg1269                                           ErrorString = "MY-013094"
 	ErrIbMsg1270                                           ErrorString = "MY-013095"
-	ErrRplSlaveSqlThreadStopCmdExecTimeout                 ErrorString = "MY-013096"
-	ErrRplSlaveIoThreadStopCmdExecTimeout                  ErrorString = "MY-013097"
+	ErrRplSubordinateSqlThreadStopCmdExecTimeout                 ErrorString = "MY-013096"
+	ErrRplSubordinateIoThreadStopCmdExecTimeout                  ErrorString = "MY-013097"
 	ErrRplGtidUnsafeStmtOnNonTransTable                    ErrorString = "MY-013098"
 	ErrRplGtidUnsafeStmtCreateSelect                       ErrorString = "MY-013099"
 	ErrRplGtidUnsafeStmtOnTemporaryTable                   ErrorString = "MY-013100"
@@ -3111,17 +3111,17 @@ const (
 	ErrComponentFilterWrongValue                           ErrorString = "MY-013111"
 	ErrXpluginFailedToStopServices                         ErrorString = "MY-013112"
 	ErrInconsistentError                                   ErrorString = "MY-013113"
-	ErrServerMasterFatalErrorReadingBinlog                 ErrorString = "MY-013114"
+	ErrServerMainFatalErrorReadingBinlog                 ErrorString = "MY-013114"
 	ErrNetworkReadEventChecksumFailure                     ErrorString = "MY-013115"
-	ErrSlaveCreateEventFailure                             ErrorString = "MY-013116"
-	ErrSlaveFatalError                                     ErrorString = "MY-013117"
-	ErrSlaveHeartbeatFailure                               ErrorString = "MY-013118"
-	ErrSlaveIncident                                       ErrorString = "MY-013119"
-	ErrSlaveMasterComFailure                               ErrorString = "MY-013120"
-	ErrSlaveRelayLogReadFailure                            ErrorString = "MY-013121"
-	ErrSlaveRelayLogWriteFailure                           ErrorString = "MY-013122"
-	ErrServerSlaveMiInitRepository                         ErrorString = "MY-013123"
-	ErrServerSlaveRliInitRepository                        ErrorString = "MY-013124"
+	ErrSubordinateCreateEventFailure                             ErrorString = "MY-013116"
+	ErrSubordinateFatalError                                     ErrorString = "MY-013117"
+	ErrSubordinateHeartbeatFailure                               ErrorString = "MY-013118"
+	ErrSubordinateIncident                                       ErrorString = "MY-013119"
+	ErrSubordinateMainComFailure                               ErrorString = "MY-013120"
+	ErrSubordinateRelayLogReadFailure                            ErrorString = "MY-013121"
+	ErrSubordinateRelayLogWriteFailure                           ErrorString = "MY-013122"
+	ErrServerSubordinateMiInitRepository                         ErrorString = "MY-013123"
+	ErrServerSubordinateRliInitRepository                        ErrorString = "MY-013124"
 	ErrServerNetPacketTooLarge                             ErrorString = "MY-013125"
 	ErrServerNoSystemTableAccess                           ErrorString = "MY-013126"
 	ErrServerUnknownError                                  ErrorString = "MY-013127"
@@ -3142,9 +3142,9 @@ const (
 	ErrServerColCountDoesntMatchPleaseUpdateV2             ErrorString = "MY-013142"
 	ErrServerColCountDoesntMatchCorruptedV2                ErrorString = "MY-013143"
 	ErrServerAclTableError                                 ErrorString = "MY-013144"
-	ErrServerSlaveInitQueryFailed                          ErrorString = "MY-013145"
-	ErrServerSlaveConversionFailed                         ErrorString = "MY-013146"
-	ErrServerSlaveIgnoredTable                             ErrorString = "MY-013147"
+	ErrServerSubordinateInitQueryFailed                          ErrorString = "MY-013145"
+	ErrServerSubordinateConversionFailed                         ErrorString = "MY-013146"
+	ErrServerSubordinateIgnoredTable                             ErrorString = "MY-013147"
 	ErrCantReplicateAnonymousWithAutoPosition              ErrorString = "MY-013148"
 	ErrCantReplicateAnonymousWithGtidModeOn                ErrorString = "MY-013149"
 	ErrCantReplicateGtidWithGtidModeOff                    ErrorString = "MY-013150"
@@ -3274,10 +3274,10 @@ const (
 	ErrServerRplEncryptionFailedToGenerateKey              ErrorString = "MY-013284"
 	ErrServerRplEncryptionFailedToStoreKey                 ErrorString = "MY-013285"
 	ErrServerRplEncryptionFailedToRemoveKey                ErrorString = "MY-013286"
-	ErrServerRplEncryptionMasterKeyRecoveryFailed          ErrorString = "MY-013287"
+	ErrServerRplEncryptionMainKeyRecoveryFailed          ErrorString = "MY-013287"
 	ErrServerRplEncryptionUnableToInitialize               ErrorString = "MY-013288"
-	ErrServerRplEncryptionUnableToRotateMasterKeyAtStartup ErrorString = "MY-013289"
-	ErrServerRplEncryptionIgnoreRotateMasterKeyAtStartup   ErrorString = "MY-013290"
+	ErrServerRplEncryptionUnableToRotateMainKeyAtStartup ErrorString = "MY-013289"
+	ErrServerRplEncryptionIgnoreRotateMainKeyAtStartup   ErrorString = "MY-013290"
 	ErrInvalidAdminAddress                                 ErrorString = "MY-013291"
 	ErrServerStartupAdminInterface                         ErrorString = "MY-013292"
 	ErrCantCreateAdminThread                               ErrorString = "MY-013293"
@@ -3343,8 +3343,8 @@ const (
 	ErrPrepareForSecondaryEngine                           ErrorString = "MY-013359"
 	ErrServerWarnDeprecated                                ErrorString = "MY-013360"
 	ErrAuthIdWithSystemUserPrivInMandatoryRoles            ErrorString = "MY-013361"
-	ErrServerBinlogMasterKeyRecoveryOutOfCombination       ErrorString = "MY-013362"
-	ErrServerBinlogMasterKeyRotationFailToCleanupAuxKey    ErrorString = "MY-013363"
+	ErrServerBinlogMainKeyRecoveryOutOfCombination       ErrorString = "MY-013362"
+	ErrServerBinlogMainKeyRotationFailToCleanupAuxKey    ErrorString = "MY-013363"
 	ErrTurningOnPartialRevokes                             ErrorString = "MY-013368"
 	ErrWarnPartialRevokeAndDbGrant                         ErrorString = "MY-013369"
 	ErrWarnIncorrectPrivilegeForDbRestrictions             ErrorString = "MY-013370"
@@ -3439,7 +3439,7 @@ const (
 	ErrGrpRplRecoveryStratChoice                           ErrorString = "MY-013471"
 	ErrGrpRplRecoveryStratFallback                         ErrorString = "MY-013472"
 	ErrGrpRplRecoveryStratNoFallback                       ErrorString = "MY-013473"
-	ErrGrpRplSlaveThreadErrorOnClone                       ErrorString = "MY-013474"
+	ErrGrpRplSubordinateThreadErrorOnClone                       ErrorString = "MY-013474"
 	ErrUnknownTableInUpgrade                               ErrorString = "MY-013475"
 	ErrIdentCausesTooLongPathInUpgrade                     ErrorString = "MY-013476"
 	ErrXaCantCreateMdlBackup                               ErrorString = "MY-013477"
@@ -3463,19 +3463,19 @@ const (
 	ErrWarnLogPrivilegeChecksUserCorrupt                   ErrorString = "MY-013495"
 	ErrWarnLogPrivilegeChecksUserNeedsRplApplierPriv       ErrorString = "MY-013496"
 	ErrFilePrivilegeForReplicationChecks                   ErrorString = "MY-013497"
-	ErrRplSlaveSqlThreadStartingWithPrivilegeChecks        ErrorString = "MY-013498"
+	ErrRplSubordinateSqlThreadStartingWithPrivilegeChecks        ErrorString = "MY-013498"
 	ErrAuditLogCannotGeneratePassword                      ErrorString = "MY-013499"
 	ErrInitFailedToGenerateRootPassword                    ErrorString = "MY-013500"
 	ErrPluginLoadOptionsIgnored                            ErrorString = "MY-013501"
 	ErrWarnAuthIdWithSystemUserPrivInMandatoryRoles        ErrorString = "MY-013502"
 	ErrIbMsgSkipHiddenDir                                  ErrorString = "MY-013503"
-	ErrWarnRplRecoveryNoRotateEventFromMasterEof           ErrorString = "MY-013504"
+	ErrWarnRplRecoveryNoRotateEventFromMainEof           ErrorString = "MY-013504"
 	ErrIbLobRollbackIndexLen                               ErrorString = "MY-013505"
 	ErrCantProcessExpressionForGeneratedColumnToDd         ErrorString = "MY-013506"
-	ErrRplSlaveQueueEventFailedInvalidNonRowFormat         ErrorString = "MY-013507"
-	ErrRplSlaveApplyLogEventFailedInvalidNonRowFormat      ErrorString = "MY-013508"
+	ErrRplSubordinateQueueEventFailedInvalidNonRowFormat         ErrorString = "MY-013507"
+	ErrRplSubordinateApplyLogEventFailedInvalidNonRowFormat      ErrorString = "MY-013508"
 	ErrLogPrivChecksRequireRowFormatNotSet                 ErrorString = "MY-013509"
-	ErrRplSlaveSqlThreadDetectedUnexpectedEventSequence    ErrorString = "MY-013510"
+	ErrRplSubordinateSqlThreadDetectedUnexpectedEventSequence    ErrorString = "MY-013510"
 	ErrIbMsgUpgradePartitionFile                           ErrorString = "MY-013511"
 	ErrIbMsgDowngradePartitionFile                         ErrorString = "MY-013512"
 	ErrIbMsgUpgradePartitionFileImport                     ErrorString = "MY-013513"
@@ -3822,7 +3822,7 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010116":
 		return ErrStartingAs
 	case "MY-010117":
-		return ErrShuttingDownSlaveThreads
+		return ErrShuttingDownSubordinateThreads
 	case "MY-010118":
 		return ErrDisconnectingRemainingClients
 	case "MY-010119":
@@ -4338,17 +4338,17 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010374":
 		return ErrTzOomWhileSettingTimeZone
 	case "MY-010375":
-		return ErrSlaveSqlThreadStoppedUntilConditionBad
+		return ErrSubordinateSqlThreadStoppedUntilConditionBad
 	case "MY-010376":
-		return ErrSlaveSqlThreadStoppedUntilPositionReached
+		return ErrSubordinateSqlThreadStoppedUntilPositionReached
 	case "MY-010377":
-		return ErrSlaveSqlThreadStoppedBeforeGtidsAlreadyApplied
+		return ErrSubordinateSqlThreadStoppedBeforeGtidsAlreadyApplied
 	case "MY-010378":
-		return ErrSlaveSqlThreadStoppedBeforeGtidsReached
+		return ErrSubordinateSqlThreadStoppedBeforeGtidsReached
 	case "MY-010379":
-		return ErrSlaveSqlThreadStoppedAfterGtidsReached
+		return ErrSubordinateSqlThreadStoppedAfterGtidsReached
 	case "MY-010380":
-		return ErrSlaveSqlThreadStoppedGapTrxProcessed
+		return ErrSubordinateSqlThreadStoppedGapTrxProcessed
 	case "MY-010381":
 		return ErrGroupReplicationPluginNotInstalled
 	case "MY-010382":
@@ -4372,19 +4372,19 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010391":
 		return ErrNpipePipeAlreadyInUse
 	case "MY-010392":
-		return ErrNdbSlaveSawEpochLowerThanPreviousOnStart
+		return ErrNdbSubordinateSawEpochLowerThanPreviousOnStart
 	case "MY-010393":
-		return ErrNdbSlaveSawEpochLowerThanPrevious
+		return ErrNdbSubordinateSawEpochLowerThanPrevious
 	case "MY-010394":
-		return ErrNdbSlaveSawAlreadyCommittedEpoch
+		return ErrNdbSubordinateSawAlreadyCommittedEpoch
 	case "MY-010395":
-		return ErrNdbSlavePreviousEpochNotCommitted
+		return ErrNdbSubordinatePreviousEpochNotCommitted
 	case "MY-010396":
-		return ErrNdbSlaveMissingDataForTimestampColumn
+		return ErrNdbSubordinateMissingDataForTimestampColumn
 	case "MY-010397":
-		return ErrNdbSlaveLoggingExceptionsTo
+		return ErrNdbSubordinateLoggingExceptionsTo
 	case "MY-010398":
-		return ErrNdbSlaveLowEpochResolution
+		return ErrNdbSubordinateLowEpochResolution
 	case "MY-010399":
 		return ErrNdbInfoFoundUnexpectedFieldType
 	case "MY-010400":
@@ -4418,9 +4418,9 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010414":
 		return ErrRplRepoShouldBeTable
 	case "MY-010415":
-		return ErrRplErrorCreatingMasterInfo
+		return ErrRplErrorCreatingMainInfo
 	case "MY-010416":
-		return ErrRplErrorChangingMasterInfoRepoType
+		return ErrRplErrorChangingMainInfoRepoType
 	case "MY-010417":
 		return ErrRplChangingRelayLogInfoRepoTypeFailedDueToGaps
 	case "MY-010418":
@@ -4428,23 +4428,23 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010419":
 		return ErrRplErrorChangingRelayLogInfoRepoType
 	case "MY-010420":
-		return ErrRplFailedToDeleteFromSlaveWorkersInfoRepository
+		return ErrRplFailedToDeleteFromSubordinateWorkersInfoRepository
 	case "MY-010421":
-		return ErrRplFailedToResetStateInSlaveInfoRepository
+		return ErrRplFailedToResetStateInSubordinateInfoRepository
 	case "MY-010422":
 		return ErrRplErrorCheckingRepository
 	case "MY-010423":
-		return ErrRplSlaveGenericMessage
+		return ErrRplSubordinateGenericMessage
 	case "MY-010424":
-		return ErrRplSlaveCouldNotCreateChannelList
+		return ErrRplSubordinateCouldNotCreateChannelList
 	case "MY-010425":
 		return ErrRplMultisourceRequiresTableTypeRepositories
 	case "MY-010426":
-		return ErrRplSlaveFailedToInitAMasterInfoStructure
+		return ErrRplSubordinateFailedToInitAMainInfoStructure
 	case "MY-010427":
-		return ErrRplSlaveFailedToInitMasterInfoStructure
+		return ErrRplSubordinateFailedToInitMainInfoStructure
 	case "MY-010428":
-		return ErrRplSlaveFailedToCreateChannelFromMasterInfo
+		return ErrRplSubordinateFailedToCreateChannelFromMainInfo
 	case "MY-010429":
 		return ErrRplFailedToCreateNewInfoFile
 	case "MY-010430":
@@ -4514,11 +4514,11 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010462":
 		return ErrRplBinlogStartingDump
 	case "MY-010463":
-		return ErrRplBinlogMasterSendsHeartbeat
+		return ErrRplBinlogMainSendsHeartbeat
 	case "MY-010464":
 		return ErrRplBinlogSkippingRemainingHeartbeatInfo
 	case "MY-010465":
-		return ErrRplBinlogMasterUsesChecksumAndSlaveCant
+		return ErrRplBinlogMainUsesChecksumAndSubordinateCant
 	case "MY-010466":
 		return ErrNdbQueryFailed
 	case "MY-010467":
@@ -4536,9 +4536,9 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010473":
 		return ErrKilledThreadsOfPlugin
 	case "MY-010474":
-		return ErrNdbSlaveMaxReplicatedEpochUnknown
+		return ErrNdbSubordinateMaxReplicatedEpochUnknown
 	case "MY-010475":
-		return ErrNdbSlaveMaxReplicatedEpochSetTo
+		return ErrNdbSubordinateMaxReplicatedEpochSetTo
 	case "MY-010476":
 		return ErrNdbNodeIdAndManagementServerInfo
 	case "MY-010477":
@@ -4554,23 +4554,23 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010482":
 		return ErrNdbOomInFixUniqueIndexAttrOrder
 	case "MY-010483":
-		return ErrNdbSlaveMalformedEventReceivedOnTable
+		return ErrNdbSubordinateMalformedEventReceivedOnTable
 	case "MY-010484":
-		return ErrNdbSlaveConflictFunctionRequiresRole
+		return ErrNdbSubordinateConflictFunctionRequiresRole
 	case "MY-010485":
-		return ErrNdbSlaveConflictDetectionRequiresTransactionIds
+		return ErrNdbSubordinateConflictDetectionRequiresTransactionIds
 	case "MY-010486":
-		return ErrNdbSlaveBinlogMissingInfoForConflictDetection
+		return ErrNdbSubordinateBinlogMissingInfoForConflictDetection
 	case "MY-010487":
 		return ErrNdbErrorInReadautoincrementvalue
 	case "MY-010488":
 		return ErrNdbFoundUncommittedAutocommit
 	case "MY-010489":
-		return ErrNdbSlaveTooManyRetries
+		return ErrNdbSubordinateTooManyRetries
 	case "MY-010490":
-		return ErrNdbSlaveErrorInUpdateCreateInfo
+		return ErrNdbSubordinateErrorInUpdateCreateInfo
 	case "MY-010491":
-		return ErrNdbSlaveCantAllocateTableShare
+		return ErrNdbSubordinateCantAllocateTableShare
 	case "MY-010492":
 		return ErrNdbBinlogErrorInfoFromDa
 	case "MY-010493":
@@ -4646,15 +4646,15 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010528":
 		return ErrTcRestartWithoutTcHeuristicRecover
 	case "MY-010529":
-		return ErrRplSlaveFailedToCreateOrRecoverInfoRepositories
+		return ErrRplSubordinateFailedToCreateOrRecoverInfoRepositories
 	case "MY-010530":
-		return ErrRplSlaveAutoPositionIs1AndGtidModeIsOff
+		return ErrRplSubordinateAutoPositionIs1AndGtidModeIsOff
 	case "MY-010531":
-		return ErrRplSlaveCantStartSlaveForChannel
+		return ErrRplSubordinateCantStartSubordinateForChannel
 	case "MY-010532":
-		return ErrRplSlaveCantStopSlaveForChannel
+		return ErrRplSubordinateCantStopSubordinateForChannel
 	case "MY-010533":
-		return ErrRplRecoveryNoRotateEventFromMaster
+		return ErrRplRecoveryNoRotateEventFromMain
 	case "MY-010534":
 		return ErrRplRecoveryErrorReadRelayLog
 	case "MY-010535":
@@ -4666,7 +4666,7 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010538":
 		return ErrRplRecoveryIoErrorReadingRelayLogIndex
 	case "MY-010539":
-		return ErrRplRecoveryFileMasterPosInfo
+		return ErrRplRecoveryFileMainPosInfo
 	case "MY-010540":
 		return ErrRplRecoveryReplicateSameServerIdRequiresPosition
 	case "MY-010541":
@@ -4682,55 +4682,55 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010546":
 		return ErrRplServerIdMissing
 	case "MY-010547":
-		return ErrRplCantCreateSlaveThread
+		return ErrRplCantCreateSubordinateThread
 	case "MY-010548":
-		return ErrRplSlaveIoThreadWasKilled
+		return ErrRplSubordinateIoThreadWasKilled
 	case "MY-010549":
-		return ErrRplSlaveMasterUuidHasChanged
+		return ErrRplSubordinateMainUuidHasChanged
 	case "MY-010550":
-		return ErrRplSlaveUsesChecksumAndMasterPre50
+		return ErrRplSubordinateUsesChecksumAndMainPre50
 	case "MY-010551":
-		return ErrRplSlaveSecondsBehindMasterDubious
+		return ErrRplSubordinateSecondsBehindMainDubious
 	case "MY-010552":
-		return ErrRplSlaveCantFlushMasterInfoFile
+		return ErrRplSubordinateCantFlushMainInfoFile
 	case "MY-010553":
-		return ErrRplSlaveReportHostTooLong
+		return ErrRplSubordinateReportHostTooLong
 	case "MY-010554":
-		return ErrRplSlaveReportUserTooLong
+		return ErrRplSubordinateReportUserTooLong
 	case "MY-010555":
-		return ErrRplSlaveReportPasswordTooLong
+		return ErrRplSubordinateReportPasswordTooLong
 	case "MY-010556":
-		return ErrRplSlaveErrorRetrying
+		return ErrRplSubordinateErrorRetrying
 	case "MY-010557":
-		return ErrRplSlaveErrorReadingFromServer
+		return ErrRplSubordinateErrorReadingFromServer
 	case "MY-010558":
-		return ErrRplSlaveDumpThreadKilledByMaster
+		return ErrRplSubordinateDumpThreadKilledByMain
 	case "MY-010559":
 		return ErrRplMtsStatistics
 	case "MY-010560":
 		return ErrRplMtsRecoveryComplete
 	case "MY-010561":
-		return ErrRplSlaveCantInitRelayLogPosition
+		return ErrRplSubordinateCantInitRelayLogPosition
 	case "MY-010562":
-		return ErrRplSlaveConnectedToMasterReplicationStarted
+		return ErrRplSubordinateConnectedToMainReplicationStarted
 	case "MY-010563":
-		return ErrRplSlaveIoThreadKilled
+		return ErrRplSubordinateIoThreadKilled
 	case "MY-010564":
-		return ErrRplSlaveIoThreadCantRegisterOnMaster
+		return ErrRplSubordinateIoThreadCantRegisterOnMain
 	case "MY-010565":
-		return ErrRplSlaveForcingToReconnectIoThread
+		return ErrRplSubordinateForcingToReconnectIoThread
 	case "MY-010566":
-		return ErrRplSlaveErrorRequestingBinlogDump
+		return ErrRplSubordinateErrorRequestingBinlogDump
 	case "MY-010567":
-		return ErrRplLogEntryExceedsSlaveMaxAllowedPacket
+		return ErrRplLogEntryExceedsSubordinateMaxAllowedPacket
 	case "MY-010568":
-		return ErrRplSlaveStoppingAsMasterOom
+		return ErrRplSubordinateStoppingAsMainOom
 	case "MY-010569":
-		return ErrRplSlaveIoThreadAbortedWaitingForRelayLogSpace
+		return ErrRplSubordinateIoThreadAbortedWaitingForRelayLogSpace
 	case "MY-010570":
-		return ErrRplSlaveIoThreadExiting
+		return ErrRplSubordinateIoThreadExiting
 	case "MY-010571":
-		return ErrRplSlaveCantInitializeSlaveWorker
+		return ErrRplSubordinateCantInitializeSubordinateWorker
 	case "MY-010572":
 		return ErrRplMtsGroupRecoveryRelayLogInfoForWorker
 	case "MY-010573":
@@ -4742,55 +4742,55 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010576":
 		return ErrRplMtsCheckpointPeriodDiffersFromCnt
 	case "MY-010577":
-		return ErrRplSlaveWorkerThreadCreationFailed
+		return ErrRplSubordinateWorkerThreadCreationFailed
 	case "MY-010578":
-		return ErrRplSlaveWorkerThreadCreationFailedWithErrno
+		return ErrRplSubordinateWorkerThreadCreationFailedWithErrno
 	case "MY-010579":
-		return ErrRplSlaveFailedToInitPartitionsHash
+		return ErrRplSubordinateFailedToInitPartitionsHash
 	case "MY-010580":
-		return ErrRplSlaveNdbTablesNotAvailable
+		return ErrRplSubordinateNdbTablesNotAvailable
 	case "MY-010581":
-		return ErrRplSlaveSqlThreadStarting
+		return ErrRplSubordinateSqlThreadStarting
 	case "MY-010582":
-		return ErrRplSlaveSkipCounterExecuted
+		return ErrRplSubordinateSkipCounterExecuted
 	case "MY-010583":
-		return ErrRplSlaveAdditionalErrorInfoFromDa
+		return ErrRplSubordinateAdditionalErrorInfoFromDa
 	case "MY-010584":
-		return ErrRplSlaveErrorInfoFromDa
+		return ErrRplSubordinateErrorInfoFromDa
 	case "MY-010585":
-		return ErrRplSlaveErrorLoadingUserDefinedLibrary
+		return ErrRplSubordinateErrorLoadingUserDefinedLibrary
 	case "MY-010586":
-		return ErrRplSlaveErrorRunningQuery
+		return ErrRplSubordinateErrorRunningQuery
 	case "MY-010587":
-		return ErrRplSlaveSqlThreadExiting
+		return ErrRplSubordinateSqlThreadExiting
 	case "MY-010588":
-		return ErrRplSlaveReadInvalidEventFromMaster
+		return ErrRplSubordinateReadInvalidEventFromMain
 	case "MY-010589":
-		return ErrRplSlaveQueueEventFailedInvalidConfiguration
+		return ErrRplSubordinateQueueEventFailedInvalidConfiguration
 	case "MY-010590":
-		return ErrRplSlaveIoThreadDetectedUnexpectedEventSequence
+		return ErrRplSubordinateIoThreadDetectedUnexpectedEventSequence
 	case "MY-010591":
-		return ErrRplSlaveCantUseCharset
+		return ErrRplSubordinateCantUseCharset
 	case "MY-010592":
-		return ErrRplSlaveConnectedToMasterReplicationResumed
+		return ErrRplSubordinateConnectedToMainReplicationResumed
 	case "MY-010593":
-		return ErrRplSlaveNextLogIsActive
+		return ErrRplSubordinateNextLogIsActive
 	case "MY-010594":
-		return ErrRplSlaveNextLogIsInactive
+		return ErrRplSubordinateNextLogIsInactive
 	case "MY-010595":
-		return ErrRplSlaveSqlThreadIoErrorReadingEvent
+		return ErrRplSubordinateSqlThreadIoErrorReadingEvent
 	case "MY-010596":
-		return ErrRplSlaveErrorReadingRelayLogEvents
+		return ErrRplSubordinateErrorReadingRelayLogEvents
 	case "MY-010597":
-		return ErrSlaveChangeMasterToExecuted
+		return ErrSubordinateChangeMainToExecuted
 	case "MY-010598":
-		return ErrRplSlaveNewMasterInfoNeedsReposTypeOtherThanFile
+		return ErrRplSubordinateNewMainInfoNeedsReposTypeOtherThanFile
 	case "MY-010599":
 		return ErrRplFailedToStatLogInIndex
 	case "MY-010600":
 		return ErrRplLogNotFoundWhileCountingRelayLogSpace
 	case "MY-010601":
-		return ErrSlaveCantUseTempdir
+		return ErrSubordinateCantUseTempdir
 	case "MY-010602":
 		return ErrRplRelayLogNeedsFileNotDirectory
 	case "MY-010603":
@@ -4910,7 +4910,7 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010660":
 		return ErrNdbBinlogWriteToNdbBinlogIndexFailedAfterKill
 	case "MY-010661":
-		return ErrNdbBinlogUsingServerId0SlavesWillNot
+		return ErrNdbBinlogUsingServerId0SubordinatesWillNot
 	case "MY-010662":
 		return ErrNdbServerIdReservedOrTooLarge
 	case "MY-010663":
@@ -4976,7 +4976,7 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010693":
 		return ErrNdbBinlogServerShutdownDuringNdbClusterStart
 	case "MY-010694":
-		return ErrNdbBinlogClusterRestartedResetMasterSuggested
+		return ErrNdbBinlogClusterRestartedResetMainSuggested
 	case "MY-010695":
 		return ErrNdbBinlogClusterHasReconnected
 	case "MY-010696":
@@ -5022,9 +5022,9 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010716":
 		return ErrWrongCountOfElements
 	case "MY-010717":
-		return ErrRplErrorReadingSlaveWorkerConfiguration
+		return ErrRplErrorReadingSubordinateWorkerConfiguration
 	case "MY-010718":
-		return ErrRplErrorWritingSlaveWorkerConfiguration
+		return ErrRplErrorWritingSubordinateWorkerConfiguration
 	case "MY-010719":
 		return ErrRplFailedToOpenRelayLog
 	case "MY-010720":
@@ -5032,7 +5032,7 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010721":
 		return ErrRplWorkerCantFindNextRelayLog
 	case "MY-010722":
-		return ErrRplMtsSlaveCoordinatorHasWaited
+		return ErrRplMtsSubordinateCoordinatorHasWaited
 	case "MY-010723":
 		return ErrBinlogFailedToWriteDropForTempTables
 	case "MY-010724":
@@ -5044,11 +5044,11 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010727":
 		return ErrSystemTableNotTransactional
 	case "MY-010728":
-		return ErrRplErrorWritingMasterConfiguration
+		return ErrRplErrorWritingMainConfiguration
 	case "MY-010729":
-		return ErrRplErrorReadingMasterConfiguration
+		return ErrRplErrorReadingMainConfiguration
 	case "MY-010730":
-		return ErrRplSslInfoInMasterInfoIgnored
+		return ErrRplSslInfoInMainInfoIgnored
 	case "MY-010731":
 		return ErrPluginFailedDeinitialization
 	case "MY-010732":
@@ -5294,7 +5294,7 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010852":
 		return ErrBinlogFailedToDeleteLogFile
 	case "MY-010853":
-		return ErrBinlogLoggingIncidentToStopSlaves
+		return ErrBinlogLoggingIncidentToStopSubordinates
 	case "MY-010854":
 		return ErrBinlogCantFindLogInIndex
 	case "MY-010855":
@@ -5378,15 +5378,15 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010894":
 		return ErrNdbNumberOfChannels
 	case "MY-010895":
-		return ErrNdbSlaveParallelWorkers
+		return ErrNdbSubordinateParallelWorkers
 	case "MY-010896":
 		return ErrNdbDistributingErr
 	case "MY-010897":
-		return ErrRplSlaveInsecureChangeMaster
+		return ErrRplSubordinateInsecureChangeMain
 	case "MY-010898":
-		return ErrRplSlaveFlushRelayLogsNotAllowed
+		return ErrRplSubordinateFlushRelayLogsNotAllowed
 	case "MY-010899":
-		return ErrRplSlaveIncorrectChannel
+		return ErrRplSubordinateIncorrectChannel
 	case "MY-010900":
 		return ErrFailedToFindDlEntry
 	case "MY-010901":
@@ -5506,15 +5506,15 @@ func FromErrorString(s string) ErrorString {
 	case "MY-010959":
 		return ErrBinlogEventWriteToStmtCacheFailed
 	case "MY-010960":
-		return ErrSlaveRelayLogTruncateInfo
+		return ErrSubordinateRelayLogTruncateInfo
 	case "MY-010961":
-		return ErrSlaveRelayLogPurgeFailed
+		return ErrSubordinateRelayLogPurgeFailed
 	case "MY-010962":
-		return ErrRplSlaveFilterCreateFailed
+		return ErrRplSubordinateFilterCreateFailed
 	case "MY-010963":
-		return ErrRplSlaveGlobalFiltersCopyFailed
+		return ErrRplSubordinateGlobalFiltersCopyFailed
 	case "MY-010964":
-		return ErrRplSlaveResetFilterOptions
+		return ErrRplSubordinateResetFilterOptions
 	case "MY-010965":
 		return ErrMissingGrantSystemTable
 	case "MY-010966":
@@ -5636,15 +5636,15 @@ func FromErrorString(s string) ErrorString {
 	case "MY-011024":
 		return ErrFailedToBinlogDropEvent
 	case "MY-011025":
-		return ErrFailedToStartSlaveThread
+		return ErrFailedToStartSubordinateThread
 	case "MY-011026":
 		return ErrRplIoThreadKilled
 	case "MY-011027":
-		return ErrSlaveReconnectFailed
+		return ErrSubordinateReconnectFailed
 	case "MY-011028":
-		return ErrSlaveKilledAfterReconnect
+		return ErrSubordinateKilledAfterReconnect
 	case "MY-011029":
-		return ErrSlaveNotStartedOnSomeChannels
+		return ErrSubordinateNotStartedOnSomeChannels
 	case "MY-011030":
 		return ErrFailedToAddRplFilter
 	case "MY-011031":
@@ -5870,19 +5870,19 @@ func FromErrorString(s string) ErrorString {
 	case "MY-011141":
 		return ErrSemisyncFunctionCalledTwice
 	case "MY-011142":
-		return ErrSemisyncRplEnabledOnMaster
+		return ErrSemisyncRplEnabledOnMain
 	case "MY-011143":
-		return ErrSemisyncMasterOom
+		return ErrSemisyncMainOom
 	case "MY-011144":
-		return ErrSemisyncDisabledOnMaster
+		return ErrSemisyncDisabledOnMain
 	case "MY-011145":
 		return ErrSemisyncForcedShutdown
 	case "MY-011146":
-		return ErrSemisyncMasterGotReplyAtPos
+		return ErrSemisyncMainGotReplyAtPos
 	case "MY-011147":
-		return ErrSemisyncMasterSignalAllWaitingThreads
+		return ErrSemisyncMainSignalAllWaitingThreads
 	case "MY-011148":
-		return ErrSemisyncMasterTrxWaitPos
+		return ErrSemisyncMainTrxWaitPos
 	case "MY-011149":
 		return ErrSemisyncBinlogReplyIsAhead
 	case "MY-011150":
@@ -5908,13 +5908,13 @@ func FromErrorString(s string) ErrorString {
 	case "MY-011160":
 		return ErrSemisyncTrxSkippedAtPos
 	case "MY-011161":
-		return ErrSemisyncMasterFailedOnNetFlush
+		return ErrSemisyncMainFailedOnNetFlush
 	case "MY-011162":
 		return ErrSemisyncReceivedAckIsSmaller
 	case "MY-011163":
 		return ErrSemisyncAddAckToSlot
 	case "MY-011164":
-		return ErrSemisyncUpdateExistingSlaveAck
+		return ErrSemisyncUpdateExistingSubordinateAck
 	case "MY-011165":
 		return ErrSemisyncFailedToStartAckReceiverThd
 	case "MY-011166":
@@ -5924,11 +5924,11 @@ func FromErrorString(s string) ErrorString {
 	case "MY-011168":
 		return ErrSemisyncStoppingAckReceiverThread
 	case "MY-011169":
-		return ErrSemisyncFailedRegisterSlaveToReceiver
+		return ErrSemisyncFailedRegisterSubordinateToReceiver
 	case "MY-011170":
-		return ErrSemisyncStartBinlogDumpToSlave
+		return ErrSemisyncStartBinlogDumpToSubordinate
 	case "MY-011171":
-		return ErrSemisyncStopBinlogDumpToSlave
+		return ErrSemisyncStopBinlogDumpToSubordinate
 	case "MY-011172":
 		return ErrSemisyncUnregisterTrxObserverFailed
 	case "MY-011173":
@@ -5940,23 +5940,23 @@ func FromErrorString(s string) ErrorString {
 	case "MY-011176":
 		return ErrSemisyncSocketFdTooLarge
 	case "MY-011177":
-		return ErrSemisyncSlaveReply
+		return ErrSemisyncSubordinateReply
 	case "MY-011178":
 		return ErrSemisyncMissingMagicNoForSemisyncPkt
 	case "MY-011179":
-		return ErrSemisyncSlaveStart
+		return ErrSemisyncSubordinateStart
 	case "MY-011180":
-		return ErrSemisyncSlaveReplyWithBinlogInfo
+		return ErrSemisyncSubordinateReplyWithBinlogInfo
 	case "MY-011181":
-		return ErrSemisyncSlaveNetFlushReplyFailed
+		return ErrSemisyncSubordinateNetFlushReplyFailed
 	case "MY-011182":
-		return ErrSemisyncSlaveSendReplyFailed
+		return ErrSemisyncSubordinateSendReplyFailed
 	case "MY-011183":
-		return ErrSemisyncExecutionFailedOnMaster
+		return ErrSemisyncExecutionFailedOnMain
 	case "MY-011184":
-		return ErrSemisyncNotSupportedByMaster
+		return ErrSemisyncNotSupportedByMain
 	case "MY-011185":
-		return ErrSemisyncSlaveSetFailed
+		return ErrSemisyncSubordinateSetFailed
 	case "MY-011186":
 		return ErrSemisyncFailedToStopAckReceiverThd
 	case "MY-011187":
@@ -6110,7 +6110,7 @@ func FromErrorString(s string) ErrorString {
 	case "MY-011261":
 		return ErrComponentFilterConfused
 	case "MY-011262":
-		return ErrStopSlaveIoThreadDiskSpace
+		return ErrStopSubordinateIoThreadDiskSpace
 	case "MY-011263":
 		return ErrLogFileCannotOpen
 	case "MY-011268":
@@ -6646,13 +6646,13 @@ func FromErrorString(s string) ErrorString {
 	case "MY-011536":
 		return ErrGrpRplFetchTransDataFailed
 	case "MY-011537":
-		return ErrGrpRplSlaveIoThdPrimaryUnknown
+		return ErrGrpRplSubordinateIoThdPrimaryUnknown
 	case "MY-011538":
 		return ErrGrpRplSalveIoThdOnSecondaryMember
 	case "MY-011539":
-		return ErrGrpRplSlaveSqlThdPrimaryUnknown
+		return ErrGrpRplSubordinateSqlThdPrimaryUnknown
 	case "MY-011540":
-		return ErrGrpRplSlaveSqlThdOnSecondaryMember
+		return ErrGrpRplSubordinateSqlThdOnSecondaryMember
 	case "MY-011541":
 		return ErrGrpRplNeedsInnodbTable
 	case "MY-011542":
@@ -6926,17 +6926,17 @@ func FromErrorString(s string) ErrorString {
 	case "MY-011676":
 		return ErrGrpRplGtidModeOff
 	case "MY-011677":
-		return ErrGrpRplLogSlaveUpdatesNotSet
+		return ErrGrpRplLogSubordinateUpdatesNotSet
 	case "MY-011678":
 		return ErrGrpRplInvalidTransWriteSetExtractionValue
 	case "MY-011679":
 		return ErrGrpRplRelayLogInfoRepoMustBeTable
 	case "MY-011680":
-		return ErrGrpRplMasterInfoRepoMustBeTable
+		return ErrGrpRplMainInfoRepoMustBeTable
 	case "MY-011681":
 		return ErrGrpRplIncorrectTypeSetForParallelApplier
 	case "MY-011682":
-		return ErrGrpRplSlavePreserveCommitOrderNotSet
+		return ErrGrpRplSubordinatePreserveCommitOrderNotSet
 	case "MY-011683":
 		return ErrGrpRplSinglePrimModeNotAllowedWithUpdateEverywhere
 	case "MY-011684":
@@ -7044,13 +7044,13 @@ func FromErrorString(s string) ErrorString {
 	case "MY-011735":
 		return ErrGrpRplGcsGrErrorMsg
 	case "MY-011736":
-		return ErrGrpRplSlaveIoThreadUnblocked
+		return ErrGrpRplSubordinateIoThreadUnblocked
 	case "MY-011737":
-		return ErrGrpRplSlaveIoThreadErrorOut
+		return ErrGrpRplSubordinateIoThreadErrorOut
 	case "MY-011738":
-		return ErrGrpRplSlaveApplierThreadUnblocked
+		return ErrGrpRplSubordinateApplierThreadUnblocked
 	case "MY-011739":
-		return ErrGrpRplSlaveApplierThreadErrorOut
+		return ErrGrpRplSubordinateApplierThreadErrorOut
 	case "MY-011740":
 		return ErrLdapAuthFailedToCreateOrGetConnection
 	case "MY-011741":
@@ -9762,9 +9762,9 @@ func FromErrorString(s string) ErrorString {
 	case "MY-013095":
 		return ErrIbMsg1270
 	case "MY-013096":
-		return ErrRplSlaveSqlThreadStopCmdExecTimeout
+		return ErrRplSubordinateSqlThreadStopCmdExecTimeout
 	case "MY-013097":
-		return ErrRplSlaveIoThreadStopCmdExecTimeout
+		return ErrRplSubordinateIoThreadStopCmdExecTimeout
 	case "MY-013098":
 		return ErrRplGtidUnsafeStmtOnNonTransTable
 	case "MY-013099":
@@ -9796,27 +9796,27 @@ func FromErrorString(s string) ErrorString {
 	case "MY-013113":
 		return ErrInconsistentError
 	case "MY-013114":
-		return ErrServerMasterFatalErrorReadingBinlog
+		return ErrServerMainFatalErrorReadingBinlog
 	case "MY-013115":
 		return ErrNetworkReadEventChecksumFailure
 	case "MY-013116":
-		return ErrSlaveCreateEventFailure
+		return ErrSubordinateCreateEventFailure
 	case "MY-013117":
-		return ErrSlaveFatalError
+		return ErrSubordinateFatalError
 	case "MY-013118":
-		return ErrSlaveHeartbeatFailure
+		return ErrSubordinateHeartbeatFailure
 	case "MY-013119":
-		return ErrSlaveIncident
+		return ErrSubordinateIncident
 	case "MY-013120":
-		return ErrSlaveMasterComFailure
+		return ErrSubordinateMainComFailure
 	case "MY-013121":
-		return ErrSlaveRelayLogReadFailure
+		return ErrSubordinateRelayLogReadFailure
 	case "MY-013122":
-		return ErrSlaveRelayLogWriteFailure
+		return ErrSubordinateRelayLogWriteFailure
 	case "MY-013123":
-		return ErrServerSlaveMiInitRepository
+		return ErrServerSubordinateMiInitRepository
 	case "MY-013124":
-		return ErrServerSlaveRliInitRepository
+		return ErrServerSubordinateRliInitRepository
 	case "MY-013125":
 		return ErrServerNetPacketTooLarge
 	case "MY-013126":
@@ -9858,11 +9858,11 @@ func FromErrorString(s string) ErrorString {
 	case "MY-013144":
 		return ErrServerAclTableError
 	case "MY-013145":
-		return ErrServerSlaveInitQueryFailed
+		return ErrServerSubordinateInitQueryFailed
 	case "MY-013146":
-		return ErrServerSlaveConversionFailed
+		return ErrServerSubordinateConversionFailed
 	case "MY-013147":
-		return ErrServerSlaveIgnoredTable
+		return ErrServerSubordinateIgnoredTable
 	case "MY-013148":
 		return ErrCantReplicateAnonymousWithAutoPosition
 	case "MY-013149":
@@ -10122,13 +10122,13 @@ func FromErrorString(s string) ErrorString {
 	case "MY-013286":
 		return ErrServerRplEncryptionFailedToRemoveKey
 	case "MY-013287":
-		return ErrServerRplEncryptionMasterKeyRecoveryFailed
+		return ErrServerRplEncryptionMainKeyRecoveryFailed
 	case "MY-013288":
 		return ErrServerRplEncryptionUnableToInitialize
 	case "MY-013289":
-		return ErrServerRplEncryptionUnableToRotateMasterKeyAtStartup
+		return ErrServerRplEncryptionUnableToRotateMainKeyAtStartup
 	case "MY-013290":
-		return ErrServerRplEncryptionIgnoreRotateMasterKeyAtStartup
+		return ErrServerRplEncryptionIgnoreRotateMainKeyAtStartup
 	case "MY-013291":
 		return ErrInvalidAdminAddress
 	case "MY-013292":
@@ -10260,9 +10260,9 @@ func FromErrorString(s string) ErrorString {
 	case "MY-013361":
 		return ErrAuthIdWithSystemUserPrivInMandatoryRoles
 	case "MY-013362":
-		return ErrServerBinlogMasterKeyRecoveryOutOfCombination
+		return ErrServerBinlogMainKeyRecoveryOutOfCombination
 	case "MY-013363":
-		return ErrServerBinlogMasterKeyRotationFailToCleanupAuxKey
+		return ErrServerBinlogMainKeyRotationFailToCleanupAuxKey
 	case "MY-013368":
 		return ErrTurningOnPartialRevokes
 	case "MY-013369":
@@ -10452,7 +10452,7 @@ func FromErrorString(s string) ErrorString {
 	case "MY-013473":
 		return ErrGrpRplRecoveryStratNoFallback
 	case "MY-013474":
-		return ErrGrpRplSlaveThreadErrorOnClone
+		return ErrGrpRplSubordinateThreadErrorOnClone
 	case "MY-013475":
 		return ErrUnknownTableInUpgrade
 	case "MY-013476":
@@ -10500,7 +10500,7 @@ func FromErrorString(s string) ErrorString {
 	case "MY-013497":
 		return ErrFilePrivilegeForReplicationChecks
 	case "MY-013498":
-		return ErrRplSlaveSqlThreadStartingWithPrivilegeChecks
+		return ErrRplSubordinateSqlThreadStartingWithPrivilegeChecks
 	case "MY-013499":
 		return ErrAuditLogCannotGeneratePassword
 	case "MY-013500":
@@ -10512,19 +10512,19 @@ func FromErrorString(s string) ErrorString {
 	case "MY-013503":
 		return ErrIbMsgSkipHiddenDir
 	case "MY-013504":
-		return ErrWarnRplRecoveryNoRotateEventFromMasterEof
+		return ErrWarnRplRecoveryNoRotateEventFromMainEof
 	case "MY-013505":
 		return ErrIbLobRollbackIndexLen
 	case "MY-013506":
 		return ErrCantProcessExpressionForGeneratedColumnToDd
 	case "MY-013507":
-		return ErrRplSlaveQueueEventFailedInvalidNonRowFormat
+		return ErrRplSubordinateQueueEventFailedInvalidNonRowFormat
 	case "MY-013508":
-		return ErrRplSlaveApplyLogEventFailedInvalidNonRowFormat
+		return ErrRplSubordinateApplyLogEventFailedInvalidNonRowFormat
 	case "MY-013509":
 		return ErrLogPrivChecksRequireRowFormatNotSet
 	case "MY-013510":
-		return ErrRplSlaveSqlThreadDetectedUnexpectedEventSequence
+		return ErrRplSubordinateSqlThreadDetectedUnexpectedEventSequence
 	case "MY-013511":
 		return ErrIbMsgUpgradePartitionFile
 	case "MY-013512":
@@ -10983,7 +10983,7 @@ func (es ErrorString) String() string {
 		return "ER_UNSUPPORTED_DATE"
 	case ErrStartingAs:
 		return "ER_STARTING_AS"
-	case ErrShuttingDownSlaveThreads:
+	case ErrShuttingDownSubordinateThreads:
 		return "ER_SHUTTING_DOWN_SLAVE_THREADS"
 	case ErrDisconnectingRemainingClients:
 		return "ER_DISCONNECTING_REMAINING_CLIENTS"
@@ -11499,17 +11499,17 @@ func (es ErrorString) String() string {
 		return "ER_TZ_OOM_WHILE_LOADING_TIME_ZONE"
 	case ErrTzOomWhileSettingTimeZone:
 		return "ER_TZ_OOM_WHILE_SETTING_TIME_ZONE"
-	case ErrSlaveSqlThreadStoppedUntilConditionBad:
+	case ErrSubordinateSqlThreadStoppedUntilConditionBad:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_UNTIL_CONDITION_BAD"
-	case ErrSlaveSqlThreadStoppedUntilPositionReached:
+	case ErrSubordinateSqlThreadStoppedUntilPositionReached:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_UNTIL_POSITION_REACHED"
-	case ErrSlaveSqlThreadStoppedBeforeGtidsAlreadyApplied:
+	case ErrSubordinateSqlThreadStoppedBeforeGtidsAlreadyApplied:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_BEFORE_GTIDS_ALREADY_APPLIED"
-	case ErrSlaveSqlThreadStoppedBeforeGtidsReached:
+	case ErrSubordinateSqlThreadStoppedBeforeGtidsReached:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_BEFORE_GTIDS_REACHED"
-	case ErrSlaveSqlThreadStoppedAfterGtidsReached:
+	case ErrSubordinateSqlThreadStoppedAfterGtidsReached:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_AFTER_GTIDS_REACHED"
-	case ErrSlaveSqlThreadStoppedGapTrxProcessed:
+	case ErrSubordinateSqlThreadStoppedGapTrxProcessed:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_GAP_TRX_PROCESSED"
 	case ErrGroupReplicationPluginNotInstalled:
 		return "ER_GROUP_REPLICATION_PLUGIN_NOT_INSTALLED"
@@ -11533,19 +11533,19 @@ func (es ErrorString) String() string {
 		return "ER_NPIPE_FAILED_TO_SET_SECURITY_DESCRIPTOR"
 	case ErrNpipePipeAlreadyInUse:
 		return "ER_NPIPE_PIPE_ALREADY_IN_USE"
-	case ErrNdbSlaveSawEpochLowerThanPreviousOnStart:
+	case ErrNdbSubordinateSawEpochLowerThanPreviousOnStart:
 		return "ER_NDB_SLAVE_SAW_EPOCH_LOWER_THAN_PREVIOUS_ON_START"
-	case ErrNdbSlaveSawEpochLowerThanPrevious:
+	case ErrNdbSubordinateSawEpochLowerThanPrevious:
 		return "ER_NDB_SLAVE_SAW_EPOCH_LOWER_THAN_PREVIOUS"
-	case ErrNdbSlaveSawAlreadyCommittedEpoch:
+	case ErrNdbSubordinateSawAlreadyCommittedEpoch:
 		return "ER_NDB_SLAVE_SAW_ALREADY_COMMITTED_EPOCH"
-	case ErrNdbSlavePreviousEpochNotCommitted:
+	case ErrNdbSubordinatePreviousEpochNotCommitted:
 		return "ER_NDB_SLAVE_PREVIOUS_EPOCH_NOT_COMMITTED"
-	case ErrNdbSlaveMissingDataForTimestampColumn:
+	case ErrNdbSubordinateMissingDataForTimestampColumn:
 		return "ER_NDB_SLAVE_MISSING_DATA_FOR_TIMESTAMP_COLUMN"
-	case ErrNdbSlaveLoggingExceptionsTo:
+	case ErrNdbSubordinateLoggingExceptionsTo:
 		return "ER_NDB_SLAVE_LOGGING_EXCEPTIONS_TO"
-	case ErrNdbSlaveLowEpochResolution:
+	case ErrNdbSubordinateLowEpochResolution:
 		return "ER_NDB_SLAVE_LOW_EPOCH_RESOLUTION"
 	case ErrNdbInfoFoundUnexpectedFieldType:
 		return "ER_NDB_INFO_FOUND_UNEXPECTED_FIELD_TYPE"
@@ -11579,9 +11579,9 @@ func (es ErrorString) String() string {
 		return "ER_RPL_CHANNELS_REQUIRE_NON_ZERO_SERVER_ID"
 	case ErrRplRepoShouldBeTable:
 		return "ER_RPL_REPO_SHOULD_BE_TABLE"
-	case ErrRplErrorCreatingMasterInfo:
+	case ErrRplErrorCreatingMainInfo:
 		return "ER_RPL_ERROR_CREATING_MASTER_INFO"
-	case ErrRplErrorChangingMasterInfoRepoType:
+	case ErrRplErrorChangingMainInfoRepoType:
 		return "ER_RPL_ERROR_CHANGING_MASTER_INFO_REPO_TYPE"
 	case ErrRplChangingRelayLogInfoRepoTypeFailedDueToGaps:
 		return "ER_RPL_CHANGING_RELAY_LOG_INFO_REPO_TYPE_FAILED_DUE_TO_GAPS"
@@ -11589,23 +11589,23 @@ func (es ErrorString) String() string {
 		return "ER_RPL_ERROR_CREATING_RELAY_LOG_INFO"
 	case ErrRplErrorChangingRelayLogInfoRepoType:
 		return "ER_RPL_ERROR_CHANGING_RELAY_LOG_INFO_REPO_TYPE"
-	case ErrRplFailedToDeleteFromSlaveWorkersInfoRepository:
+	case ErrRplFailedToDeleteFromSubordinateWorkersInfoRepository:
 		return "ER_RPL_FAILED_TO_DELETE_FROM_SLAVE_WORKERS_INFO_REPOSITORY"
-	case ErrRplFailedToResetStateInSlaveInfoRepository:
+	case ErrRplFailedToResetStateInSubordinateInfoRepository:
 		return "ER_RPL_FAILED_TO_RESET_STATE_IN_SLAVE_INFO_REPOSITORY"
 	case ErrRplErrorCheckingRepository:
 		return "ER_RPL_ERROR_CHECKING_REPOSITORY"
-	case ErrRplSlaveGenericMessage:
+	case ErrRplSubordinateGenericMessage:
 		return "ER_RPL_SLAVE_GENERIC_MESSAGE"
-	case ErrRplSlaveCouldNotCreateChannelList:
+	case ErrRplSubordinateCouldNotCreateChannelList:
 		return "ER_RPL_SLAVE_COULD_NOT_CREATE_CHANNEL_LIST"
 	case ErrRplMultisourceRequiresTableTypeRepositories:
 		return "ER_RPL_MULTISOURCE_REQUIRES_TABLE_TYPE_REPOSITORIES"
-	case ErrRplSlaveFailedToInitAMasterInfoStructure:
+	case ErrRplSubordinateFailedToInitAMainInfoStructure:
 		return "ER_RPL_SLAVE_FAILED_TO_INIT_A_MASTER_INFO_STRUCTURE"
-	case ErrRplSlaveFailedToInitMasterInfoStructure:
+	case ErrRplSubordinateFailedToInitMainInfoStructure:
 		return "ER_RPL_SLAVE_FAILED_TO_INIT_MASTER_INFO_STRUCTURE"
-	case ErrRplSlaveFailedToCreateChannelFromMasterInfo:
+	case ErrRplSubordinateFailedToCreateChannelFromMainInfo:
 		return "ER_RPL_SLAVE_FAILED_TO_CREATE_CHANNEL_FROM_MASTER_INFO"
 	case ErrRplFailedToCreateNewInfoFile:
 		return "ER_RPL_FAILED_TO_CREATE_NEW_INFO_FILE"
@@ -11675,11 +11675,11 @@ func (es ErrorString) String() string {
 		return "ER_INIT_CREATING_DD"
 	case ErrRplBinlogStartingDump:
 		return "ER_RPL_BINLOG_STARTING_DUMP"
-	case ErrRplBinlogMasterSendsHeartbeat:
+	case ErrRplBinlogMainSendsHeartbeat:
 		return "ER_RPL_BINLOG_MASTER_SENDS_HEARTBEAT"
 	case ErrRplBinlogSkippingRemainingHeartbeatInfo:
 		return "ER_RPL_BINLOG_SKIPPING_REMAINING_HEARTBEAT_INFO"
-	case ErrRplBinlogMasterUsesChecksumAndSlaveCant:
+	case ErrRplBinlogMainUsesChecksumAndSubordinateCant:
 		return "ER_RPL_BINLOG_MASTER_USES_CHECKSUM_AND_SLAVE_CANT"
 	case ErrNdbQueryFailed:
 		return "ER_NDB_QUERY_FAILED"
@@ -11697,9 +11697,9 @@ func (es ErrorString) String() string {
 		return "ER_PLUGIN_DID_NOT_DEINITIALIZE_THREADS"
 	case ErrKilledThreadsOfPlugin:
 		return "ER_KILLED_THREADS_OF_PLUGIN"
-	case ErrNdbSlaveMaxReplicatedEpochUnknown:
+	case ErrNdbSubordinateMaxReplicatedEpochUnknown:
 		return "ER_NDB_SLAVE_MAX_REPLICATED_EPOCH_UNKNOWN"
-	case ErrNdbSlaveMaxReplicatedEpochSetTo:
+	case ErrNdbSubordinateMaxReplicatedEpochSetTo:
 		return "ER_NDB_SLAVE_MAX_REPLICATED_EPOCH_SET_TO"
 	case ErrNdbNodeIdAndManagementServerInfo:
 		return "ER_NDB_NODE_ID_AND_MANAGEMENT_SERVER_INFO"
@@ -11715,23 +11715,23 @@ func (es ErrorString) String() string {
 		return "ER_NDB_COLUMN_INFO"
 	case ErrNdbOomInFixUniqueIndexAttrOrder:
 		return "ER_NDB_OOM_IN_FIX_UNIQUE_INDEX_ATTR_ORDER"
-	case ErrNdbSlaveMalformedEventReceivedOnTable:
+	case ErrNdbSubordinateMalformedEventReceivedOnTable:
 		return "ER_NDB_SLAVE_MALFORMED_EVENT_RECEIVED_ON_TABLE"
-	case ErrNdbSlaveConflictFunctionRequiresRole:
+	case ErrNdbSubordinateConflictFunctionRequiresRole:
 		return "ER_NDB_SLAVE_CONFLICT_FUNCTION_REQUIRES_ROLE"
-	case ErrNdbSlaveConflictDetectionRequiresTransactionIds:
+	case ErrNdbSubordinateConflictDetectionRequiresTransactionIds:
 		return "ER_NDB_SLAVE_CONFLICT_DETECTION_REQUIRES_TRANSACTION_IDS"
-	case ErrNdbSlaveBinlogMissingInfoForConflictDetection:
+	case ErrNdbSubordinateBinlogMissingInfoForConflictDetection:
 		return "ER_NDB_SLAVE_BINLOG_MISSING_INFO_FOR_CONFLICT_DETECTION"
 	case ErrNdbErrorInReadautoincrementvalue:
 		return "ER_NDB_ERROR_IN_READAUTOINCREMENTVALUE"
 	case ErrNdbFoundUncommittedAutocommit:
 		return "ER_NDB_FOUND_UNCOMMITTED_AUTOCOMMIT"
-	case ErrNdbSlaveTooManyRetries:
+	case ErrNdbSubordinateTooManyRetries:
 		return "ER_NDB_SLAVE_TOO_MANY_RETRIES"
-	case ErrNdbSlaveErrorInUpdateCreateInfo:
+	case ErrNdbSubordinateErrorInUpdateCreateInfo:
 		return "ER_NDB_SLAVE_ERROR_IN_UPDATE_CREATE_INFO"
-	case ErrNdbSlaveCantAllocateTableShare:
+	case ErrNdbSubordinateCantAllocateTableShare:
 		return "ER_NDB_SLAVE_CANT_ALLOCATE_TABLE_SHARE"
 	case ErrNdbBinlogErrorInfoFromDa:
 		return "ER_NDB_BINLOG_ERROR_INFO_FROM_DA"
@@ -11807,15 +11807,15 @@ func (es ErrorString) String() string {
 		return "ER_TC_HEURISTIC_RECOVERY_FAILED"
 	case ErrTcRestartWithoutTcHeuristicRecover:
 		return "ER_TC_RESTART_WITHOUT_TC_HEURISTIC_RECOVER"
-	case ErrRplSlaveFailedToCreateOrRecoverInfoRepositories:
+	case ErrRplSubordinateFailedToCreateOrRecoverInfoRepositories:
 		return "ER_RPL_SLAVE_FAILED_TO_CREATE_OR_RECOVER_INFO_REPOSITORIES"
-	case ErrRplSlaveAutoPositionIs1AndGtidModeIsOff:
+	case ErrRplSubordinateAutoPositionIs1AndGtidModeIsOff:
 		return "ER_RPL_SLAVE_AUTO_POSITION_IS_1_AND_GTID_MODE_IS_OFF"
-	case ErrRplSlaveCantStartSlaveForChannel:
+	case ErrRplSubordinateCantStartSubordinateForChannel:
 		return "ER_RPL_SLAVE_CANT_START_SLAVE_FOR_CHANNEL"
-	case ErrRplSlaveCantStopSlaveForChannel:
+	case ErrRplSubordinateCantStopSubordinateForChannel:
 		return "ER_RPL_SLAVE_CANT_STOP_SLAVE_FOR_CHANNEL"
-	case ErrRplRecoveryNoRotateEventFromMaster:
+	case ErrRplRecoveryNoRotateEventFromMain:
 		return "ER_RPL_RECOVERY_NO_ROTATE_EVENT_FROM_MASTER"
 	case ErrRplRecoveryErrorReadRelayLog:
 		return "ER_RPL_RECOVERY_ERROR_READ_RELAY_LOG"
@@ -11827,7 +11827,7 @@ func (es ErrorString) String() string {
 		return "ER_RPL_RECOVERY_ERROR"
 	case ErrRplRecoveryIoErrorReadingRelayLogIndex:
 		return "ER_RPL_RECOVERY_IO_ERROR_READING_RELAY_LOG_INDEX"
-	case ErrRplRecoveryFileMasterPosInfo:
+	case ErrRplRecoveryFileMainPosInfo:
 		return "ER_RPL_RECOVERY_FILE_MASTER_POS_INFO"
 	case ErrRplRecoveryReplicateSameServerIdRequiresPosition:
 		return "ER_RPL_RECOVERY_REPLICATE_SAME_SERVER_ID_REQUIRES_POSITION"
@@ -11843,55 +11843,55 @@ func (es ErrorString) String() string {
 		return "ER_RPL_MTS_RECOVERY_SUCCESSFUL"
 	case ErrRplServerIdMissing:
 		return "ER_RPL_SERVER_ID_MISSING"
-	case ErrRplCantCreateSlaveThread:
+	case ErrRplCantCreateSubordinateThread:
 		return "ER_RPL_CANT_CREATE_SLAVE_THREAD"
-	case ErrRplSlaveIoThreadWasKilled:
+	case ErrRplSubordinateIoThreadWasKilled:
 		return "ER_RPL_SLAVE_IO_THREAD_WAS_KILLED"
-	case ErrRplSlaveMasterUuidHasChanged:
+	case ErrRplSubordinateMainUuidHasChanged:
 		return "ER_RPL_SLAVE_MASTER_UUID_HAS_CHANGED"
-	case ErrRplSlaveUsesChecksumAndMasterPre50:
+	case ErrRplSubordinateUsesChecksumAndMainPre50:
 		return "ER_RPL_SLAVE_USES_CHECKSUM_AND_MASTER_PRE_50"
-	case ErrRplSlaveSecondsBehindMasterDubious:
+	case ErrRplSubordinateSecondsBehindMainDubious:
 		return "ER_RPL_SLAVE_SECONDS_BEHIND_MASTER_DUBIOUS"
-	case ErrRplSlaveCantFlushMasterInfoFile:
+	case ErrRplSubordinateCantFlushMainInfoFile:
 		return "ER_RPL_SLAVE_CANT_FLUSH_MASTER_INFO_FILE"
-	case ErrRplSlaveReportHostTooLong:
+	case ErrRplSubordinateReportHostTooLong:
 		return "ER_RPL_SLAVE_REPORT_HOST_TOO_LONG"
-	case ErrRplSlaveReportUserTooLong:
+	case ErrRplSubordinateReportUserTooLong:
 		return "ER_RPL_SLAVE_REPORT_USER_TOO_LONG"
-	case ErrRplSlaveReportPasswordTooLong:
+	case ErrRplSubordinateReportPasswordTooLong:
 		return "ER_RPL_SLAVE_REPORT_PASSWORD_TOO_LONG"
-	case ErrRplSlaveErrorRetrying:
+	case ErrRplSubordinateErrorRetrying:
 		return "ER_RPL_SLAVE_ERROR_RETRYING"
-	case ErrRplSlaveErrorReadingFromServer:
+	case ErrRplSubordinateErrorReadingFromServer:
 		return "ER_RPL_SLAVE_ERROR_READING_FROM_SERVER"
-	case ErrRplSlaveDumpThreadKilledByMaster:
+	case ErrRplSubordinateDumpThreadKilledByMain:
 		return "ER_RPL_SLAVE_DUMP_THREAD_KILLED_BY_MASTER"
 	case ErrRplMtsStatistics:
 		return "ER_RPL_MTS_STATISTICS"
 	case ErrRplMtsRecoveryComplete:
 		return "ER_RPL_MTS_RECOVERY_COMPLETE"
-	case ErrRplSlaveCantInitRelayLogPosition:
+	case ErrRplSubordinateCantInitRelayLogPosition:
 		return "ER_RPL_SLAVE_CANT_INIT_RELAY_LOG_POSITION"
-	case ErrRplSlaveConnectedToMasterReplicationStarted:
+	case ErrRplSubordinateConnectedToMainReplicationStarted:
 		return "ER_RPL_SLAVE_CONNECTED_TO_MASTER_REPLICATION_STARTED"
-	case ErrRplSlaveIoThreadKilled:
+	case ErrRplSubordinateIoThreadKilled:
 		return "ER_RPL_SLAVE_IO_THREAD_KILLED"
-	case ErrRplSlaveIoThreadCantRegisterOnMaster:
+	case ErrRplSubordinateIoThreadCantRegisterOnMain:
 		return "ER_RPL_SLAVE_IO_THREAD_CANT_REGISTER_ON_MASTER"
-	case ErrRplSlaveForcingToReconnectIoThread:
+	case ErrRplSubordinateForcingToReconnectIoThread:
 		return "ER_RPL_SLAVE_FORCING_TO_RECONNECT_IO_THREAD"
-	case ErrRplSlaveErrorRequestingBinlogDump:
+	case ErrRplSubordinateErrorRequestingBinlogDump:
 		return "ER_RPL_SLAVE_ERROR_REQUESTING_BINLOG_DUMP"
-	case ErrRplLogEntryExceedsSlaveMaxAllowedPacket:
+	case ErrRplLogEntryExceedsSubordinateMaxAllowedPacket:
 		return "ER_RPL_LOG_ENTRY_EXCEEDS_SLAVE_MAX_ALLOWED_PACKET"
-	case ErrRplSlaveStoppingAsMasterOom:
+	case ErrRplSubordinateStoppingAsMainOom:
 		return "ER_RPL_SLAVE_STOPPING_AS_MASTER_OOM"
-	case ErrRplSlaveIoThreadAbortedWaitingForRelayLogSpace:
+	case ErrRplSubordinateIoThreadAbortedWaitingForRelayLogSpace:
 		return "ER_RPL_SLAVE_IO_THREAD_ABORTED_WAITING_FOR_RELAY_LOG_SPACE"
-	case ErrRplSlaveIoThreadExiting:
+	case ErrRplSubordinateIoThreadExiting:
 		return "ER_RPL_SLAVE_IO_THREAD_EXITING"
-	case ErrRplSlaveCantInitializeSlaveWorker:
+	case ErrRplSubordinateCantInitializeSubordinateWorker:
 		return "ER_RPL_SLAVE_CANT_INITIALIZE_SLAVE_WORKER"
 	case ErrRplMtsGroupRecoveryRelayLogInfoForWorker:
 		return "ER_RPL_MTS_GROUP_RECOVERY_RELAY_LOG_INFO_FOR_WORKER"
@@ -11903,55 +11903,55 @@ func (es ErrorString) String() string {
 		return "ER_RPL_CANT_FIND_FOLLOWUP_FILE"
 	case ErrRplMtsCheckpointPeriodDiffersFromCnt:
 		return "ER_RPL_MTS_CHECKPOINT_PERIOD_DIFFERS_FROM_CNT"
-	case ErrRplSlaveWorkerThreadCreationFailed:
+	case ErrRplSubordinateWorkerThreadCreationFailed:
 		return "ER_RPL_SLAVE_WORKER_THREAD_CREATION_FAILED"
-	case ErrRplSlaveWorkerThreadCreationFailedWithErrno:
+	case ErrRplSubordinateWorkerThreadCreationFailedWithErrno:
 		return "ER_RPL_SLAVE_WORKER_THREAD_CREATION_FAILED_WITH_ERRNO"
-	case ErrRplSlaveFailedToInitPartitionsHash:
+	case ErrRplSubordinateFailedToInitPartitionsHash:
 		return "ER_RPL_SLAVE_FAILED_TO_INIT_PARTITIONS_HASH"
-	case ErrRplSlaveNdbTablesNotAvailable:
+	case ErrRplSubordinateNdbTablesNotAvailable:
 		return "ER_RPL_SLAVE_NDB_TABLES_NOT_AVAILABLE"
-	case ErrRplSlaveSqlThreadStarting:
+	case ErrRplSubordinateSqlThreadStarting:
 		return "ER_RPL_SLAVE_SQL_THREAD_STARTING"
-	case ErrRplSlaveSkipCounterExecuted:
+	case ErrRplSubordinateSkipCounterExecuted:
 		return "ER_RPL_SLAVE_SKIP_COUNTER_EXECUTED"
-	case ErrRplSlaveAdditionalErrorInfoFromDa:
+	case ErrRplSubordinateAdditionalErrorInfoFromDa:
 		return "ER_RPL_SLAVE_ADDITIONAL_ERROR_INFO_FROM_DA"
-	case ErrRplSlaveErrorInfoFromDa:
+	case ErrRplSubordinateErrorInfoFromDa:
 		return "ER_RPL_SLAVE_ERROR_INFO_FROM_DA"
-	case ErrRplSlaveErrorLoadingUserDefinedLibrary:
+	case ErrRplSubordinateErrorLoadingUserDefinedLibrary:
 		return "ER_RPL_SLAVE_ERROR_LOADING_USER_DEFINED_LIBRARY"
-	case ErrRplSlaveErrorRunningQuery:
+	case ErrRplSubordinateErrorRunningQuery:
 		return "ER_RPL_SLAVE_ERROR_RUNNING_QUERY"
-	case ErrRplSlaveSqlThreadExiting:
+	case ErrRplSubordinateSqlThreadExiting:
 		return "ER_RPL_SLAVE_SQL_THREAD_EXITING"
-	case ErrRplSlaveReadInvalidEventFromMaster:
+	case ErrRplSubordinateReadInvalidEventFromMain:
 		return "ER_RPL_SLAVE_READ_INVALID_EVENT_FROM_MASTER"
-	case ErrRplSlaveQueueEventFailedInvalidConfiguration:
+	case ErrRplSubordinateQueueEventFailedInvalidConfiguration:
 		return "ER_RPL_SLAVE_QUEUE_EVENT_FAILED_INVALID_CONFIGURATION"
-	case ErrRplSlaveIoThreadDetectedUnexpectedEventSequence:
+	case ErrRplSubordinateIoThreadDetectedUnexpectedEventSequence:
 		return "ER_RPL_SLAVE_IO_THREAD_DETECTED_UNEXPECTED_EVENT_SEQUENCE"
-	case ErrRplSlaveCantUseCharset:
+	case ErrRplSubordinateCantUseCharset:
 		return "ER_RPL_SLAVE_CANT_USE_CHARSET"
-	case ErrRplSlaveConnectedToMasterReplicationResumed:
+	case ErrRplSubordinateConnectedToMainReplicationResumed:
 		return "ER_RPL_SLAVE_CONNECTED_TO_MASTER_REPLICATION_RESUMED"
-	case ErrRplSlaveNextLogIsActive:
+	case ErrRplSubordinateNextLogIsActive:
 		return "ER_RPL_SLAVE_NEXT_LOG_IS_ACTIVE"
-	case ErrRplSlaveNextLogIsInactive:
+	case ErrRplSubordinateNextLogIsInactive:
 		return "ER_RPL_SLAVE_NEXT_LOG_IS_INACTIVE"
-	case ErrRplSlaveSqlThreadIoErrorReadingEvent:
+	case ErrRplSubordinateSqlThreadIoErrorReadingEvent:
 		return "ER_RPL_SLAVE_SQL_THREAD_IO_ERROR_READING_EVENT"
-	case ErrRplSlaveErrorReadingRelayLogEvents:
+	case ErrRplSubordinateErrorReadingRelayLogEvents:
 		return "ER_RPL_SLAVE_ERROR_READING_RELAY_LOG_EVENTS"
-	case ErrSlaveChangeMasterToExecuted:
+	case ErrSubordinateChangeMainToExecuted:
 		return "ER_SLAVE_CHANGE_MASTER_TO_EXECUTED"
-	case ErrRplSlaveNewMasterInfoNeedsReposTypeOtherThanFile:
+	case ErrRplSubordinateNewMainInfoNeedsReposTypeOtherThanFile:
 		return "ER_RPL_SLAVE_NEW_MASTER_INFO_NEEDS_REPOS_TYPE_OTHER_THAN_FILE"
 	case ErrRplFailedToStatLogInIndex:
 		return "ER_RPL_FAILED_TO_STAT_LOG_IN_INDEX"
 	case ErrRplLogNotFoundWhileCountingRelayLogSpace:
 		return "ER_RPL_LOG_NOT_FOUND_WHILE_COUNTING_RELAY_LOG_SPACE"
-	case ErrSlaveCantUseTempdir:
+	case ErrSubordinateCantUseTempdir:
 		return "ER_SLAVE_CANT_USE_TEMPDIR"
 	case ErrRplRelayLogNeedsFileNotDirectory:
 		return "ER_RPL_RELAY_LOG_NEEDS_FILE_NOT_DIRECTORY"
@@ -12071,7 +12071,7 @@ func (es ErrorString) String() string {
 		return "ER_NDB_BINLOG_CANT_COMMIT_TO_NDB_BINLOG_INDEX"
 	case ErrNdbBinlogWriteToNdbBinlogIndexFailedAfterKill:
 		return "ER_NDB_BINLOG_WRITE_TO_NDB_BINLOG_INDEX_FAILED_AFTER_KILL"
-	case ErrNdbBinlogUsingServerId0SlavesWillNot:
+	case ErrNdbBinlogUsingServerId0SubordinatesWillNot:
 		return "ER_NDB_BINLOG_USING_SERVER_ID_0_SLAVES_WILL_NOT"
 	case ErrNdbServerIdReservedOrTooLarge:
 		return "ER_NDB_SERVER_ID_RESERVED_OR_TOO_LARGE"
@@ -12137,7 +12137,7 @@ func (es ErrorString) String() string {
 		return "ER_NDB_COULD_NOT_GET_APPLY_STATUS_SHARE"
 	case ErrNdbBinlogServerShutdownDuringNdbClusterStart:
 		return "ER_NDB_BINLOG_SERVER_SHUTDOWN_DURING_NDB_CLUSTER_START"
-	case ErrNdbBinlogClusterRestartedResetMasterSuggested:
+	case ErrNdbBinlogClusterRestartedResetMainSuggested:
 		return "ER_NDB_BINLOG_CLUSTER_RESTARTED_RESET_MASTER_SUGGESTED"
 	case ErrNdbBinlogClusterHasReconnected:
 		return "ER_NDB_BINLOG_CLUSTER_HAS_RECONNECTED"
@@ -12183,9 +12183,9 @@ func (es ErrorString) String() string {
 		return "ER_WRONG_COUNT_FOR_KEY"
 	case ErrWrongCountOfElements:
 		return "ER_WRONG_COUNT_OF_ELEMENTS"
-	case ErrRplErrorReadingSlaveWorkerConfiguration:
+	case ErrRplErrorReadingSubordinateWorkerConfiguration:
 		return "ER_RPL_ERROR_READING_SLAVE_WORKER_CONFIGURATION"
-	case ErrRplErrorWritingSlaveWorkerConfiguration:
+	case ErrRplErrorWritingSubordinateWorkerConfiguration:
 		return "ER_RPL_ERROR_WRITING_SLAVE_WORKER_CONFIGURATION"
 	case ErrRplFailedToOpenRelayLog:
 		return "ER_RPL_FAILED_TO_OPEN_RELAY_LOG"
@@ -12193,7 +12193,7 @@ func (es ErrorString) String() string {
 		return "ER_RPL_WORKER_CANT_READ_RELAY_LOG"
 	case ErrRplWorkerCantFindNextRelayLog:
 		return "ER_RPL_WORKER_CANT_FIND_NEXT_RELAY_LOG"
-	case ErrRplMtsSlaveCoordinatorHasWaited:
+	case ErrRplMtsSubordinateCoordinatorHasWaited:
 		return "ER_RPL_MTS_SLAVE_COORDINATOR_HAS_WAITED"
 	case ErrBinlogFailedToWriteDropForTempTables:
 		return "ER_BINLOG_FAILED_TO_WRITE_DROP_FOR_TEMP_TABLES"
@@ -12205,11 +12205,11 @@ func (es ErrorString) String() string {
 		return "ER_FAILED_TO_REMOVE_TEMP_TABLE"
 	case ErrSystemTableNotTransactional:
 		return "ER_SYSTEM_TABLE_NOT_TRANSACTIONAL"
-	case ErrRplErrorWritingMasterConfiguration:
+	case ErrRplErrorWritingMainConfiguration:
 		return "ER_RPL_ERROR_WRITING_MASTER_CONFIGURATION"
-	case ErrRplErrorReadingMasterConfiguration:
+	case ErrRplErrorReadingMainConfiguration:
 		return "ER_RPL_ERROR_READING_MASTER_CONFIGURATION"
-	case ErrRplSslInfoInMasterInfoIgnored:
+	case ErrRplSslInfoInMainInfoIgnored:
 		return "ER_RPL_SSL_INFO_IN_MASTER_INFO_IGNORED"
 	case ErrPluginFailedDeinitialization:
 		return "ER_PLUGIN_FAILED_DEINITIALIZATION"
@@ -12455,7 +12455,7 @@ func (es ErrorString) String() string {
 		return "ER_BINLOG_CANT_DELETE_FILE_AND_READ_BINLOG_INDEX"
 	case ErrBinlogFailedToDeleteLogFile:
 		return "ER_BINLOG_FAILED_TO_DELETE_LOG_FILE"
-	case ErrBinlogLoggingIncidentToStopSlaves:
+	case ErrBinlogLoggingIncidentToStopSubordinates:
 		return "ER_BINLOG_LOGGING_INCIDENT_TO_STOP_SLAVES"
 	case ErrBinlogCantFindLogInIndex:
 		return "ER_BINLOG_CANT_FIND_LOG_IN_INDEX"
@@ -12539,15 +12539,15 @@ func (es ErrorString) String() string {
 		return "ER_AUDIT_WARNING"
 	case ErrNdbNumberOfChannels:
 		return "ER_NDB_NUMBER_OF_CHANNELS"
-	case ErrNdbSlaveParallelWorkers:
+	case ErrNdbSubordinateParallelWorkers:
 		return "ER_NDB_SLAVE_PARALLEL_WORKERS"
 	case ErrNdbDistributingErr:
 		return "ER_NDB_DISTRIBUTING_ERR"
-	case ErrRplSlaveInsecureChangeMaster:
+	case ErrRplSubordinateInsecureChangeMain:
 		return "ER_RPL_SLAVE_INSECURE_CHANGE_MASTER"
-	case ErrRplSlaveFlushRelayLogsNotAllowed:
+	case ErrRplSubordinateFlushRelayLogsNotAllowed:
 		return "ER_RPL_SLAVE_FLUSH_RELAY_LOGS_NOT_ALLOWED"
-	case ErrRplSlaveIncorrectChannel:
+	case ErrRplSubordinateIncorrectChannel:
 		return "ER_RPL_SLAVE_INCORRECT_CHANNEL"
 	case ErrFailedToFindDlEntry:
 		return "ER_FAILED_TO_FIND_DL_ENTRY"
@@ -12667,15 +12667,15 @@ func (es ErrorString) String() string {
 		return "ER_BINLOG_FILE_OPEN_FAILED"
 	case ErrBinlogEventWriteToStmtCacheFailed:
 		return "ER_BINLOG_EVENT_WRITE_TO_STMT_CACHE_FAILED"
-	case ErrSlaveRelayLogTruncateInfo:
+	case ErrSubordinateRelayLogTruncateInfo:
 		return "ER_SLAVE_RELAY_LOG_TRUNCATE_INFO"
-	case ErrSlaveRelayLogPurgeFailed:
+	case ErrSubordinateRelayLogPurgeFailed:
 		return "ER_SLAVE_RELAY_LOG_PURGE_FAILED"
-	case ErrRplSlaveFilterCreateFailed:
+	case ErrRplSubordinateFilterCreateFailed:
 		return "ER_RPL_SLAVE_FILTER_CREATE_FAILED"
-	case ErrRplSlaveGlobalFiltersCopyFailed:
+	case ErrRplSubordinateGlobalFiltersCopyFailed:
 		return "ER_RPL_SLAVE_GLOBAL_FILTERS_COPY_FAILED"
-	case ErrRplSlaveResetFilterOptions:
+	case ErrRplSubordinateResetFilterOptions:
 		return "ER_RPL_SLAVE_RESET_FILTER_OPTIONS"
 	case ErrMissingGrantSystemTable:
 		return "ER_MISSING_GRANT_SYSTEM_TABLE"
@@ -12797,15 +12797,15 @@ func (es ErrorString) String() string {
 		return "ER_FAILED_TO_CONSTRUCT_DROP_EVENT_QUERY"
 	case ErrFailedToBinlogDropEvent:
 		return "ER_FAILED_TO_BINLOG_DROP_EVENT"
-	case ErrFailedToStartSlaveThread:
+	case ErrFailedToStartSubordinateThread:
 		return "ER_FAILED_TO_START_SLAVE_THREAD"
 	case ErrRplIoThreadKilled:
 		return "ER_RPL_IO_THREAD_KILLED"
-	case ErrSlaveReconnectFailed:
+	case ErrSubordinateReconnectFailed:
 		return "ER_SLAVE_RECONNECT_FAILED"
-	case ErrSlaveKilledAfterReconnect:
+	case ErrSubordinateKilledAfterReconnect:
 		return "ER_SLAVE_KILLED_AFTER_RECONNECT"
-	case ErrSlaveNotStartedOnSomeChannels:
+	case ErrSubordinateNotStartedOnSomeChannels:
 		return "ER_SLAVE_NOT_STARTED_ON_SOME_CHANNELS"
 	case ErrFailedToAddRplFilter:
 		return "ER_FAILED_TO_ADD_RPL_FILTER"
@@ -13031,19 +13031,19 @@ func (es ErrorString) String() string {
 		return "ER_SEMISYNC_SERVER_REPLY"
 	case ErrSemisyncFunctionCalledTwice:
 		return "ER_SEMISYNC_FUNCTION_CALLED_TWICE"
-	case ErrSemisyncRplEnabledOnMaster:
+	case ErrSemisyncRplEnabledOnMain:
 		return "ER_SEMISYNC_RPL_ENABLED_ON_MASTER"
-	case ErrSemisyncMasterOom:
+	case ErrSemisyncMainOom:
 		return "ER_SEMISYNC_MASTER_OOM"
-	case ErrSemisyncDisabledOnMaster:
+	case ErrSemisyncDisabledOnMain:
 		return "ER_SEMISYNC_DISABLED_ON_MASTER"
 	case ErrSemisyncForcedShutdown:
 		return "ER_SEMISYNC_FORCED_SHUTDOWN"
-	case ErrSemisyncMasterGotReplyAtPos:
+	case ErrSemisyncMainGotReplyAtPos:
 		return "ER_SEMISYNC_MASTER_GOT_REPLY_AT_POS"
-	case ErrSemisyncMasterSignalAllWaitingThreads:
+	case ErrSemisyncMainSignalAllWaitingThreads:
 		return "ER_SEMISYNC_MASTER_SIGNAL_ALL_WAITING_THREADS"
-	case ErrSemisyncMasterTrxWaitPos:
+	case ErrSemisyncMainTrxWaitPos:
 		return "ER_SEMISYNC_MASTER_TRX_WAIT_POS"
 	case ErrSemisyncBinlogReplyIsAhead:
 		return "ER_SEMISYNC_BINLOG_REPLY_IS_AHEAD"
@@ -13069,13 +13069,13 @@ func (es ErrorString) String() string {
 		return "ER_SEMISYNC_FAILED_TO_INSERT_TRX_NODE"
 	case ErrSemisyncTrxSkippedAtPos:
 		return "ER_SEMISYNC_TRX_SKIPPED_AT_POS"
-	case ErrSemisyncMasterFailedOnNetFlush:
+	case ErrSemisyncMainFailedOnNetFlush:
 		return "ER_SEMISYNC_MASTER_FAILED_ON_NET_FLUSH"
 	case ErrSemisyncReceivedAckIsSmaller:
 		return "ER_SEMISYNC_RECEIVED_ACK_IS_SMALLER"
 	case ErrSemisyncAddAckToSlot:
 		return "ER_SEMISYNC_ADD_ACK_TO_SLOT"
-	case ErrSemisyncUpdateExistingSlaveAck:
+	case ErrSemisyncUpdateExistingSubordinateAck:
 		return "ER_SEMISYNC_UPDATE_EXISTING_SLAVE_ACK"
 	case ErrSemisyncFailedToStartAckReceiverThd:
 		return "ER_SEMISYNC_FAILED_TO_START_ACK_RECEIVER_THD"
@@ -13085,11 +13085,11 @@ func (es ErrorString) String() string {
 		return "ER_SEMISYNC_FAILED_TO_WAIT_ON_DUMP_SOCKET"
 	case ErrSemisyncStoppingAckReceiverThread:
 		return "ER_SEMISYNC_STOPPING_ACK_RECEIVER_THREAD"
-	case ErrSemisyncFailedRegisterSlaveToReceiver:
+	case ErrSemisyncFailedRegisterSubordinateToReceiver:
 		return "ER_SEMISYNC_FAILED_REGISTER_SLAVE_TO_RECEIVER"
-	case ErrSemisyncStartBinlogDumpToSlave:
+	case ErrSemisyncStartBinlogDumpToSubordinate:
 		return "ER_SEMISYNC_START_BINLOG_DUMP_TO_SLAVE"
-	case ErrSemisyncStopBinlogDumpToSlave:
+	case ErrSemisyncStopBinlogDumpToSubordinate:
 		return "ER_SEMISYNC_STOP_BINLOG_DUMP_TO_SLAVE"
 	case ErrSemisyncUnregisterTrxObserverFailed:
 		return "ER_SEMISYNC_UNREGISTER_TRX_OBSERVER_FAILED"
@@ -13101,23 +13101,23 @@ func (es ErrorString) String() string {
 		return "ER_SEMISYNC_UNREGISTERED_REPLICATOR"
 	case ErrSemisyncSocketFdTooLarge:
 		return "ER_SEMISYNC_SOCKET_FD_TOO_LARGE"
-	case ErrSemisyncSlaveReply:
+	case ErrSemisyncSubordinateReply:
 		return "ER_SEMISYNC_SLAVE_REPLY"
 	case ErrSemisyncMissingMagicNoForSemisyncPkt:
 		return "ER_SEMISYNC_MISSING_MAGIC_NO_FOR_SEMISYNC_PKT"
-	case ErrSemisyncSlaveStart:
+	case ErrSemisyncSubordinateStart:
 		return "ER_SEMISYNC_SLAVE_START"
-	case ErrSemisyncSlaveReplyWithBinlogInfo:
+	case ErrSemisyncSubordinateReplyWithBinlogInfo:
 		return "ER_SEMISYNC_SLAVE_REPLY_WITH_BINLOG_INFO"
-	case ErrSemisyncSlaveNetFlushReplyFailed:
+	case ErrSemisyncSubordinateNetFlushReplyFailed:
 		return "ER_SEMISYNC_SLAVE_NET_FLUSH_REPLY_FAILED"
-	case ErrSemisyncSlaveSendReplyFailed:
+	case ErrSemisyncSubordinateSendReplyFailed:
 		return "ER_SEMISYNC_SLAVE_SEND_REPLY_FAILED"
-	case ErrSemisyncExecutionFailedOnMaster:
+	case ErrSemisyncExecutionFailedOnMain:
 		return "ER_SEMISYNC_EXECUTION_FAILED_ON_MASTER"
-	case ErrSemisyncNotSupportedByMaster:
+	case ErrSemisyncNotSupportedByMain:
 		return "ER_SEMISYNC_NOT_SUPPORTED_BY_MASTER"
-	case ErrSemisyncSlaveSetFailed:
+	case ErrSemisyncSubordinateSetFailed:
 		return "ER_SEMISYNC_SLAVE_SET_FAILED"
 	case ErrSemisyncFailedToStopAckReceiverThd:
 		return "ER_SEMISYNC_FAILED_TO_STOP_ACK_RECEIVER_THD"
@@ -13271,7 +13271,7 @@ func (es ErrorString) String() string {
 		return "ER_SYS_VAR_COMPONENT_FAILED_TO_MAKE_VARIABLE_PERSISTENT"
 	case ErrComponentFilterConfused:
 		return "ER_COMPONENT_FILTER_CONFUSED"
-	case ErrStopSlaveIoThreadDiskSpace:
+	case ErrStopSubordinateIoThreadDiskSpace:
 		return "ER_STOP_SLAVE_IO_THREAD_DISK_SPACE"
 	case ErrLogFileCannotOpen:
 		return "ER_LOG_FILE_CANNOT_OPEN"
@@ -13807,13 +13807,13 @@ func (es ErrorString) String() string {
 		return "ER_GRP_RPL_APPLIER_THD_STOP_ERROR"
 	case ErrGrpRplFetchTransDataFailed:
 		return "ER_GRP_RPL_FETCH_TRANS_DATA_FAILED"
-	case ErrGrpRplSlaveIoThdPrimaryUnknown:
+	case ErrGrpRplSubordinateIoThdPrimaryUnknown:
 		return "ER_GRP_RPL_SLAVE_IO_THD_PRIMARY_UNKNOWN"
 	case ErrGrpRplSalveIoThdOnSecondaryMember:
 		return "ER_GRP_RPL_SALVE_IO_THD_ON_SECONDARY_MEMBER"
-	case ErrGrpRplSlaveSqlThdPrimaryUnknown:
+	case ErrGrpRplSubordinateSqlThdPrimaryUnknown:
 		return "ER_GRP_RPL_SLAVE_SQL_THD_PRIMARY_UNKNOWN"
-	case ErrGrpRplSlaveSqlThdOnSecondaryMember:
+	case ErrGrpRplSubordinateSqlThdOnSecondaryMember:
 		return "ER_GRP_RPL_SLAVE_SQL_THD_ON_SECONDARY_MEMBER"
 	case ErrGrpRplNeedsInnodbTable:
 		return "ER_GRP_RPL_NEEDS_INNODB_TABLE"
@@ -14087,17 +14087,17 @@ func (es ErrorString) String() string {
 		return "ER_GRP_RPL_BINLOG_DISABLED"
 	case ErrGrpRplGtidModeOff:
 		return "ER_GRP_RPL_GTID_MODE_OFF"
-	case ErrGrpRplLogSlaveUpdatesNotSet:
+	case ErrGrpRplLogSubordinateUpdatesNotSet:
 		return "ER_GRP_RPL_LOG_SLAVE_UPDATES_NOT_SET"
 	case ErrGrpRplInvalidTransWriteSetExtractionValue:
 		return "ER_GRP_RPL_INVALID_TRANS_WRITE_SET_EXTRACTION_VALUE"
 	case ErrGrpRplRelayLogInfoRepoMustBeTable:
 		return "ER_GRP_RPL_RELAY_LOG_INFO_REPO_MUST_BE_TABLE"
-	case ErrGrpRplMasterInfoRepoMustBeTable:
+	case ErrGrpRplMainInfoRepoMustBeTable:
 		return "ER_GRP_RPL_MASTER_INFO_REPO_MUST_BE_TABLE"
 	case ErrGrpRplIncorrectTypeSetForParallelApplier:
 		return "ER_GRP_RPL_INCORRECT_TYPE_SET_FOR_PARALLEL_APPLIER"
-	case ErrGrpRplSlavePreserveCommitOrderNotSet:
+	case ErrGrpRplSubordinatePreserveCommitOrderNotSet:
 		return "ER_GRP_RPL_SLAVE_PRESERVE_COMMIT_ORDER_NOT_SET"
 	case ErrGrpRplSinglePrimModeNotAllowedWithUpdateEverywhere:
 		return "ER_GRP_RPL_SINGLE_PRIM_MODE_NOT_ALLOWED_WITH_UPDATE_EVERYWHERE"
@@ -14205,13 +14205,13 @@ func (es ErrorString) String() string {
 		return "ER_GRP_RPL_STOP_REP_CHANNEL"
 	case ErrGrpRplGcsGrErrorMsg:
 		return "ER_GRP_RPL_GCS_GR_ERROR_MSG"
-	case ErrGrpRplSlaveIoThreadUnblocked:
+	case ErrGrpRplSubordinateIoThreadUnblocked:
 		return "ER_GRP_RPL_SLAVE_IO_THREAD_UNBLOCKED"
-	case ErrGrpRplSlaveIoThreadErrorOut:
+	case ErrGrpRplSubordinateIoThreadErrorOut:
 		return "ER_GRP_RPL_SLAVE_IO_THREAD_ERROR_OUT"
-	case ErrGrpRplSlaveApplierThreadUnblocked:
+	case ErrGrpRplSubordinateApplierThreadUnblocked:
 		return "ER_GRP_RPL_SLAVE_APPLIER_THREAD_UNBLOCKED"
-	case ErrGrpRplSlaveApplierThreadErrorOut:
+	case ErrGrpRplSubordinateApplierThreadErrorOut:
 		return "ER_GRP_RPL_SLAVE_APPLIER_THREAD_ERROR_OUT"
 	case ErrLdapAuthFailedToCreateOrGetConnection:
 		return "ER_LDAP_AUTH_FAILED_TO_CREATE_OR_GET_CONNECTION"
@@ -16923,9 +16923,9 @@ func (es ErrorString) String() string {
 		return "ER_IB_MSG_1269"
 	case ErrIbMsg1270:
 		return "ER_IB_MSG_1270"
-	case ErrRplSlaveSqlThreadStopCmdExecTimeout:
+	case ErrRplSubordinateSqlThreadStopCmdExecTimeout:
 		return "ER_RPL_SLAVE_SQL_THREAD_STOP_CMD_EXEC_TIMEOUT"
-	case ErrRplSlaveIoThreadStopCmdExecTimeout:
+	case ErrRplSubordinateIoThreadStopCmdExecTimeout:
 		return "ER_RPL_SLAVE_IO_THREAD_STOP_CMD_EXEC_TIMEOUT"
 	case ErrRplGtidUnsafeStmtOnNonTransTable:
 		return "ER_RPL_GTID_UNSAFE_STMT_ON_NON_TRANS_TABLE"
@@ -16957,27 +16957,27 @@ func (es ErrorString) String() string {
 		return "ER_XPLUGIN_FAILED_TO_STOP_SERVICES"
 	case ErrInconsistentError:
 		return "ER_INCONSISTENT_ERROR"
-	case ErrServerMasterFatalErrorReadingBinlog:
+	case ErrServerMainFatalErrorReadingBinlog:
 		return "ER_SERVER_MASTER_FATAL_ERROR_READING_BINLOG"
 	case ErrNetworkReadEventChecksumFailure:
 		return "ER_NETWORK_READ_EVENT_CHECKSUM_FAILURE"
-	case ErrSlaveCreateEventFailure:
+	case ErrSubordinateCreateEventFailure:
 		return "ER_SLAVE_CREATE_EVENT_FAILURE"
-	case ErrSlaveFatalError:
+	case ErrSubordinateFatalError:
 		return "ER_SLAVE_FATAL_ERROR"
-	case ErrSlaveHeartbeatFailure:
+	case ErrSubordinateHeartbeatFailure:
 		return "ER_SLAVE_HEARTBEAT_FAILURE"
-	case ErrSlaveIncident:
+	case ErrSubordinateIncident:
 		return "ER_SLAVE_INCIDENT"
-	case ErrSlaveMasterComFailure:
+	case ErrSubordinateMainComFailure:
 		return "ER_SLAVE_MASTER_COM_FAILURE"
-	case ErrSlaveRelayLogReadFailure:
+	case ErrSubordinateRelayLogReadFailure:
 		return "ER_SLAVE_RELAY_LOG_READ_FAILURE"
-	case ErrSlaveRelayLogWriteFailure:
+	case ErrSubordinateRelayLogWriteFailure:
 		return "ER_SLAVE_RELAY_LOG_WRITE_FAILURE"
-	case ErrServerSlaveMiInitRepository:
+	case ErrServerSubordinateMiInitRepository:
 		return "ER_SERVER_SLAVE_MI_INIT_REPOSITORY"
-	case ErrServerSlaveRliInitRepository:
+	case ErrServerSubordinateRliInitRepository:
 		return "ER_SERVER_SLAVE_RLI_INIT_REPOSITORY"
 	case ErrServerNetPacketTooLarge:
 		return "ER_SERVER_NET_PACKET_TOO_LARGE"
@@ -17019,11 +17019,11 @@ func (es ErrorString) String() string {
 		return "ER_SERVER_COL_COUNT_DOESNT_MATCH_CORRUPTED_V2"
 	case ErrServerAclTableError:
 		return "ER_SERVER_ACL_TABLE_ERROR"
-	case ErrServerSlaveInitQueryFailed:
+	case ErrServerSubordinateInitQueryFailed:
 		return "ER_SERVER_SLAVE_INIT_QUERY_FAILED"
-	case ErrServerSlaveConversionFailed:
+	case ErrServerSubordinateConversionFailed:
 		return "ER_SERVER_SLAVE_CONVERSION_FAILED"
-	case ErrServerSlaveIgnoredTable:
+	case ErrServerSubordinateIgnoredTable:
 		return "ER_SERVER_SLAVE_IGNORED_TABLE"
 	case ErrCantReplicateAnonymousWithAutoPosition:
 		return "ER_CANT_REPLICATE_ANONYMOUS_WITH_AUTO_POSITION"
@@ -17283,13 +17283,13 @@ func (es ErrorString) String() string {
 		return "ER_SERVER_RPL_ENCRYPTION_FAILED_TO_STORE_KEY"
 	case ErrServerRplEncryptionFailedToRemoveKey:
 		return "ER_SERVER_RPL_ENCRYPTION_FAILED_TO_REMOVE_KEY"
-	case ErrServerRplEncryptionMasterKeyRecoveryFailed:
+	case ErrServerRplEncryptionMainKeyRecoveryFailed:
 		return "ER_SERVER_RPL_ENCRYPTION_MASTER_KEY_RECOVERY_FAILED"
 	case ErrServerRplEncryptionUnableToInitialize:
 		return "ER_SERVER_RPL_ENCRYPTION_UNABLE_TO_INITIALIZE"
-	case ErrServerRplEncryptionUnableToRotateMasterKeyAtStartup:
+	case ErrServerRplEncryptionUnableToRotateMainKeyAtStartup:
 		return "ER_SERVER_RPL_ENCRYPTION_UNABLE_TO_ROTATE_MASTER_KEY_AT_STARTUP"
-	case ErrServerRplEncryptionIgnoreRotateMasterKeyAtStartup:
+	case ErrServerRplEncryptionIgnoreRotateMainKeyAtStartup:
 		return "ER_SERVER_RPL_ENCRYPTION_IGNORE_ROTATE_MASTER_KEY_AT_STARTUP"
 	case ErrInvalidAdminAddress:
 		return "ER_INVALID_ADMIN_ADDRESS"
@@ -17421,9 +17421,9 @@ func (es ErrorString) String() string {
 		return "ER_SERVER_WARN_DEPRECATED"
 	case ErrAuthIdWithSystemUserPrivInMandatoryRoles:
 		return "ER_AUTH_ID_WITH_SYSTEM_USER_PRIV_IN_MANDATORY_ROLES"
-	case ErrServerBinlogMasterKeyRecoveryOutOfCombination:
+	case ErrServerBinlogMainKeyRecoveryOutOfCombination:
 		return "ER_SERVER_BINLOG_MASTER_KEY_RECOVERY_OUT_OF_COMBINATION"
-	case ErrServerBinlogMasterKeyRotationFailToCleanupAuxKey:
+	case ErrServerBinlogMainKeyRotationFailToCleanupAuxKey:
 		return "ER_SERVER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_CLEANUP_AUX_KEY"
 	case ErrTurningOnPartialRevokes:
 		return "ER_TURNING_ON_PARTIAL_REVOKES"
@@ -17613,7 +17613,7 @@ func (es ErrorString) String() string {
 		return "ER_GRP_RPL_RECOVERY_STRAT_FALLBACK"
 	case ErrGrpRplRecoveryStratNoFallback:
 		return "ER_GRP_RPL_RECOVERY_STRAT_NO_FALLBACK"
-	case ErrGrpRplSlaveThreadErrorOnClone:
+	case ErrGrpRplSubordinateThreadErrorOnClone:
 		return "ER_GRP_RPL_SLAVE_THREAD_ERROR_ON_CLONE"
 	case ErrUnknownTableInUpgrade:
 		return "ER_UNKNOWN_TABLE_IN_UPGRADE"
@@ -17661,7 +17661,7 @@ func (es ErrorString) String() string {
 		return "ER_WARN_LOG_PRIVILEGE_CHECKS_USER_NEEDS_RPL_APPLIER_PRIV"
 	case ErrFilePrivilegeForReplicationChecks:
 		return "ER_FILE_PRIVILEGE_FOR_REPLICATION_CHECKS"
-	case ErrRplSlaveSqlThreadStartingWithPrivilegeChecks:
+	case ErrRplSubordinateSqlThreadStartingWithPrivilegeChecks:
 		return "ER_RPL_SLAVE_SQL_THREAD_STARTING_WITH_PRIVILEGE_CHECKS"
 	case ErrAuditLogCannotGeneratePassword:
 		return "ER_AUDIT_LOG_CANNOT_GENERATE_PASSWORD"
@@ -17673,19 +17673,19 @@ func (es ErrorString) String() string {
 		return "ER_WARN_AUTH_ID_WITH_SYSTEM_USER_PRIV_IN_MANDATORY_ROLES"
 	case ErrIbMsgSkipHiddenDir:
 		return "ER_IB_MSG_SKIP_HIDDEN_DIR"
-	case ErrWarnRplRecoveryNoRotateEventFromMasterEof:
+	case ErrWarnRplRecoveryNoRotateEventFromMainEof:
 		return "ER_WARN_RPL_RECOVERY_NO_ROTATE_EVENT_FROM_MASTER_EOF"
 	case ErrIbLobRollbackIndexLen:
 		return "ER_IB_LOB_ROLLBACK_INDEX_LEN"
 	case ErrCantProcessExpressionForGeneratedColumnToDd:
 		return "ER_CANT_PROCESS_EXPRESSION_FOR_GENERATED_COLUMN_TO_DD"
-	case ErrRplSlaveQueueEventFailedInvalidNonRowFormat:
+	case ErrRplSubordinateQueueEventFailedInvalidNonRowFormat:
 		return "ER_RPL_SLAVE_QUEUE_EVENT_FAILED_INVALID_NON_ROW_FORMAT"
-	case ErrRplSlaveApplyLogEventFailedInvalidNonRowFormat:
+	case ErrRplSubordinateApplyLogEventFailedInvalidNonRowFormat:
 		return "ER_RPL_SLAVE_APPLY_LOG_EVENT_FAILED_INVALID_NON_ROW_FORMAT"
 	case ErrLogPrivChecksRequireRowFormatNotSet:
 		return "ER_LOG_PRIV_CHECKS_REQUIRE_ROW_FORMAT_NOT_SET"
-	case ErrRplSlaveSqlThreadDetectedUnexpectedEventSequence:
+	case ErrRplSubordinateSqlThreadDetectedUnexpectedEventSequence:
 		return "ER_RPL_SLAVE_SQL_THREAD_DETECTED_UNEXPECTED_EVENT_SEQUENCE"
 	case ErrIbMsgUpgradePartitionFile:
 		return "ER_IB_MSG_UPGRADE_PARTITION_FILE"
@@ -18144,7 +18144,7 @@ func (es ErrorString) Description() string {
 		return "ER_UNSUPPORTED_DATE was added in 8.0.2."
 	case ErrStartingAs:
 		return "ER_STARTING_AS was added in 8.0.2."
-	case ErrShuttingDownSlaveThreads:
+	case ErrShuttingDownSubordinateThreads:
 		return "ER_SHUTTING_DOWN_SLAVE_THREADS was added in 8.0.2."
 	case ErrDisconnectingRemainingClients:
 		return "ER_DISCONNECTING_REMAINING_CLIENTS was added in 8.0.2."
@@ -18660,17 +18660,17 @@ func (es ErrorString) Description() string {
 		return "ER_TZ_OOM_WHILE_LOADING_TIME_ZONE was added in 8.0.2."
 	case ErrTzOomWhileSettingTimeZone:
 		return "ER_TZ_OOM_WHILE_SETTING_TIME_ZONE was added in 8.0.2."
-	case ErrSlaveSqlThreadStoppedUntilConditionBad:
+	case ErrSubordinateSqlThreadStoppedUntilConditionBad:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_UNTIL_CONDITION_BAD was added in 8.0.2."
-	case ErrSlaveSqlThreadStoppedUntilPositionReached:
+	case ErrSubordinateSqlThreadStoppedUntilPositionReached:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_UNTIL_POSITION_REACHED was added in 8.0.2."
-	case ErrSlaveSqlThreadStoppedBeforeGtidsAlreadyApplied:
+	case ErrSubordinateSqlThreadStoppedBeforeGtidsAlreadyApplied:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_BEFORE_GTIDS_ALREADY_APPLIED was added in 8.0.2."
-	case ErrSlaveSqlThreadStoppedBeforeGtidsReached:
+	case ErrSubordinateSqlThreadStoppedBeforeGtidsReached:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_BEFORE_GTIDS_REACHED was added in 8.0.2."
-	case ErrSlaveSqlThreadStoppedAfterGtidsReached:
+	case ErrSubordinateSqlThreadStoppedAfterGtidsReached:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_AFTER_GTIDS_REACHED was added in 8.0.2."
-	case ErrSlaveSqlThreadStoppedGapTrxProcessed:
+	case ErrSubordinateSqlThreadStoppedGapTrxProcessed:
 		return "ER_SLAVE_SQL_THREAD_STOPPED_GAP_TRX_PROCESSED was added in 8.0.2."
 	case ErrGroupReplicationPluginNotInstalled:
 		return "ER_GROUP_REPLICATION_PLUGIN_NOT_INSTALLED was added in 8.0.2."
@@ -18694,19 +18694,19 @@ func (es ErrorString) Description() string {
 		return "ER_NPIPE_FAILED_TO_SET_SECURITY_DESCRIPTOR was added in 8.0.2."
 	case ErrNpipePipeAlreadyInUse:
 		return "ER_NPIPE_PIPE_ALREADY_IN_USE was added in 8.0.2."
-	case ErrNdbSlaveSawEpochLowerThanPreviousOnStart:
+	case ErrNdbSubordinateSawEpochLowerThanPreviousOnStart:
 		return "ER_NDB_SLAVE_SAW_EPOCH_LOWER_THAN_PREVIOUS_ON_START was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveSawEpochLowerThanPrevious:
+	case ErrNdbSubordinateSawEpochLowerThanPrevious:
 		return "ER_NDB_SLAVE_SAW_EPOCH_LOWER_THAN_PREVIOUS was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveSawAlreadyCommittedEpoch:
+	case ErrNdbSubordinateSawAlreadyCommittedEpoch:
 		return "ER_NDB_SLAVE_SAW_ALREADY_COMMITTED_EPOCH was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlavePreviousEpochNotCommitted:
+	case ErrNdbSubordinatePreviousEpochNotCommitted:
 		return "ER_NDB_SLAVE_PREVIOUS_EPOCH_NOT_COMMITTED was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveMissingDataForTimestampColumn:
+	case ErrNdbSubordinateMissingDataForTimestampColumn:
 		return "ER_NDB_SLAVE_MISSING_DATA_FOR_TIMESTAMP_COLUMN was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveLoggingExceptionsTo:
+	case ErrNdbSubordinateLoggingExceptionsTo:
 		return "ER_NDB_SLAVE_LOGGING_EXCEPTIONS_TO was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveLowEpochResolution:
+	case ErrNdbSubordinateLowEpochResolution:
 		return "ER_NDB_SLAVE_LOW_EPOCH_RESOLUTION was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbInfoFoundUnexpectedFieldType:
 		return "ER_NDB_INFO_FOUND_UNEXPECTED_FIELD_TYPE was added in 8.0.2, removed after 8.0.13."
@@ -18740,9 +18740,9 @@ func (es ErrorString) Description() string {
 		return "ER_RPL_CHANNELS_REQUIRE_NON_ZERO_SERVER_ID was added in 8.0.2."
 	case ErrRplRepoShouldBeTable:
 		return "ER_RPL_REPO_SHOULD_BE_TABLE was added in 8.0.2."
-	case ErrRplErrorCreatingMasterInfo:
+	case ErrRplErrorCreatingMainInfo:
 		return "ER_RPL_ERROR_CREATING_MASTER_INFO was added in 8.0.2."
-	case ErrRplErrorChangingMasterInfoRepoType:
+	case ErrRplErrorChangingMainInfoRepoType:
 		return "ER_RPL_ERROR_CHANGING_MASTER_INFO_REPO_TYPE was added in 8.0.2."
 	case ErrRplChangingRelayLogInfoRepoTypeFailedDueToGaps:
 		return "ER_RPL_CHANGING_RELAY_LOG_INFO_REPO_TYPE_FAILED_DUE_TO_GAPS was added in 8.0.2."
@@ -18750,23 +18750,23 @@ func (es ErrorString) Description() string {
 		return "ER_RPL_ERROR_CREATING_RELAY_LOG_INFO was added in 8.0.2."
 	case ErrRplErrorChangingRelayLogInfoRepoType:
 		return "ER_RPL_ERROR_CHANGING_RELAY_LOG_INFO_REPO_TYPE was added in 8.0.2."
-	case ErrRplFailedToDeleteFromSlaveWorkersInfoRepository:
+	case ErrRplFailedToDeleteFromSubordinateWorkersInfoRepository:
 		return "ER_RPL_FAILED_TO_DELETE_FROM_SLAVE_WORKERS_INFO_REPOSITORY was added in 8.0.2."
-	case ErrRplFailedToResetStateInSlaveInfoRepository:
+	case ErrRplFailedToResetStateInSubordinateInfoRepository:
 		return "ER_RPL_FAILED_TO_RESET_STATE_IN_SLAVE_INFO_REPOSITORY was added in 8.0.2."
 	case ErrRplErrorCheckingRepository:
 		return "ER_RPL_ERROR_CHECKING_REPOSITORY was added in 8.0.2."
-	case ErrRplSlaveGenericMessage:
+	case ErrRplSubordinateGenericMessage:
 		return "ER_RPL_SLAVE_GENERIC_MESSAGE was added in 8.0.2."
-	case ErrRplSlaveCouldNotCreateChannelList:
+	case ErrRplSubordinateCouldNotCreateChannelList:
 		return "ER_RPL_SLAVE_COULD_NOT_CREATE_CHANNEL_LIST was added in 8.0.2."
 	case ErrRplMultisourceRequiresTableTypeRepositories:
 		return "ER_RPL_MULTISOURCE_REQUIRES_TABLE_TYPE_REPOSITORIES was added in 8.0.2."
-	case ErrRplSlaveFailedToInitAMasterInfoStructure:
+	case ErrRplSubordinateFailedToInitAMainInfoStructure:
 		return "ER_RPL_SLAVE_FAILED_TO_INIT_A_MASTER_INFO_STRUCTURE was added in 8.0.2."
-	case ErrRplSlaveFailedToInitMasterInfoStructure:
+	case ErrRplSubordinateFailedToInitMainInfoStructure:
 		return "ER_RPL_SLAVE_FAILED_TO_INIT_MASTER_INFO_STRUCTURE was added in 8.0.2."
-	case ErrRplSlaveFailedToCreateChannelFromMasterInfo:
+	case ErrRplSubordinateFailedToCreateChannelFromMainInfo:
 		return "ER_RPL_SLAVE_FAILED_TO_CREATE_CHANNEL_FROM_MASTER_INFO was added in 8.0.2."
 	case ErrRplFailedToCreateNewInfoFile:
 		return "ER_RPL_FAILED_TO_CREATE_NEW_INFO_FILE was added in 8.0.2."
@@ -18836,11 +18836,11 @@ func (es ErrorString) Description() string {
 		return "ER_INIT_CREATING_DD was added in 8.0.2."
 	case ErrRplBinlogStartingDump:
 		return "ER_RPL_BINLOG_STARTING_DUMP was added in 8.0.2."
-	case ErrRplBinlogMasterSendsHeartbeat:
+	case ErrRplBinlogMainSendsHeartbeat:
 		return "ER_RPL_BINLOG_MASTER_SENDS_HEARTBEAT was added in 8.0.2."
 	case ErrRplBinlogSkippingRemainingHeartbeatInfo:
 		return "ER_RPL_BINLOG_SKIPPING_REMAINING_HEARTBEAT_INFO was added in 8.0.2."
-	case ErrRplBinlogMasterUsesChecksumAndSlaveCant:
+	case ErrRplBinlogMainUsesChecksumAndSubordinateCant:
 		return "ER_RPL_BINLOG_MASTER_USES_CHECKSUM_AND_SLAVE_CANT was added in 8.0.2."
 	case ErrNdbQueryFailed:
 		return "ER_NDB_QUERY_FAILED was added in 8.0.2, removed after 8.0.13."
@@ -18858,9 +18858,9 @@ func (es ErrorString) Description() string {
 		return "ER_PLUGIN_DID_NOT_DEINITIALIZE_THREADS was added in 8.0.2."
 	case ErrKilledThreadsOfPlugin:
 		return "ER_KILLED_THREADS_OF_PLUGIN was added in 8.0.2."
-	case ErrNdbSlaveMaxReplicatedEpochUnknown:
+	case ErrNdbSubordinateMaxReplicatedEpochUnknown:
 		return "ER_NDB_SLAVE_MAX_REPLICATED_EPOCH_UNKNOWN was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveMaxReplicatedEpochSetTo:
+	case ErrNdbSubordinateMaxReplicatedEpochSetTo:
 		return "ER_NDB_SLAVE_MAX_REPLICATED_EPOCH_SET_TO was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbNodeIdAndManagementServerInfo:
 		return "ER_NDB_NODE_ID_AND_MANAGEMENT_SERVER_INFO was added in 8.0.2, removed after 8.0.13."
@@ -18876,23 +18876,23 @@ func (es ErrorString) Description() string {
 		return "ER_NDB_COLUMN_INFO was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbOomInFixUniqueIndexAttrOrder:
 		return "ER_NDB_OOM_IN_FIX_UNIQUE_INDEX_ATTR_ORDER was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveMalformedEventReceivedOnTable:
+	case ErrNdbSubordinateMalformedEventReceivedOnTable:
 		return "ER_NDB_SLAVE_MALFORMED_EVENT_RECEIVED_ON_TABLE was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveConflictFunctionRequiresRole:
+	case ErrNdbSubordinateConflictFunctionRequiresRole:
 		return "ER_NDB_SLAVE_CONFLICT_FUNCTION_REQUIRES_ROLE was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveConflictDetectionRequiresTransactionIds:
+	case ErrNdbSubordinateConflictDetectionRequiresTransactionIds:
 		return "ER_NDB_SLAVE_CONFLICT_DETECTION_REQUIRES_TRANSACTION_IDS was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveBinlogMissingInfoForConflictDetection:
+	case ErrNdbSubordinateBinlogMissingInfoForConflictDetection:
 		return "ER_NDB_SLAVE_BINLOG_MISSING_INFO_FOR_CONFLICT_DETECTION was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbErrorInReadautoincrementvalue:
 		return "ER_NDB_ERROR_IN_READAUTOINCREMENTVALUE was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbFoundUncommittedAutocommit:
 		return "ER_NDB_FOUND_UNCOMMITTED_AUTOCOMMIT was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveTooManyRetries:
+	case ErrNdbSubordinateTooManyRetries:
 		return "ER_NDB_SLAVE_TOO_MANY_RETRIES was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveErrorInUpdateCreateInfo:
+	case ErrNdbSubordinateErrorInUpdateCreateInfo:
 		return "ER_NDB_SLAVE_ERROR_IN_UPDATE_CREATE_INFO was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveCantAllocateTableShare:
+	case ErrNdbSubordinateCantAllocateTableShare:
 		return "ER_NDB_SLAVE_CANT_ALLOCATE_TABLE_SHARE was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbBinlogErrorInfoFromDa:
 		return "ER_NDB_BINLOG_ERROR_INFO_FROM_DA was added in 8.0.2, removed after 8.0.13."
@@ -18968,15 +18968,15 @@ func (es ErrorString) Description() string {
 		return "ER_TC_HEURISTIC_RECOVERY_FAILED was added in 8.0.2."
 	case ErrTcRestartWithoutTcHeuristicRecover:
 		return "ER_TC_RESTART_WITHOUT_TC_HEURISTIC_RECOVER was added in 8.0.2."
-	case ErrRplSlaveFailedToCreateOrRecoverInfoRepositories:
+	case ErrRplSubordinateFailedToCreateOrRecoverInfoRepositories:
 		return "ER_RPL_SLAVE_FAILED_TO_CREATE_OR_RECOVER_INFO_REPOSITORIES was added in 8.0.2."
-	case ErrRplSlaveAutoPositionIs1AndGtidModeIsOff:
+	case ErrRplSubordinateAutoPositionIs1AndGtidModeIsOff:
 		return "ER_RPL_SLAVE_AUTO_POSITION_IS_1_AND_GTID_MODE_IS_OFF was added in 8.0.2."
-	case ErrRplSlaveCantStartSlaveForChannel:
+	case ErrRplSubordinateCantStartSubordinateForChannel:
 		return "ER_RPL_SLAVE_CANT_START_SLAVE_FOR_CHANNEL was added in 8.0.2."
-	case ErrRplSlaveCantStopSlaveForChannel:
+	case ErrRplSubordinateCantStopSubordinateForChannel:
 		return "ER_RPL_SLAVE_CANT_STOP_SLAVE_FOR_CHANNEL was added in 8.0.2."
-	case ErrRplRecoveryNoRotateEventFromMaster:
+	case ErrRplRecoveryNoRotateEventFromMain:
 		return "ER_RPL_RECOVERY_NO_ROTATE_EVENT_FROM_MASTER was added in 8.0.2."
 	case ErrRplRecoveryErrorReadRelayLog:
 		return "ER_RPL_RECOVERY_ERROR_READ_RELAY_LOG was added in 8.0.2."
@@ -18988,7 +18988,7 @@ func (es ErrorString) Description() string {
 		return "ER_RPL_RECOVERY_ERROR was added in 8.0.2."
 	case ErrRplRecoveryIoErrorReadingRelayLogIndex:
 		return "ER_RPL_RECOVERY_IO_ERROR_READING_RELAY_LOG_INDEX was added in 8.0.2."
-	case ErrRplRecoveryFileMasterPosInfo:
+	case ErrRplRecoveryFileMainPosInfo:
 		return "ER_RPL_RECOVERY_FILE_MASTER_POS_INFO was added in 8.0.2."
 	case ErrRplRecoveryReplicateSameServerIdRequiresPosition:
 		return "ER_RPL_RECOVERY_REPLICATE_SAME_SERVER_ID_REQUIRES_POSITION was added in 8.0.2."
@@ -19004,55 +19004,55 @@ func (es ErrorString) Description() string {
 		return "ER_RPL_MTS_RECOVERY_SUCCESSFUL was added in 8.0.2."
 	case ErrRplServerIdMissing:
 		return "ER_RPL_SERVER_ID_MISSING was added in 8.0.2."
-	case ErrRplCantCreateSlaveThread:
+	case ErrRplCantCreateSubordinateThread:
 		return "ER_RPL_CANT_CREATE_SLAVE_THREAD was added in 8.0.2."
-	case ErrRplSlaveIoThreadWasKilled:
+	case ErrRplSubordinateIoThreadWasKilled:
 		return "ER_RPL_SLAVE_IO_THREAD_WAS_KILLED was added in 8.0.2."
-	case ErrRplSlaveMasterUuidHasChanged:
+	case ErrRplSubordinateMainUuidHasChanged:
 		return "ER_RPL_SLAVE_MASTER_UUID_HAS_CHANGED was added in 8.0.2."
-	case ErrRplSlaveUsesChecksumAndMasterPre50:
+	case ErrRplSubordinateUsesChecksumAndMainPre50:
 		return "ER_RPL_SLAVE_USES_CHECKSUM_AND_MASTER_PRE_50 was added in 8.0.2."
-	case ErrRplSlaveSecondsBehindMasterDubious:
+	case ErrRplSubordinateSecondsBehindMainDubious:
 		return "ER_RPL_SLAVE_SECONDS_BEHIND_MASTER_DUBIOUS was added in 8.0.2."
-	case ErrRplSlaveCantFlushMasterInfoFile:
+	case ErrRplSubordinateCantFlushMainInfoFile:
 		return "ER_RPL_SLAVE_CANT_FLUSH_MASTER_INFO_FILE was added in 8.0.2."
-	case ErrRplSlaveReportHostTooLong:
+	case ErrRplSubordinateReportHostTooLong:
 		return "ER_RPL_SLAVE_REPORT_HOST_TOO_LONG was added in 8.0.2."
-	case ErrRplSlaveReportUserTooLong:
+	case ErrRplSubordinateReportUserTooLong:
 		return "ER_RPL_SLAVE_REPORT_USER_TOO_LONG was added in 8.0.2."
-	case ErrRplSlaveReportPasswordTooLong:
+	case ErrRplSubordinateReportPasswordTooLong:
 		return "ER_RPL_SLAVE_REPORT_PASSWORD_TOO_LONG was added in 8.0.2."
-	case ErrRplSlaveErrorRetrying:
+	case ErrRplSubordinateErrorRetrying:
 		return "ER_RPL_SLAVE_ERROR_RETRYING was added in 8.0.2."
-	case ErrRplSlaveErrorReadingFromServer:
+	case ErrRplSubordinateErrorReadingFromServer:
 		return "ER_RPL_SLAVE_ERROR_READING_FROM_SERVER was added in 8.0.2."
-	case ErrRplSlaveDumpThreadKilledByMaster:
+	case ErrRplSubordinateDumpThreadKilledByMain:
 		return "ER_RPL_SLAVE_DUMP_THREAD_KILLED_BY_MASTER was added in 8.0.2."
 	case ErrRplMtsStatistics:
 		return "ER_RPL_MTS_STATISTICS was added in 8.0.2."
 	case ErrRplMtsRecoveryComplete:
 		return "ER_RPL_MTS_RECOVERY_COMPLETE was added in 8.0.2."
-	case ErrRplSlaveCantInitRelayLogPosition:
+	case ErrRplSubordinateCantInitRelayLogPosition:
 		return "ER_RPL_SLAVE_CANT_INIT_RELAY_LOG_POSITION was added in 8.0.2."
-	case ErrRplSlaveConnectedToMasterReplicationStarted:
+	case ErrRplSubordinateConnectedToMainReplicationStarted:
 		return "ER_RPL_SLAVE_CONNECTED_TO_MASTER_REPLICATION_STARTED was added in 8.0.2."
-	case ErrRplSlaveIoThreadKilled:
+	case ErrRplSubordinateIoThreadKilled:
 		return "ER_RPL_SLAVE_IO_THREAD_KILLED was added in 8.0.2."
-	case ErrRplSlaveIoThreadCantRegisterOnMaster:
+	case ErrRplSubordinateIoThreadCantRegisterOnMain:
 		return "ER_RPL_SLAVE_IO_THREAD_CANT_REGISTER_ON_MASTER was added in 8.0.2."
-	case ErrRplSlaveForcingToReconnectIoThread:
+	case ErrRplSubordinateForcingToReconnectIoThread:
 		return "ER_RPL_SLAVE_FORCING_TO_RECONNECT_IO_THREAD was added in 8.0.2."
-	case ErrRplSlaveErrorRequestingBinlogDump:
+	case ErrRplSubordinateErrorRequestingBinlogDump:
 		return "ER_RPL_SLAVE_ERROR_REQUESTING_BINLOG_DUMP was added in 8.0.2."
-	case ErrRplLogEntryExceedsSlaveMaxAllowedPacket:
+	case ErrRplLogEntryExceedsSubordinateMaxAllowedPacket:
 		return "ER_RPL_LOG_ENTRY_EXCEEDS_SLAVE_MAX_ALLOWED_PACKET was added in 8.0.2."
-	case ErrRplSlaveStoppingAsMasterOom:
+	case ErrRplSubordinateStoppingAsMainOom:
 		return "ER_RPL_SLAVE_STOPPING_AS_MASTER_OOM was added in 8.0.2."
-	case ErrRplSlaveIoThreadAbortedWaitingForRelayLogSpace:
+	case ErrRplSubordinateIoThreadAbortedWaitingForRelayLogSpace:
 		return "ER_RPL_SLAVE_IO_THREAD_ABORTED_WAITING_FOR_RELAY_LOG_SPACE was added in 8.0.2."
-	case ErrRplSlaveIoThreadExiting:
+	case ErrRplSubordinateIoThreadExiting:
 		return "ER_RPL_SLAVE_IO_THREAD_EXITING was added in 8.0.2."
-	case ErrRplSlaveCantInitializeSlaveWorker:
+	case ErrRplSubordinateCantInitializeSubordinateWorker:
 		return "ER_RPL_SLAVE_CANT_INITIALIZE_SLAVE_WORKER was added in 8.0.2."
 	case ErrRplMtsGroupRecoveryRelayLogInfoForWorker:
 		return "ER_RPL_MTS_GROUP_RECOVERY_RELAY_LOG_INFO_FOR_WORKER was added in 8.0.2."
@@ -19064,55 +19064,55 @@ func (es ErrorString) Description() string {
 		return "ER_RPL_CANT_FIND_FOLLOWUP_FILE was added in 8.0.2."
 	case ErrRplMtsCheckpointPeriodDiffersFromCnt:
 		return "ER_RPL_MTS_CHECKPOINT_PERIOD_DIFFERS_FROM_CNT was added in 8.0.2."
-	case ErrRplSlaveWorkerThreadCreationFailed:
+	case ErrRplSubordinateWorkerThreadCreationFailed:
 		return "ER_RPL_SLAVE_WORKER_THREAD_CREATION_FAILED was added in 8.0.2."
-	case ErrRplSlaveWorkerThreadCreationFailedWithErrno:
+	case ErrRplSubordinateWorkerThreadCreationFailedWithErrno:
 		return "ER_RPL_SLAVE_WORKER_THREAD_CREATION_FAILED_WITH_ERRNO was added in 8.0.2."
-	case ErrRplSlaveFailedToInitPartitionsHash:
+	case ErrRplSubordinateFailedToInitPartitionsHash:
 		return "ER_RPL_SLAVE_FAILED_TO_INIT_PARTITIONS_HASH was added in 8.0.2."
-	case ErrRplSlaveNdbTablesNotAvailable:
+	case ErrRplSubordinateNdbTablesNotAvailable:
 		return "ER_RPL_SLAVE_NDB_TABLES_NOT_AVAILABLE was added in 8.0.2, removed after 8.0.13."
-	case ErrRplSlaveSqlThreadStarting:
+	case ErrRplSubordinateSqlThreadStarting:
 		return "ER_RPL_SLAVE_SQL_THREAD_STARTING was added in 8.0.2."
-	case ErrRplSlaveSkipCounterExecuted:
+	case ErrRplSubordinateSkipCounterExecuted:
 		return "ER_RPL_SLAVE_SKIP_COUNTER_EXECUTED was added in 8.0.2."
-	case ErrRplSlaveAdditionalErrorInfoFromDa:
+	case ErrRplSubordinateAdditionalErrorInfoFromDa:
 		return "ER_RPL_SLAVE_ADDITIONAL_ERROR_INFO_FROM_DA was added in 8.0.2."
-	case ErrRplSlaveErrorInfoFromDa:
+	case ErrRplSubordinateErrorInfoFromDa:
 		return "ER_RPL_SLAVE_ERROR_INFO_FROM_DA was added in 8.0.2."
-	case ErrRplSlaveErrorLoadingUserDefinedLibrary:
+	case ErrRplSubordinateErrorLoadingUserDefinedLibrary:
 		return "ER_RPL_SLAVE_ERROR_LOADING_USER_DEFINED_LIBRARY was added in 8.0.2."
-	case ErrRplSlaveErrorRunningQuery:
+	case ErrRplSubordinateErrorRunningQuery:
 		return "ER_RPL_SLAVE_ERROR_RUNNING_QUERY was added in 8.0.2."
-	case ErrRplSlaveSqlThreadExiting:
+	case ErrRplSubordinateSqlThreadExiting:
 		return "ER_RPL_SLAVE_SQL_THREAD_EXITING was added in 8.0.2."
-	case ErrRplSlaveReadInvalidEventFromMaster:
+	case ErrRplSubordinateReadInvalidEventFromMain:
 		return "ER_RPL_SLAVE_READ_INVALID_EVENT_FROM_MASTER was added in 8.0.2."
-	case ErrRplSlaveQueueEventFailedInvalidConfiguration:
+	case ErrRplSubordinateQueueEventFailedInvalidConfiguration:
 		return "ER_RPL_SLAVE_QUEUE_EVENT_FAILED_INVALID_CONFIGURATION was added in 8.0.2."
-	case ErrRplSlaveIoThreadDetectedUnexpectedEventSequence:
+	case ErrRplSubordinateIoThreadDetectedUnexpectedEventSequence:
 		return "ER_RPL_SLAVE_IO_THREAD_DETECTED_UNEXPECTED_EVENT_SEQUENCE was added in 8.0.2."
-	case ErrRplSlaveCantUseCharset:
+	case ErrRplSubordinateCantUseCharset:
 		return "ER_RPL_SLAVE_CANT_USE_CHARSET was added in 8.0.2."
-	case ErrRplSlaveConnectedToMasterReplicationResumed:
+	case ErrRplSubordinateConnectedToMainReplicationResumed:
 		return "ER_RPL_SLAVE_CONNECTED_TO_MASTER_REPLICATION_RESUMED was added in 8.0.2."
-	case ErrRplSlaveNextLogIsActive:
+	case ErrRplSubordinateNextLogIsActive:
 		return "ER_RPL_SLAVE_NEXT_LOG_IS_ACTIVE was added in 8.0.2."
-	case ErrRplSlaveNextLogIsInactive:
+	case ErrRplSubordinateNextLogIsInactive:
 		return "ER_RPL_SLAVE_NEXT_LOG_IS_INACTIVE was added in 8.0.2."
-	case ErrRplSlaveSqlThreadIoErrorReadingEvent:
+	case ErrRplSubordinateSqlThreadIoErrorReadingEvent:
 		return "ER_RPL_SLAVE_SQL_THREAD_IO_ERROR_READING_EVENT was added in 8.0.2."
-	case ErrRplSlaveErrorReadingRelayLogEvents:
+	case ErrRplSubordinateErrorReadingRelayLogEvents:
 		return "ER_RPL_SLAVE_ERROR_READING_RELAY_LOG_EVENTS was added in 8.0.2."
-	case ErrSlaveChangeMasterToExecuted:
+	case ErrSubordinateChangeMainToExecuted:
 		return "ER_SLAVE_CHANGE_MASTER_TO_EXECUTED was added in 8.0.2."
-	case ErrRplSlaveNewMasterInfoNeedsReposTypeOtherThanFile:
+	case ErrRplSubordinateNewMainInfoNeedsReposTypeOtherThanFile:
 		return "ER_RPL_SLAVE_NEW_MASTER_INFO_NEEDS_REPOS_TYPE_OTHER_THAN_FILE was added in 8.0.2."
 	case ErrRplFailedToStatLogInIndex:
 		return "ER_RPL_FAILED_TO_STAT_LOG_IN_INDEX was added in 8.0.2."
 	case ErrRplLogNotFoundWhileCountingRelayLogSpace:
 		return "ER_RPL_LOG_NOT_FOUND_WHILE_COUNTING_RELAY_LOG_SPACE was added in 8.0.2."
-	case ErrSlaveCantUseTempdir:
+	case ErrSubordinateCantUseTempdir:
 		return "ER_SLAVE_CANT_USE_TEMPDIR was added in 8.0.2."
 	case ErrRplRelayLogNeedsFileNotDirectory:
 		return "ER_RPL_RELAY_LOG_NEEDS_FILE_NOT_DIRECTORY was added in 8.0.2."
@@ -19232,7 +19232,7 @@ func (es ErrorString) Description() string {
 		return "ER_NDB_BINLOG_CANT_COMMIT_TO_NDB_BINLOG_INDEX was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbBinlogWriteToNdbBinlogIndexFailedAfterKill:
 		return "ER_NDB_BINLOG_WRITE_TO_NDB_BINLOG_INDEX_FAILED_AFTER_KILL was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbBinlogUsingServerId0SlavesWillNot:
+	case ErrNdbBinlogUsingServerId0SubordinatesWillNot:
 		return "ER_NDB_BINLOG_USING_SERVER_ID_0_SLAVES_WILL_NOT was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbServerIdReservedOrTooLarge:
 		return "ER_NDB_SERVER_ID_RESERVED_OR_TOO_LARGE was added in 8.0.2, removed after 8.0.13."
@@ -19298,7 +19298,7 @@ func (es ErrorString) Description() string {
 		return "ER_NDB_COULD_NOT_GET_APPLY_STATUS_SHARE was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbBinlogServerShutdownDuringNdbClusterStart:
 		return "ER_NDB_BINLOG_SERVER_SHUTDOWN_DURING_NDB_CLUSTER_START was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbBinlogClusterRestartedResetMasterSuggested:
+	case ErrNdbBinlogClusterRestartedResetMainSuggested:
 		return "ER_NDB_BINLOG_CLUSTER_RESTARTED_RESET_MASTER_SUGGESTED was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbBinlogClusterHasReconnected:
 		return "ER_NDB_BINLOG_CLUSTER_HAS_RECONNECTED was added in 8.0.2, removed after 8.0.13."
@@ -19344,9 +19344,9 @@ func (es ErrorString) Description() string {
 		return "ER_WRONG_COUNT_FOR_KEY was added in 8.0.2."
 	case ErrWrongCountOfElements:
 		return "ER_WRONG_COUNT_OF_ELEMENTS was added in 8.0.2."
-	case ErrRplErrorReadingSlaveWorkerConfiguration:
+	case ErrRplErrorReadingSubordinateWorkerConfiguration:
 		return "ER_RPL_ERROR_READING_SLAVE_WORKER_CONFIGURATION was added in 8.0.2."
-	case ErrRplErrorWritingSlaveWorkerConfiguration:
+	case ErrRplErrorWritingSubordinateWorkerConfiguration:
 		return "ER_RPL_ERROR_WRITING_SLAVE_WORKER_CONFIGURATION was added in 8.0.2, removed after 8.0.18."
 	case ErrRplFailedToOpenRelayLog:
 		return "ER_RPL_FAILED_TO_OPEN_RELAY_LOG was added in 8.0.2."
@@ -19354,7 +19354,7 @@ func (es ErrorString) Description() string {
 		return "ER_RPL_WORKER_CANT_READ_RELAY_LOG was added in 8.0.2."
 	case ErrRplWorkerCantFindNextRelayLog:
 		return "ER_RPL_WORKER_CANT_FIND_NEXT_RELAY_LOG was added in 8.0.2."
-	case ErrRplMtsSlaveCoordinatorHasWaited:
+	case ErrRplMtsSubordinateCoordinatorHasWaited:
 		return "ER_RPL_MTS_SLAVE_COORDINATOR_HAS_WAITED was added in 8.0.2."
 	case ErrBinlogFailedToWriteDropForTempTables:
 		return "ER_BINLOG_FAILED_TO_WRITE_DROP_FOR_TEMP_TABLES was added in 8.0.2."
@@ -19366,11 +19366,11 @@ func (es ErrorString) Description() string {
 		return "ER_FAILED_TO_REMOVE_TEMP_TABLE was added in 8.0.2."
 	case ErrSystemTableNotTransactional:
 		return "ER_SYSTEM_TABLE_NOT_TRANSACTIONAL was added in 8.0.2."
-	case ErrRplErrorWritingMasterConfiguration:
+	case ErrRplErrorWritingMainConfiguration:
 		return "ER_RPL_ERROR_WRITING_MASTER_CONFIGURATION was added in 8.0.2."
-	case ErrRplErrorReadingMasterConfiguration:
+	case ErrRplErrorReadingMainConfiguration:
 		return "ER_RPL_ERROR_READING_MASTER_CONFIGURATION was added in 8.0.2."
-	case ErrRplSslInfoInMasterInfoIgnored:
+	case ErrRplSslInfoInMainInfoIgnored:
 		return "ER_RPL_SSL_INFO_IN_MASTER_INFO_IGNORED was added in 8.0.2."
 	case ErrPluginFailedDeinitialization:
 		return "ER_PLUGIN_FAILED_DEINITIALIZATION was added in 8.0.2."
@@ -19616,7 +19616,7 @@ func (es ErrorString) Description() string {
 		return "ER_BINLOG_CANT_DELETE_FILE_AND_READ_BINLOG_INDEX was added in 8.0.2."
 	case ErrBinlogFailedToDeleteLogFile:
 		return "ER_BINLOG_FAILED_TO_DELETE_LOG_FILE was added in 8.0.2."
-	case ErrBinlogLoggingIncidentToStopSlaves:
+	case ErrBinlogLoggingIncidentToStopSubordinates:
 		return "ER_BINLOG_LOGGING_INCIDENT_TO_STOP_SLAVES was added in 8.0.2."
 	case ErrBinlogCantFindLogInIndex:
 		return "ER_BINLOG_CANT_FIND_LOG_IN_INDEX was added in 8.0.2."
@@ -19700,15 +19700,15 @@ func (es ErrorString) Description() string {
 		return "ER_AUDIT_WARNING was added in 8.0.2."
 	case ErrNdbNumberOfChannels:
 		return "ER_NDB_NUMBER_OF_CHANNELS was added in 8.0.2, removed after 8.0.13."
-	case ErrNdbSlaveParallelWorkers:
+	case ErrNdbSubordinateParallelWorkers:
 		return "ER_NDB_SLAVE_PARALLEL_WORKERS was added in 8.0.2, removed after 8.0.13."
 	case ErrNdbDistributingErr:
 		return "ER_NDB_DISTRIBUTING_ERR was added in 8.0.2, removed after 8.0.13."
-	case ErrRplSlaveInsecureChangeMaster:
+	case ErrRplSubordinateInsecureChangeMain:
 		return "ER_RPL_SLAVE_INSECURE_CHANGE_MASTER was added in 8.0.4."
-	case ErrRplSlaveFlushRelayLogsNotAllowed:
+	case ErrRplSubordinateFlushRelayLogsNotAllowed:
 		return "ER_RPL_SLAVE_FLUSH_RELAY_LOGS_NOT_ALLOWED was added in 8.0.4, removed after 8.0.15."
-	case ErrRplSlaveIncorrectChannel:
+	case ErrRplSubordinateIncorrectChannel:
 		return "ER_RPL_SLAVE_INCORRECT_CHANNEL was added in 8.0.4."
 	case ErrFailedToFindDlEntry:
 		return "ER_FAILED_TO_FIND_DL_ENTRY was added in 8.0.4."
@@ -19828,15 +19828,15 @@ func (es ErrorString) Description() string {
 		return "ER_BINLOG_FILE_OPEN_FAILED was added in 8.0.4."
 	case ErrBinlogEventWriteToStmtCacheFailed:
 		return "ER_BINLOG_EVENT_WRITE_TO_STMT_CACHE_FAILED was added in 8.0.4."
-	case ErrSlaveRelayLogTruncateInfo:
+	case ErrSubordinateRelayLogTruncateInfo:
 		return "ER_SLAVE_RELAY_LOG_TRUNCATE_INFO was added in 8.0.4."
-	case ErrSlaveRelayLogPurgeFailed:
+	case ErrSubordinateRelayLogPurgeFailed:
 		return "ER_SLAVE_RELAY_LOG_PURGE_FAILED was added in 8.0.4."
-	case ErrRplSlaveFilterCreateFailed:
+	case ErrRplSubordinateFilterCreateFailed:
 		return "ER_RPL_SLAVE_FILTER_CREATE_FAILED was added in 8.0.4."
-	case ErrRplSlaveGlobalFiltersCopyFailed:
+	case ErrRplSubordinateGlobalFiltersCopyFailed:
 		return "ER_RPL_SLAVE_GLOBAL_FILTERS_COPY_FAILED was added in 8.0.4."
-	case ErrRplSlaveResetFilterOptions:
+	case ErrRplSubordinateResetFilterOptions:
 		return "ER_RPL_SLAVE_RESET_FILTER_OPTIONS was added in 8.0.4."
 	case ErrMissingGrantSystemTable:
 		return "ER_MISSING_GRANT_SYSTEM_TABLE was added in 8.0.4."
@@ -19958,15 +19958,15 @@ func (es ErrorString) Description() string {
 		return "ER_FAILED_TO_CONSTRUCT_DROP_EVENT_QUERY was added in 8.0.4."
 	case ErrFailedToBinlogDropEvent:
 		return "ER_FAILED_TO_BINLOG_DROP_EVENT was added in 8.0.4."
-	case ErrFailedToStartSlaveThread:
+	case ErrFailedToStartSubordinateThread:
 		return "ER_FAILED_TO_START_SLAVE_THREAD was added in 8.0.4."
 	case ErrRplIoThreadKilled:
 		return "ER_RPL_IO_THREAD_KILLED was added in 8.0.4."
-	case ErrSlaveReconnectFailed:
+	case ErrSubordinateReconnectFailed:
 		return "ER_SLAVE_RECONNECT_FAILED was added in 8.0.4."
-	case ErrSlaveKilledAfterReconnect:
+	case ErrSubordinateKilledAfterReconnect:
 		return "ER_SLAVE_KILLED_AFTER_RECONNECT was added in 8.0.4."
-	case ErrSlaveNotStartedOnSomeChannels:
+	case ErrSubordinateNotStartedOnSomeChannels:
 		return "ER_SLAVE_NOT_STARTED_ON_SOME_CHANNELS was added in 8.0.4."
 	case ErrFailedToAddRplFilter:
 		return "ER_FAILED_TO_ADD_RPL_FILTER was added in 8.0.4."
@@ -20192,19 +20192,19 @@ func (es ErrorString) Description() string {
 		return "ER_SEMISYNC_SERVER_REPLY was added in 8.0.4."
 	case ErrSemisyncFunctionCalledTwice:
 		return "ER_SEMISYNC_FUNCTION_CALLED_TWICE was added in 8.0.4."
-	case ErrSemisyncRplEnabledOnMaster:
+	case ErrSemisyncRplEnabledOnMain:
 		return "ER_SEMISYNC_RPL_ENABLED_ON_MASTER was added in 8.0.4."
-	case ErrSemisyncMasterOom:
+	case ErrSemisyncMainOom:
 		return "ER_SEMISYNC_MASTER_OOM was added in 8.0.4."
-	case ErrSemisyncDisabledOnMaster:
+	case ErrSemisyncDisabledOnMain:
 		return "ER_SEMISYNC_DISABLED_ON_MASTER was added in 8.0.4."
 	case ErrSemisyncForcedShutdown:
 		return "ER_SEMISYNC_FORCED_SHUTDOWN was added in 8.0.4."
-	case ErrSemisyncMasterGotReplyAtPos:
+	case ErrSemisyncMainGotReplyAtPos:
 		return "ER_SEMISYNC_MASTER_GOT_REPLY_AT_POS was added in 8.0.4."
-	case ErrSemisyncMasterSignalAllWaitingThreads:
+	case ErrSemisyncMainSignalAllWaitingThreads:
 		return "ER_SEMISYNC_MASTER_SIGNAL_ALL_WAITING_THREADS was added in 8.0.4."
-	case ErrSemisyncMasterTrxWaitPos:
+	case ErrSemisyncMainTrxWaitPos:
 		return "ER_SEMISYNC_MASTER_TRX_WAIT_POS was added in 8.0.4."
 	case ErrSemisyncBinlogReplyIsAhead:
 		return "ER_SEMISYNC_BINLOG_REPLY_IS_AHEAD was added in 8.0.4."
@@ -20230,13 +20230,13 @@ func (es ErrorString) Description() string {
 		return "ER_SEMISYNC_FAILED_TO_INSERT_TRX_NODE was added in 8.0.4."
 	case ErrSemisyncTrxSkippedAtPos:
 		return "ER_SEMISYNC_TRX_SKIPPED_AT_POS was added in 8.0.4."
-	case ErrSemisyncMasterFailedOnNetFlush:
+	case ErrSemisyncMainFailedOnNetFlush:
 		return "ER_SEMISYNC_MASTER_FAILED_ON_NET_FLUSH was added in 8.0.4."
 	case ErrSemisyncReceivedAckIsSmaller:
 		return "ER_SEMISYNC_RECEIVED_ACK_IS_SMALLER was added in 8.0.4."
 	case ErrSemisyncAddAckToSlot:
 		return "ER_SEMISYNC_ADD_ACK_TO_SLOT was added in 8.0.4."
-	case ErrSemisyncUpdateExistingSlaveAck:
+	case ErrSemisyncUpdateExistingSubordinateAck:
 		return "ER_SEMISYNC_UPDATE_EXISTING_SLAVE_ACK was added in 8.0.4."
 	case ErrSemisyncFailedToStartAckReceiverThd:
 		return "ER_SEMISYNC_FAILED_TO_START_ACK_RECEIVER_THD was added in 8.0.4."
@@ -20246,11 +20246,11 @@ func (es ErrorString) Description() string {
 		return "ER_SEMISYNC_FAILED_TO_WAIT_ON_DUMP_SOCKET was added in 8.0.4."
 	case ErrSemisyncStoppingAckReceiverThread:
 		return "ER_SEMISYNC_STOPPING_ACK_RECEIVER_THREAD was added in 8.0.4."
-	case ErrSemisyncFailedRegisterSlaveToReceiver:
+	case ErrSemisyncFailedRegisterSubordinateToReceiver:
 		return "ER_SEMISYNC_FAILED_REGISTER_SLAVE_TO_RECEIVER was added in 8.0.4."
-	case ErrSemisyncStartBinlogDumpToSlave:
+	case ErrSemisyncStartBinlogDumpToSubordinate:
 		return "ER_SEMISYNC_START_BINLOG_DUMP_TO_SLAVE was added in 8.0.4."
-	case ErrSemisyncStopBinlogDumpToSlave:
+	case ErrSemisyncStopBinlogDumpToSubordinate:
 		return "ER_SEMISYNC_STOP_BINLOG_DUMP_TO_SLAVE was added in 8.0.4."
 	case ErrSemisyncUnregisterTrxObserverFailed:
 		return "ER_SEMISYNC_UNREGISTER_TRX_OBSERVER_FAILED was added in 8.0.4."
@@ -20262,23 +20262,23 @@ func (es ErrorString) Description() string {
 		return "ER_SEMISYNC_UNREGISTERED_REPLICATOR was added in 8.0.4."
 	case ErrSemisyncSocketFdTooLarge:
 		return "ER_SEMISYNC_SOCKET_FD_TOO_LARGE was added in 8.0.4."
-	case ErrSemisyncSlaveReply:
+	case ErrSemisyncSubordinateReply:
 		return "ER_SEMISYNC_SLAVE_REPLY was added in 8.0.4."
 	case ErrSemisyncMissingMagicNoForSemisyncPkt:
 		return "ER_SEMISYNC_MISSING_MAGIC_NO_FOR_SEMISYNC_PKT was added in 8.0.4."
-	case ErrSemisyncSlaveStart:
+	case ErrSemisyncSubordinateStart:
 		return "ER_SEMISYNC_SLAVE_START was added in 8.0.4."
-	case ErrSemisyncSlaveReplyWithBinlogInfo:
+	case ErrSemisyncSubordinateReplyWithBinlogInfo:
 		return "ER_SEMISYNC_SLAVE_REPLY_WITH_BINLOG_INFO was added in 8.0.4."
-	case ErrSemisyncSlaveNetFlushReplyFailed:
+	case ErrSemisyncSubordinateNetFlushReplyFailed:
 		return "ER_SEMISYNC_SLAVE_NET_FLUSH_REPLY_FAILED was added in 8.0.4."
-	case ErrSemisyncSlaveSendReplyFailed:
+	case ErrSemisyncSubordinateSendReplyFailed:
 		return "ER_SEMISYNC_SLAVE_SEND_REPLY_FAILED was added in 8.0.4."
-	case ErrSemisyncExecutionFailedOnMaster:
+	case ErrSemisyncExecutionFailedOnMain:
 		return "ER_SEMISYNC_EXECUTION_FAILED_ON_MASTER was added in 8.0.4."
-	case ErrSemisyncNotSupportedByMaster:
+	case ErrSemisyncNotSupportedByMain:
 		return "ER_SEMISYNC_NOT_SUPPORTED_BY_MASTER was added in 8.0.4."
-	case ErrSemisyncSlaveSetFailed:
+	case ErrSemisyncSubordinateSetFailed:
 		return "ER_SEMISYNC_SLAVE_SET_FAILED was added in 8.0.4."
 	case ErrSemisyncFailedToStopAckReceiverThd:
 		return "ER_SEMISYNC_FAILED_TO_STOP_ACK_RECEIVER_THD was added in 8.0.4."
@@ -20432,7 +20432,7 @@ func (es ErrorString) Description() string {
 		return "ER_SYS_VAR_COMPONENT_FAILED_TO_MAKE_VARIABLE_PERSISTENT was added in 8.0.4."
 	case ErrComponentFilterConfused:
 		return "ER_COMPONENT_FILTER_CONFUSED was added in 8.0.4."
-	case ErrStopSlaveIoThreadDiskSpace:
+	case ErrStopSubordinateIoThreadDiskSpace:
 		return "ER_STOP_SLAVE_IO_THREAD_DISK_SPACE was added in 8.0.2."
 	case ErrLogFileCannotOpen:
 		return "ER_LOG_FILE_CANNOT_OPEN was added in 8.0.2."
@@ -20968,13 +20968,13 @@ func (es ErrorString) Description() string {
 		return "ER_GRP_RPL_APPLIER_THD_STOP_ERROR was added in 8.0.11."
 	case ErrGrpRplFetchTransDataFailed:
 		return "ER_GRP_RPL_FETCH_TRANS_DATA_FAILED was added in 8.0.11."
-	case ErrGrpRplSlaveIoThdPrimaryUnknown:
+	case ErrGrpRplSubordinateIoThdPrimaryUnknown:
 		return "ER_GRP_RPL_SLAVE_IO_THD_PRIMARY_UNKNOWN was added in 8.0.11."
 	case ErrGrpRplSalveIoThdOnSecondaryMember:
 		return "ER_GRP_RPL_SALVE_IO_THD_ON_SECONDARY_MEMBER was added in 8.0.11."
-	case ErrGrpRplSlaveSqlThdPrimaryUnknown:
+	case ErrGrpRplSubordinateSqlThdPrimaryUnknown:
 		return "ER_GRP_RPL_SLAVE_SQL_THD_PRIMARY_UNKNOWN was added in 8.0.11."
-	case ErrGrpRplSlaveSqlThdOnSecondaryMember:
+	case ErrGrpRplSubordinateSqlThdOnSecondaryMember:
 		return "ER_GRP_RPL_SLAVE_SQL_THD_ON_SECONDARY_MEMBER was added in 8.0.11."
 	case ErrGrpRplNeedsInnodbTable:
 		return "ER_GRP_RPL_NEEDS_INNODB_TABLE was added in 8.0.11."
@@ -21248,17 +21248,17 @@ func (es ErrorString) Description() string {
 		return "ER_GRP_RPL_BINLOG_DISABLED was added in 8.0.11."
 	case ErrGrpRplGtidModeOff:
 		return "ER_GRP_RPL_GTID_MODE_OFF was added in 8.0.11."
-	case ErrGrpRplLogSlaveUpdatesNotSet:
+	case ErrGrpRplLogSubordinateUpdatesNotSet:
 		return "ER_GRP_RPL_LOG_SLAVE_UPDATES_NOT_SET was added in 8.0.11."
 	case ErrGrpRplInvalidTransWriteSetExtractionValue:
 		return "ER_GRP_RPL_INVALID_TRANS_WRITE_SET_EXTRACTION_VALUE was added in 8.0.11."
 	case ErrGrpRplRelayLogInfoRepoMustBeTable:
 		return "ER_GRP_RPL_RELAY_LOG_INFO_REPO_MUST_BE_TABLE was added in 8.0.11."
-	case ErrGrpRplMasterInfoRepoMustBeTable:
+	case ErrGrpRplMainInfoRepoMustBeTable:
 		return "ER_GRP_RPL_MASTER_INFO_REPO_MUST_BE_TABLE was added in 8.0.11."
 	case ErrGrpRplIncorrectTypeSetForParallelApplier:
 		return "ER_GRP_RPL_INCORRECT_TYPE_SET_FOR_PARALLEL_APPLIER was added in 8.0.11."
-	case ErrGrpRplSlavePreserveCommitOrderNotSet:
+	case ErrGrpRplSubordinatePreserveCommitOrderNotSet:
 		return "ER_GRP_RPL_SLAVE_PRESERVE_COMMIT_ORDER_NOT_SET was added in 8.0.11."
 	case ErrGrpRplSinglePrimModeNotAllowedWithUpdateEverywhere:
 		return "ER_GRP_RPL_SINGLE_PRIM_MODE_NOT_ALLOWED_WITH_UPDATE_EVERYWHERE was added in 8.0.11."
@@ -21366,13 +21366,13 @@ func (es ErrorString) Description() string {
 		return "ER_GRP_RPL_STOP_REP_CHANNEL was added in 8.0.11, removed after 8.0.17."
 	case ErrGrpRplGcsGrErrorMsg:
 		return "ER_GRP_RPL_GCS_GR_ERROR_MSG was added in 8.0.11."
-	case ErrGrpRplSlaveIoThreadUnblocked:
+	case ErrGrpRplSubordinateIoThreadUnblocked:
 		return "ER_GRP_RPL_SLAVE_IO_THREAD_UNBLOCKED was added in 8.0.11."
-	case ErrGrpRplSlaveIoThreadErrorOut:
+	case ErrGrpRplSubordinateIoThreadErrorOut:
 		return "ER_GRP_RPL_SLAVE_IO_THREAD_ERROR_OUT was added in 8.0.11."
-	case ErrGrpRplSlaveApplierThreadUnblocked:
+	case ErrGrpRplSubordinateApplierThreadUnblocked:
 		return "ER_GRP_RPL_SLAVE_APPLIER_THREAD_UNBLOCKED was added in 8.0.11."
-	case ErrGrpRplSlaveApplierThreadErrorOut:
+	case ErrGrpRplSubordinateApplierThreadErrorOut:
 		return "ER_GRP_RPL_SLAVE_APPLIER_THREAD_ERROR_OUT was added in 8.0.11."
 	case ErrLdapAuthFailedToCreateOrGetConnection:
 		return "ER_LDAP_AUTH_FAILED_TO_CREATE_OR_GET_CONNECTION was added in 8.0.11."
@@ -24084,9 +24084,9 @@ func (es ErrorString) Description() string {
 		return "ER_IB_MSG_1269 was added in 8.0.11."
 	case ErrIbMsg1270:
 		return "ER_IB_MSG_1270 was added in 8.0.11."
-	case ErrRplSlaveSqlThreadStopCmdExecTimeout:
+	case ErrRplSubordinateSqlThreadStopCmdExecTimeout:
 		return "ER_RPL_SLAVE_SQL_THREAD_STOP_CMD_EXEC_TIMEOUT was added in 8.0.11."
-	case ErrRplSlaveIoThreadStopCmdExecTimeout:
+	case ErrRplSubordinateIoThreadStopCmdExecTimeout:
 		return "ER_RPL_SLAVE_IO_THREAD_STOP_CMD_EXEC_TIMEOUT was added in 8.0.11."
 	case ErrRplGtidUnsafeStmtOnNonTransTable:
 		return "ER_RPL_GTID_UNSAFE_STMT_ON_NON_TRANS_TABLE was added in 8.0.11."
@@ -24117,28 +24117,28 @@ func (es ErrorString) Description() string {
 	case ErrXpluginFailedToStopServices:
 		return "ER_XPLUGIN_FAILED_TO_STOP_SERVICES was added in 8.0.11."
 	case ErrInconsistentError:
-		return "Message: Query caused different errors on master and slave. Error on master: message (format)='%s' error code=%d; Error on slave:actual message='%s', error code=%d. Default database:'%s'. Query:'%s'"
-	case ErrServerMasterFatalErrorReadingBinlog:
+		return "Message: Query caused different errors on main and subordinate. Error on main: message (format)='%s' error code=%d; Error on subordinate:actual message='%s', error code=%d. Default database:'%s'. Query:'%s'"
+	case ErrServerMainFatalErrorReadingBinlog:
 		return "ER_SERVER_MASTER_FATAL_ERROR_READING_BINLOG was added in 8.0.11."
 	case ErrNetworkReadEventChecksumFailure:
 		return "Message: Replication event checksum verification failed while reading from network."
-	case ErrSlaveCreateEventFailure:
+	case ErrSubordinateCreateEventFailure:
 		return "Message: Failed to create %s"
-	case ErrSlaveFatalError:
+	case ErrSubordinateFatalError:
 		return "Message: Fatal error: %s"
-	case ErrSlaveHeartbeatFailure:
-		return "Message: Unexpected master's heartbeat data: %s"
-	case ErrSlaveIncident:
-		return "Message: The incident %s occurred on the master. Message: %s"
-	case ErrSlaveMasterComFailure:
-		return "Message: Master command %s failed: %s"
-	case ErrSlaveRelayLogReadFailure:
+	case ErrSubordinateHeartbeatFailure:
+		return "Message: Unexpected main's heartbeat data: %s"
+	case ErrSubordinateIncident:
+		return "Message: The incident %s occurred on the main. Message: %s"
+	case ErrSubordinateMainComFailure:
+		return "Message: Main command %s failed: %s"
+	case ErrSubordinateRelayLogReadFailure:
 		return "Message: Relay log read failure: %s"
-	case ErrSlaveRelayLogWriteFailure:
+	case ErrSubordinateRelayLogWriteFailure:
 		return "Message: Relay log write failure: %s"
-	case ErrServerSlaveMiInitRepository:
+	case ErrServerSubordinateMiInitRepository:
 		return "ER_SERVER_SLAVE_MI_INIT_REPOSITORY was added in 8.0.11."
-	case ErrServerSlaveRliInitRepository:
+	case ErrServerSubordinateRliInitRepository:
 		return "ER_SERVER_SLAVE_RLI_INIT_REPOSITORY was added in 8.0.11."
 	case ErrServerNetPacketTooLarge:
 		return "ER_SERVER_NET_PACKET_TOO_LARGE was added in 8.0.11."
@@ -24180,11 +24180,11 @@ func (es ErrorString) Description() string {
 		return "ER_SERVER_COL_COUNT_DOESNT_MATCH_CORRUPTED_V2 was added in 8.0.11."
 	case ErrServerAclTableError:
 		return "ER_SERVER_ACL_TABLE_ERROR was added in 8.0.11."
-	case ErrServerSlaveInitQueryFailed:
+	case ErrServerSubordinateInitQueryFailed:
 		return "ER_SERVER_SLAVE_INIT_QUERY_FAILED was added in 8.0.11."
-	case ErrServerSlaveConversionFailed:
+	case ErrServerSubordinateConversionFailed:
 		return "ER_SERVER_SLAVE_CONVERSION_FAILED was added in 8.0.11."
-	case ErrServerSlaveIgnoredTable:
+	case ErrServerSubordinateIgnoredTable:
 		return "ER_SERVER_SLAVE_IGNORED_TABLE was added in 8.0.11."
 	case ErrCantReplicateAnonymousWithAutoPosition:
 		return "Message: Cannot replicate anonymous transaction when AUTO_POSITION = 1, at file %s, position %lld."
@@ -24444,13 +24444,13 @@ func (es ErrorString) Description() string {
 		return "ER_SERVER_RPL_ENCRYPTION_FAILED_TO_STORE_KEY was added in 8.0.14."
 	case ErrServerRplEncryptionFailedToRemoveKey:
 		return "ER_SERVER_RPL_ENCRYPTION_FAILED_TO_REMOVE_KEY was added in 8.0.14."
-	case ErrServerRplEncryptionMasterKeyRecoveryFailed:
+	case ErrServerRplEncryptionMainKeyRecoveryFailed:
 		return "ER_SERVER_RPL_ENCRYPTION_MASTER_KEY_RECOVERY_FAILED was added in 8.0.14."
 	case ErrServerRplEncryptionUnableToInitialize:
 		return "ER_SERVER_RPL_ENCRYPTION_UNABLE_TO_INITIALIZE was added in 8.0.14."
-	case ErrServerRplEncryptionUnableToRotateMasterKeyAtStartup:
+	case ErrServerRplEncryptionUnableToRotateMainKeyAtStartup:
 		return "ER_SERVER_RPL_ENCRYPTION_UNABLE_TO_ROTATE_MASTER_KEY_AT_STARTUP was added in 8.0.14."
-	case ErrServerRplEncryptionIgnoreRotateMasterKeyAtStartup:
+	case ErrServerRplEncryptionIgnoreRotateMainKeyAtStartup:
 		return "ER_SERVER_RPL_ENCRYPTION_IGNORE_ROTATE_MASTER_KEY_AT_STARTUP was added in 8.0.14."
 	case ErrInvalidAdminAddress:
 		return "ER_INVALID_ADMIN_ADDRESS was added in 8.0.14."
@@ -24582,9 +24582,9 @@ func (es ErrorString) Description() string {
 		return "ER_SERVER_WARN_DEPRECATED was added in 8.0.16."
 	case ErrAuthIdWithSystemUserPrivInMandatoryRoles:
 		return "ER_AUTH_ID_WITH_SYSTEM_USER_PRIV_IN_MANDATORY_ROLES was added in 8.0.16."
-	case ErrServerBinlogMasterKeyRecoveryOutOfCombination:
+	case ErrServerBinlogMainKeyRecoveryOutOfCombination:
 		return "ER_SERVER_BINLOG_MASTER_KEY_RECOVERY_OUT_OF_COMBINATION was added in 8.0.16."
-	case ErrServerBinlogMasterKeyRotationFailToCleanupAuxKey:
+	case ErrServerBinlogMainKeyRotationFailToCleanupAuxKey:
 		return "ER_SERVER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_CLEANUP_AUX_KEY was added in 8.0.16."
 	case ErrTurningOnPartialRevokes:
 		return "ER_TURNING_ON_PARTIAL_REVOKES was added in 8.0.16."
@@ -24774,7 +24774,7 @@ func (es ErrorString) Description() string {
 		return "ER_GRP_RPL_RECOVERY_STRAT_FALLBACK was added in 8.0.17."
 	case ErrGrpRplRecoveryStratNoFallback:
 		return "ER_GRP_RPL_RECOVERY_STRAT_NO_FALLBACK was added in 8.0.17."
-	case ErrGrpRplSlaveThreadErrorOnClone:
+	case ErrGrpRplSubordinateThreadErrorOnClone:
 		return "ER_GRP_RPL_SLAVE_THREAD_ERROR_ON_CLONE was added in 8.0.17."
 	case ErrUnknownTableInUpgrade:
 		return "ER_UNKNOWN_TABLE_IN_UPGRADE was added in 8.0.17."
@@ -24822,7 +24822,7 @@ func (es ErrorString) Description() string {
 		return "ER_WARN_LOG_PRIVILEGE_CHECKS_USER_NEEDS_RPL_APPLIER_PRIV was added in 8.0.18."
 	case ErrFilePrivilegeForReplicationChecks:
 		return "ER_FILE_PRIVILEGE_FOR_REPLICATION_CHECKS was added in 8.0.18."
-	case ErrRplSlaveSqlThreadStartingWithPrivilegeChecks:
+	case ErrRplSubordinateSqlThreadStartingWithPrivilegeChecks:
 		return "ER_RPL_SLAVE_SQL_THREAD_STARTING_WITH_PRIVILEGE_CHECKS was added in 8.0.18."
 	case ErrAuditLogCannotGeneratePassword:
 		return "ER_AUDIT_LOG_CANNOT_GENERATE_PASSWORD was added in 8.0.18."
@@ -24834,19 +24834,19 @@ func (es ErrorString) Description() string {
 		return "ER_WARN_AUTH_ID_WITH_SYSTEM_USER_PRIV_IN_MANDATORY_ROLES was added in 8.0.18."
 	case ErrIbMsgSkipHiddenDir:
 		return "ER_IB_MSG_SKIP_HIDDEN_DIR was added in 8.0.18."
-	case ErrWarnRplRecoveryNoRotateEventFromMasterEof:
+	case ErrWarnRplRecoveryNoRotateEventFromMainEof:
 		return "ER_WARN_RPL_RECOVERY_NO_ROTATE_EVENT_FROM_MASTER_EOF was added in 8.0.19."
 	case ErrIbLobRollbackIndexLen:
 		return "ER_IB_LOB_ROLLBACK_INDEX_LEN was added in 8.0.19."
 	case ErrCantProcessExpressionForGeneratedColumnToDd:
 		return "ER_CANT_PROCESS_EXPRESSION_FOR_GENERATED_COLUMN_TO_DD was added in 8.0.19."
-	case ErrRplSlaveQueueEventFailedInvalidNonRowFormat:
+	case ErrRplSubordinateQueueEventFailedInvalidNonRowFormat:
 		return "ER_RPL_SLAVE_QUEUE_EVENT_FAILED_INVALID_NON_ROW_FORMAT was added in 8.0.19."
-	case ErrRplSlaveApplyLogEventFailedInvalidNonRowFormat:
+	case ErrRplSubordinateApplyLogEventFailedInvalidNonRowFormat:
 		return "ER_RPL_SLAVE_APPLY_LOG_EVENT_FAILED_INVALID_NON_ROW_FORMAT was added in 8.0.19."
 	case ErrLogPrivChecksRequireRowFormatNotSet:
 		return "ER_LOG_PRIV_CHECKS_REQUIRE_ROW_FORMAT_NOT_SET was added in 8.0.19."
-	case ErrRplSlaveSqlThreadDetectedUnexpectedEventSequence:
+	case ErrRplSubordinateSqlThreadDetectedUnexpectedEventSequence:
 		return "ER_RPL_SLAVE_SQL_THREAD_DETECTED_UNEXPECTED_EVENT_SEQUENCE was added in 8.0.19."
 	case ErrIbMsgUpgradePartitionFile:
 		return "ER_IB_MSG_UPGRADE_PARTITION_FILE was added in 8.0.19."
