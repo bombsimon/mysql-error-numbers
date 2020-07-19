@@ -178,9 +178,9 @@ const (
 	ErrErrorDuringRollback                                  ErrorNumber = 1181
 	ErrErrorDuringFlushLogs                                 ErrorNumber = 1182
 	ErrNewAbortingConnection                                ErrorNumber = 1184
-	ErrMaster                                               ErrorNumber = 1188
-	ErrMasterNetRead                                        ErrorNumber = 1189
-	ErrMasterNetWrite                                       ErrorNumber = 1190
+	ErrMain                                               ErrorNumber = 1188
+	ErrMainNetRead                                        ErrorNumber = 1189
+	ErrMainNetWrite                                       ErrorNumber = 1190
 	ErrFtMatchingKeyNotFound                                ErrorNumber = 1191
 	ErrLockOrActiveTransaction                              ErrorNumber = 1192
 	ErrUnknownSystemVariable                                ErrorNumber = 1193
@@ -188,10 +188,10 @@ const (
 	ErrCrashedOnRepair                                      ErrorNumber = 1195
 	ErrWarningNotCompleteRollback                           ErrorNumber = 1196
 	ErrTransCacheFull                                       ErrorNumber = 1197
-	ErrSlaveNotRunning                                      ErrorNumber = 1199
-	ErrBadSlave                                             ErrorNumber = 1200
-	ErrMasterInfo                                           ErrorNumber = 1201
-	ErrSlaveThread                                          ErrorNumber = 1202
+	ErrSubordinateNotRunning                                      ErrorNumber = 1199
+	ErrBadSubordinate                                             ErrorNumber = 1200
+	ErrMainInfo                                           ErrorNumber = 1201
+	ErrSubordinateThread                                          ErrorNumber = 1202
 	ErrTooManyUserConnections                               ErrorNumber = 1203
 	ErrSetConstantsOnly                                     ErrorNumber = 1204
 	ErrLockWaitTimeout                                      ErrorNumber = 1205
@@ -204,7 +204,7 @@ const (
 	ErrCannotAddForeign                                     ErrorNumber = 1215
 	ErrNoReferencedRow                                      ErrorNumber = 1216
 	ErrRowIsReferenced                                      ErrorNumber = 1217
-	ErrConnectToMaster                                      ErrorNumber = 1218
+	ErrConnectToMain                                      ErrorNumber = 1218
 	ErrErrorWhenExecutingCommand                            ErrorNumber = 1220
 	ErrWrongUsage                                           ErrorNumber = 1221
 	ErrWrongNumberOfColumnsInSelect                         ErrorNumber = 1222
@@ -221,8 +221,8 @@ const (
 	ErrVarCantBeRead                                        ErrorNumber = 1233
 	ErrCantUseOptionHere                                    ErrorNumber = 1234
 	ErrNotSupportedYet                                      ErrorNumber = 1235
-	ErrMasterFatalErrorReadingBinlog                        ErrorNumber = 1236
-	ErrSlaveIgnoredTable                                    ErrorNumber = 1237
+	ErrMainFatalErrorReadingBinlog                        ErrorNumber = 1236
+	ErrSubordinateIgnoredTable                                    ErrorNumber = 1237
 	ErrIncorrectGlobalLocalVar                              ErrorNumber = 1238
 	ErrWrongFkDef                                           ErrorNumber = 1239
 	ErrKeyRefDoNotMatchTableRef                             ErrorNumber = 1240
@@ -255,11 +255,11 @@ const (
 	ErrCantAggregateNcollations                             ErrorNumber = 1271
 	ErrVariableIsNotStruct                                  ErrorNumber = 1272
 	ErrUnknownCollation                                     ErrorNumber = 1273
-	ErrSlaveIgnoredSslParams                                ErrorNumber = 1274
+	ErrSubordinateIgnoredSslParams                                ErrorNumber = 1274
 	ErrServerIsInSecureAuthMode                             ErrorNumber = 1275
 	ErrWarnFieldResolved                                    ErrorNumber = 1276
-	ErrBadSlaveUntilCond                                    ErrorNumber = 1277
-	ErrMissingSkipSlave                                     ErrorNumber = 1278
+	ErrBadSubordinateUntilCond                                    ErrorNumber = 1277
+	ErrMissingSkipSubordinate                                     ErrorNumber = 1278
 	ErrUntilCondIgnored                                     ErrorNumber = 1279
 	ErrWrongNameForIndex                                    ErrorNumber = 1280
 	ErrWrongNameForCatalog                                  ErrorNumber = 1281
@@ -543,18 +543,18 @@ const (
 	ErrEventInvalidCreationCtx                              ErrorNumber = 1605
 	ErrTrgCantOpenTable                                     ErrorNumber = 1606
 	ErrNoFormatDescriptionEventBeforeBinlogStatement        ErrorNumber = 1609
-	ErrSlaveCorruptEvent                                    ErrorNumber = 1610
+	ErrSubordinateCorruptEvent                                    ErrorNumber = 1610
 	ErrLogPurgeNoFile                                       ErrorNumber = 1612
 	ErrXaRbtimeout                                          ErrorNumber = 1613
 	ErrXaRbdeadlock                                         ErrorNumber = 1614
 	ErrNeedReprepare                                        ErrorNumber = 1615
-	WarnNoMasterrInfo                                       ErrorNumber = 1617
+	WarnNoMainrInfo                                       ErrorNumber = 1617
 	WarnOptionIgnored                                       ErrorNumber = 1618
 	ErrPluginDeleteBuiltin                                  ErrorNumber = 1619
 	WarnPluginBusy                                          ErrorNumber = 1620
 	ErrVariableIsReadonly                                   ErrorNumber = 1621
 	ErrWarnEngineTransactionRollback                        ErrorNumber = 1622
-	ErrSlaveHeartbeatValueOutOfRange                        ErrorNumber = 1624
+	ErrSubordinateHeartbeatValueOutOfRange                        ErrorNumber = 1624
 	ErrNdbReplicationSchemaError                            ErrorNumber = 1625
 	ErrConflictFnParseError                                 ErrorNumber = 1626
 	ErrExceptionsWriteError                                 ErrorNumber = 1627
@@ -580,7 +580,7 @@ const (
 	WarnCondItemTruncated                                   ErrorNumber = 1647
 	ErrCondItemTooLong                                      ErrorNumber = 1648
 	ErrUnknownLocale                                        ErrorNumber = 1649
-	ErrSlaveIgnoreServerIds                                 ErrorNumber = 1650
+	ErrSubordinateIgnoreServerIds                                 ErrorNumber = 1650
 	ErrQueryCacheDisabled                                   ErrorNumber = 1651
 	ErrSameNamePartitionField                               ErrorNumber = 1652
 	ErrPartitionColumnListError                             ErrorNumber = 1653
@@ -606,8 +606,8 @@ const (
 	ErrBinlogUnsafeSystemFunction                           ErrorNumber = 1674
 	ErrBinlogUnsafeNontransAfterTrans                       ErrorNumber = 1675
 	ErrMessageAndStatement                                  ErrorNumber = 1676
-	ErrSlaveConversionFailed                                ErrorNumber = 1677
-	ErrSlaveCantCreateConversion                            ErrorNumber = 1678
+	ErrSubordinateConversionFailed                                ErrorNumber = 1677
+	ErrSubordinateCantCreateConversion                            ErrorNumber = 1678
 	ErrInsideTransactionPreventsSwitchBinlogFormat          ErrorNumber = 1679
 	ErrPathLength                                           ErrorNumber = 1680
 	ErrWarnDeprecatedSyntaxNoReplacement                    ErrorNumber = 1681
@@ -631,8 +631,8 @@ const (
 	ErrSetPasswordAuthPlugin                                ErrorNumber = 1699
 	ErrTruncateIllegalFk                                    ErrorNumber = 1701
 	ErrPluginIsPermanent                                    ErrorNumber = 1702
-	ErrSlaveHeartbeatValueOutOfRangeMin                     ErrorNumber = 1703
-	ErrSlaveHeartbeatValueOutOfRangeMax                     ErrorNumber = 1704
+	ErrSubordinateHeartbeatValueOutOfRangeMin                     ErrorNumber = 1703
+	ErrSubordinateHeartbeatValueOutOfRangeMax                     ErrorNumber = 1704
 	ErrStmtCacheFull                                        ErrorNumber = 1705
 	ErrMultiUpdateKeyConflict                               ErrorNumber = 1706
 	ErrTableNeedsRebuild                                    ErrorNumber = 1707
@@ -657,7 +657,7 @@ const (
 	ErrUnsupportedEngine                                    ErrorNumber = 1726
 	ErrBinlogUnsafeAutoincNotFirst                          ErrorNumber = 1727
 	ErrCannotLoadFromTableV2                                ErrorNumber = 1728
-	ErrMasterDelayValueOutOfRange                           ErrorNumber = 1729
+	ErrMainDelayValueOutOfRange                           ErrorNumber = 1729
 	ErrOnlyFdAndRbrEventsAllowedInBinlogStatement           ErrorNumber = 1730
 	ErrPartitionExchangeDifferentOption                     ErrorNumber = 1731
 	ErrPartitionExchangePartTable                           ErrorNumber = 1732
@@ -684,10 +684,10 @@ const (
 	ErrFulltextNotSupportedWithPartitioning                 ErrorNumber = 1757
 	ErrDaInvalidConditionNumber                             ErrorNumber = 1758
 	ErrInsecurePlainText                                    ErrorNumber = 1759
-	ErrInsecureChangeMaster                                 ErrorNumber = 1760
+	ErrInsecureChangeMain                                 ErrorNumber = 1760
 	ErrForeignDuplicateKeyWithChildInfo                     ErrorNumber = 1761
 	ErrForeignDuplicateKeyWithoutChildInfo                  ErrorNumber = 1762
-	ErrSqlthreadWithSecureSlave                             ErrorNumber = 1763
+	ErrSqlthreadWithSecureSubordinate                             ErrorNumber = 1763
 	ErrTableHasNoFt                                         ErrorNumber = 1764
 	ErrVariableNotSettableInSfOrTrigger                     ErrorNumber = 1765
 	ErrVariableNotSettableInTransaction                     ErrorNumber = 1766
@@ -697,7 +697,7 @@ const (
 	ErrMalformedGtidSetEncoding                             ErrorNumber = 1773
 	ErrMalformedGtidSpecification                           ErrorNumber = 1774
 	ErrGnoExhausted                                         ErrorNumber = 1775
-	ErrBadSlaveAutoPosition                                 ErrorNumber = 1776
+	ErrBadSubordinateAutoPosition                                 ErrorNumber = 1776
 	ErrAutoPositionRequiresGtidModeNotOff                   ErrorNumber = 1777
 	ErrCantDoImplicitCommitInTrxWhenGtidNextIsSet           ErrorNumber = 1778
 	ErrGtidModeOnRequiresEnforceGtidConsistencyOn           ErrorNumber = 1779
@@ -708,12 +708,12 @@ const (
 	ErrGtidUnsafeCreateSelect                               ErrorNumber = 1786
 	ErrGtidUnsafeCreateDropTemporaryTableInTransaction      ErrorNumber = 1787
 	ErrGtidModeCanOnlyChangeOneStepAtATime                  ErrorNumber = 1788
-	ErrMasterHasPurgedRequiredGtids                         ErrorNumber = 1789
+	ErrMainHasPurgedRequiredGtids                         ErrorNumber = 1789
 	ErrCantSetGtidNextWhenOwningGtid                        ErrorNumber = 1790
 	ErrUnknownExplainFormat                                 ErrorNumber = 1791
 	ErrCantExecuteInReadOnlyTransaction                     ErrorNumber = 1792
 	ErrTooLongTablePartitionComment                         ErrorNumber = 1793
-	ErrSlaveConfiguration                                   ErrorNumber = 1794
+	ErrSubordinateConfiguration                                   ErrorNumber = 1794
 	ErrInnodbFtLimit                                        ErrorNumber = 1795
 	ErrInnodbNoFtTempTable                                  ErrorNumber = 1796
 	ErrInnodbFtWrongDocidColumn                             ErrorNumber = 1797
@@ -721,11 +721,11 @@ const (
 	ErrInnodbOnlineLogTooBig                                ErrorNumber = 1799
 	ErrUnknownAlterAlgorithm                                ErrorNumber = 1800
 	ErrUnknownAlterLock                                     ErrorNumber = 1801
-	ErrMtsChangeMasterCantRunWithGaps                       ErrorNumber = 1802
+	ErrMtsChangeMainCantRunWithGaps                       ErrorNumber = 1802
 	ErrMtsRecoveryFailure                                   ErrorNumber = 1803
 	ErrMtsResetWorkers                                      ErrorNumber = 1804
 	ErrColCountDoesntMatchCorruptedV2                       ErrorNumber = 1805
-	ErrSlaveSilentRetryTransaction                          ErrorNumber = 1806
+	ErrSubordinateSilentRetryTransaction                          ErrorNumber = 1806
 	ErrDiscardFkChecksRunning                               ErrorNumber = 1807
 	ErrTableSchemaMismatch                                  ErrorNumber = 1808
 	ErrTableInSystemTablespace                              ErrorNumber = 1809
@@ -774,7 +774,7 @@ const (
 	ErrAlterOperationNotSupportedReasonHiddenFts            ErrorNumber = 1855
 	ErrAlterOperationNotSupportedReasonChangeFts            ErrorNumber = 1856
 	ErrAlterOperationNotSupportedReasonFts                  ErrorNumber = 1857
-	ErrSqlSlaveSkipCounterNotSettableInGtidMode             ErrorNumber = 1858
+	ErrSqlSubordinateSkipCounterNotSettableInGtidMode             ErrorNumber = 1858
 	ErrDupUnknownInIndex                                    ErrorNumber = 1859
 	ErrIdentCausesTooLongPath                               ErrorNumber = 1860
 	ErrAlterOperationNotSupportedReasonNotNull              ErrorNumber = 1861
@@ -786,12 +786,12 @@ const (
 	ErrWarnPurgeLogIsActive                                 ErrorNumber = 1868
 	ErrAutoIncrementConflict                                ErrorNumber = 1869
 	WarnOnBlockholeInRbr                                    ErrorNumber = 1870
-	ErrSlaveMiInitRepository                                ErrorNumber = 1871
-	ErrSlaveRliInitRepository                               ErrorNumber = 1872
+	ErrSubordinateMiInitRepository                                ErrorNumber = 1871
+	ErrSubordinateRliInitRepository                               ErrorNumber = 1872
 	ErrAccessDeniedChangeUserError                          ErrorNumber = 1873
 	ErrInnodbReadOnly                                       ErrorNumber = 1874
-	ErrStopSlaveSqlThreadTimeout                            ErrorNumber = 1875
-	ErrStopSlaveIoThreadTimeout                             ErrorNumber = 1876
+	ErrStopSubordinateSqlThreadTimeout                            ErrorNumber = 1875
+	ErrStopSubordinateIoThreadTimeout                             ErrorNumber = 1876
 	ErrTableCorrupt                                         ErrorNumber = 1877
 	ErrTempFileWriteFailure                                 ErrorNumber = 1878
 	ErrInnodbFtAuxNotHexId                                  ErrorNumber = 1879
@@ -800,11 +800,11 @@ const (
 	ErrAesInvalidIv                                         ErrorNumber = 1882
 	ErrPluginCannotBeUninstalled                            ErrorNumber = 1883
 	ErrGtidUnsafeBinlogSplittableStatementAndGtidGroup      ErrorNumber = 1884
-	ErrSlaveHasMoreGtidsThanMaster                          ErrorNumber = 1885
+	ErrSubordinateHasMoreGtidsThanMain                          ErrorNumber = 1885
 	ErrMissingKey                                           ErrorNumber = 1886
 	WarnNamedPipeAccessEverryone                            ErrorNumber = 1887
 	ErrFileCorrupt                                          ErrorNumber = 3000
-	ErrErrorOnMaster                                        ErrorNumber = 3001
+	ErrErrorOnMain                                        ErrorNumber = 3001
 	ErrStorageEngineNotLoaded                               ErrorNumber = 3003
 	ErrGetStackedDaWithoutActiveHandler                     ErrorNumber = 3004
 	ErrWarnLegacySyntaxConverted                            ErrorNumber = 3005
@@ -819,20 +819,20 @@ const (
 	ErrMissingHaCreateOption                                ErrorNumber = 3014
 	ErrEngineOutOfMemory                                    ErrorNumber = 3015
 	ErrPasswordExpireAnonymousUser                          ErrorNumber = 3016
-	ErrSlaveSqlThreadMustStop                               ErrorNumber = 3017
+	ErrSubordinateSqlThreadMustStop                               ErrorNumber = 3017
 	ErrNoFtMaterializedSubquery                             ErrorNumber = 3018
 	ErrInnodbUndoLogFull                                    ErrorNumber = 3019
 	ErrInvalidArgumentForLogarithm                          ErrorNumber = 3020
-	ErrSlaveChannelIoThreadMustStop                         ErrorNumber = 3021
+	ErrSubordinateChannelIoThreadMustStop                         ErrorNumber = 3021
 	ErrWarnOpenTempTablesMustBeZero                         ErrorNumber = 3022
-	ErrWarnOnlyMasterLogFileNoPos                           ErrorNumber = 3023
+	ErrWarnOnlyMainLogFileNoPos                           ErrorNumber = 3023
 	ErrQueryTimeout                                         ErrorNumber = 3024
 	ErrNonRoSelectDisableTimer                              ErrorNumber = 3025
 	ErrDupListEntry                                         ErrorNumber = 3026
 	ErrAggregateOrderForUnion                               ErrorNumber = 3028
 	ErrAggregateOrderNonAggQuery                            ErrorNumber = 3029
-	ErrSlaveWorkerStoppedPreviousThdError                   ErrorNumber = 3030
-	ErrDontSupportSlavePreserveCommitOrder                  ErrorNumber = 3031
+	ErrSubordinateWorkerStoppedPreviousThdError                   ErrorNumber = 3030
+	ErrDontSupportSubordinatePreserveCommitOrder                  ErrorNumber = 3031
 	ErrServerOfflineMode                                    ErrorNumber = 3032
 	ErrGisDifferentSrids                                    ErrorNumber = 3033
 	ErrGisUnsupportedArgument                               ErrorNumber = 3034
@@ -857,7 +857,7 @@ const (
 	ErrStdRuntimeError                                      ErrorNumber = 3053
 	ErrStdUnknownException                                  ErrorNumber = 3054
 	ErrGisDataWrongEndianess                                ErrorNumber = 3055
-	ErrChangeMasterPasswordLength                           ErrorNumber = 3056
+	ErrChangeMainPasswordLength                           ErrorNumber = 3056
 	ErrUserLockWrongName                                    ErrorNumber = 3057
 	ErrUserLockDeadlock                                     ErrorNumber = 3058
 	ErrReplaceInaccessibleRows                              ErrorNumber = 3059
@@ -874,17 +874,17 @@ const (
 	ErrInvalidGeojsonWrongType                              ErrorNumber = 3071
 	ErrInvalidGeojsonUnspecified                            ErrorNumber = 3072
 	ErrDimensionUnsupported                                 ErrorNumber = 3073
-	ErrSlaveChannelDoesNotExist                             ErrorNumber = 3074
-	ErrSlaveChannelNameInvalidOrTooLong                     ErrorNumber = 3076
-	ErrSlaveNewChannelWrongRepository                       ErrorNumber = 3077
-	ErrSlaveMultipleChannelsCmd                             ErrorNumber = 3079
-	ErrSlaveMaxChannelsExceeded                             ErrorNumber = 3080
-	ErrSlaveChannelMustStop                                 ErrorNumber = 3081
-	ErrSlaveChannelNotRunning                               ErrorNumber = 3082
-	ErrSlaveChannelWasRunning                               ErrorNumber = 3083
-	ErrSlaveChannelWasNotRunning                            ErrorNumber = 3084
-	ErrSlaveChannelSqlThreadMustStop                        ErrorNumber = 3085
-	ErrSlaveChannelSqlSkipCounter                           ErrorNumber = 3086
+	ErrSubordinateChannelDoesNotExist                             ErrorNumber = 3074
+	ErrSubordinateChannelNameInvalidOrTooLong                     ErrorNumber = 3076
+	ErrSubordinateNewChannelWrongRepository                       ErrorNumber = 3077
+	ErrSubordinateMultipleChannelsCmd                             ErrorNumber = 3079
+	ErrSubordinateMaxChannelsExceeded                             ErrorNumber = 3080
+	ErrSubordinateChannelMustStop                                 ErrorNumber = 3081
+	ErrSubordinateChannelNotRunning                               ErrorNumber = 3082
+	ErrSubordinateChannelWasRunning                               ErrorNumber = 3083
+	ErrSubordinateChannelWasNotRunning                            ErrorNumber = 3084
+	ErrSubordinateChannelSqlThreadMustStop                        ErrorNumber = 3085
+	ErrSubordinateChannelSqlSkipCounter                           ErrorNumber = 3086
 	ErrWrongFieldWithGroupV2                                ErrorNumber = 3087
 	ErrMixOfGroupFuncAndFieldsV2                            ErrorNumber = 3088
 	ErrWarnDeprecatedSysvarUpdate                           ErrorNumber = 3089
@@ -934,7 +934,7 @@ const (
 	ErrVtokenPluginTokenMismatch                            ErrorNumber = 3136
 	ErrVtokenPluginTokenNotFound                            ErrorNumber = 3137
 	ErrCantSetVariableWhenOwningGtid                        ErrorNumber = 3138
-	ErrSlaveChannelOperationNotAllowed                      ErrorNumber = 3139
+	ErrSubordinateChannelOperationNotAllowed                      ErrorNumber = 3139
 	ErrInvalidJsonText                                      ErrorNumber = 3140
 	ErrInvalidJsonTextInParam                               ErrorNumber = 3141
 	ErrInvalidJsonBinaryData                                ErrorNumber = 3142
@@ -973,9 +973,9 @@ const (
 	ErrErrorOnModifyingGtidExecutedTable                    ErrorNumber = 3176
 	ErrLockRefusedByEngine                                  ErrorNumber = 3177
 	ErrUnsupportedAlterOnlineOnVirtualColumn                ErrorNumber = 3178
-	ErrMasterKeyRotationNotSupportedBySe                    ErrorNumber = 3179
-	ErrMasterKeyRotationBinlogFailed                        ErrorNumber = 3181
-	ErrMasterKeyRotationSeUnavailable                       ErrorNumber = 3182
+	ErrMainKeyRotationNotSupportedBySe                    ErrorNumber = 3179
+	ErrMainKeyRotationBinlogFailed                        ErrorNumber = 3181
+	ErrMainKeyRotationSeUnavailable                       ErrorNumber = 3182
 	ErrTablespaceCannotEncrypt                              ErrorNumber = 3183
 	ErrInvalidEncryptionOption                              ErrorNumber = 3184
 	ErrCannotFindKeyInKeyring                               ErrorNumber = 3185
@@ -983,7 +983,7 @@ const (
 	ErrUnsupportedAlterEncryptionInplace                    ErrorNumber = 3187
 	ErrKeyringUdfKeyringServiceError                        ErrorNumber = 3188
 	ErrUserColumnOldLength                                  ErrorNumber = 3189
-	ErrCantResetMaster                                      ErrorNumber = 3190
+	ErrCantResetMain                                      ErrorNumber = 3190
 	ErrGroupReplicationMaxGroupSize                         ErrorNumber = 3191
 	ErrCannotAddForeignBaseColStored                        ErrorNumber = 3192
 	ErrTableReferenced                                      ErrorNumber = 3193
@@ -1062,7 +1062,7 @@ const (
 	ErrDuplicateOptionKey                                   ErrorNumber = 3564
 	ErrWarnSrsNotFoundAxisOrder                             ErrorNumber = 3565
 	ErrNoAccessToNativeFct                                  ErrorNumber = 3566
-	ErrResetMasterToValueOutOfRange                         ErrorNumber = 3567
+	ErrResetMainToValueOutOfRange                         ErrorNumber = 3567
 	ErrUnresolvedTableLock                                  ErrorNumber = 3568
 	ErrDuplicateTableLock                                   ErrorNumber = 3569
 	ErrBinlogUnsafeSkipLocked                               ErrorNumber = 3570
@@ -1220,7 +1220,7 @@ const (
 	ErrUnableToCollectLogStatus                             ErrorNumber = 3722
 	ErrReservedTablespaceName                               ErrorNumber = 3723
 	ErrUnableToSetOption                                    ErrorNumber = 3724
-	ErrSlavePossiblyDivergedAfterDdl                        ErrorNumber = 3725
+	ErrSubordinatePossiblyDivergedAfterDdl                        ErrorNumber = 3725
 	ErrSrsNotGeographic                                     ErrorNumber = 3726
 	ErrPolygonTooLarge                                      ErrorNumber = 3727
 	ErrSpatialUniqueIndex                                   ErrorNumber = 3728
@@ -1288,7 +1288,7 @@ const (
 	ErrRplEncryptionFailedToStoreKey                        ErrorNumber = 3791
 	ErrRplEncryptionFailedToRemoveKey                       ErrorNumber = 3792
 	ErrRplEncryptionUnableToChangeOption                    ErrorNumber = 3793
-	ErrRplEncryptionMasterKeyRecoveryFailed                 ErrorNumber = 3794
+	ErrRplEncryptionMainKeyRecoveryFailed                 ErrorNumber = 3794
 	ErrSlowLogModeIgnoredWhenNotLoggingToFile               ErrorNumber = 3795
 	ErrGrpTrxConsistencyNotAllowed                          ErrorNumber = 3796
 	ErrGrpTrxConsistencyBefore                              ErrorNumber = 3797
@@ -1299,13 +1299,13 @@ const (
 	ErrPageTrackingNotStarted                               ErrorNumber = 3802
 	ErrPageTrackingRangeNotTracked                          ErrorNumber = 3803
 	ErrPageTrackingCannotPurge                              ErrorNumber = 3804
-	ErrRplEncryptionCannotRotateBinlogMasterKey             ErrorNumber = 3805
-	ErrBinlogMasterKeyRecoveryOutOfCombination              ErrorNumber = 3806
-	ErrBinlogMasterKeyRotationFailToOperateKey              ErrorNumber = 3807
-	ErrBinlogMasterKeyRotationFailToRotateLogs              ErrorNumber = 3808
-	ErrBinlogMasterKeyRotationFailToReencryptLog            ErrorNumber = 3809
-	ErrBinlogMasterKeyRotationFailToCleanupUnusedKeys       ErrorNumber = 3810
-	ErrBinlogMasterKeyRotationFailToCleanupAuxKey           ErrorNumber = 3811
+	ErrRplEncryptionCannotRotateBinlogMainKey             ErrorNumber = 3805
+	ErrBinlogMainKeyRecoveryOutOfCombination              ErrorNumber = 3806
+	ErrBinlogMainKeyRotationFailToOperateKey              ErrorNumber = 3807
+	ErrBinlogMainKeyRotationFailToRotateLogs              ErrorNumber = 3808
+	ErrBinlogMainKeyRotationFailToReencryptLog            ErrorNumber = 3809
+	ErrBinlogMainKeyRotationFailToCleanupUnusedKeys       ErrorNumber = 3810
+	ErrBinlogMainKeyRotationFailToCleanupAuxKey           ErrorNumber = 3811
 	ErrNonBooleanExprForCheckConstraint                     ErrorNumber = 3812
 	ErrColumnCheckConstraintReferencesOtherColumn           ErrorNumber = 3813
 	ErrCheckConstraintNamedFunctionIsNotAllowed             ErrorNumber = 3814
@@ -1351,7 +1351,7 @@ const (
 	ErrCannotConvertString                                  ErrorNumber = 3854
 	ErrDependentByPartitionFunc                             ErrorNumber = 3855
 	ErrWarnDeprecatedFloatAutoIncrement                     ErrorNumber = 3856
-	ErrRplCantStopSlaveWhileLockedBackup                    ErrorNumber = 3857
+	ErrRplCantStopSubordinateWhileLockedBackup                    ErrorNumber = 3857
 	ErrWarnDeprecatedFloatDigits                            ErrorNumber = 3858
 	ErrWarnDeprecatedFloatUnsigned                          ErrorNumber = 3859
 	ErrWarnDeprecatedIntegerDisplayWidth                    ErrorNumber = 3860
@@ -1413,11 +1413,11 @@ const (
 	ErrSysvarChangeDuringQuery                              ErrorNumber = 3917
 	ErrGlobstatChangeDuringQuery                            ErrorNumber = 3918
 	ErrGrpRplMessageServiceInitFailure                      ErrorNumber = 3919
-	ErrChangeMasterWrongCompressionAlgorithmClient          ErrorNumber = 3920
-	ErrChangeMasterWrongCompressionLevelClient              ErrorNumber = 3921
+	ErrChangeMainWrongCompressionAlgorithmClient          ErrorNumber = 3920
+	ErrChangeMainWrongCompressionLevelClient              ErrorNumber = 3921
 	ErrWrongCompressionAlgorithmClient                      ErrorNumber = 3922
 	ErrWrongCompressionLevelClient                          ErrorNumber = 3923
-	ErrChangeMasterWrongCompressionAlgorithmListClient      ErrorNumber = 3924
+	ErrChangeMainWrongCompressionAlgorithmListClient      ErrorNumber = 3924
 	ErrClientPrivilegeChecksUserCannotBeAnonymous           ErrorNumber = 3925
 	ErrClientPrivilegeChecksUserDoesNotExist                ErrorNumber = 3926
 	ErrClientPrivilegeChecksUserCorrupt                     ErrorNumber = 3927
@@ -1834,11 +1834,11 @@ func FromNumber(n int) ErrorNumber {
 	case 1184:
 		return ErrNewAbortingConnection
 	case 1188:
-		return ErrMaster
+		return ErrMain
 	case 1189:
-		return ErrMasterNetRead
+		return ErrMainNetRead
 	case 1190:
-		return ErrMasterNetWrite
+		return ErrMainNetWrite
 	case 1191:
 		return ErrFtMatchingKeyNotFound
 	case 1192:
@@ -1854,13 +1854,13 @@ func FromNumber(n int) ErrorNumber {
 	case 1197:
 		return ErrTransCacheFull
 	case 1199:
-		return ErrSlaveNotRunning
+		return ErrSubordinateNotRunning
 	case 1200:
-		return ErrBadSlave
+		return ErrBadSubordinate
 	case 1201:
-		return ErrMasterInfo
+		return ErrMainInfo
 	case 1202:
-		return ErrSlaveThread
+		return ErrSubordinateThread
 	case 1203:
 		return ErrTooManyUserConnections
 	case 1204:
@@ -1886,7 +1886,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1217:
 		return ErrRowIsReferenced
 	case 1218:
-		return ErrConnectToMaster
+		return ErrConnectToMain
 	case 1220:
 		return ErrErrorWhenExecutingCommand
 	case 1221:
@@ -1920,9 +1920,9 @@ func FromNumber(n int) ErrorNumber {
 	case 1235:
 		return ErrNotSupportedYet
 	case 1236:
-		return ErrMasterFatalErrorReadingBinlog
+		return ErrMainFatalErrorReadingBinlog
 	case 1237:
-		return ErrSlaveIgnoredTable
+		return ErrSubordinateIgnoredTable
 	case 1238:
 		return ErrIncorrectGlobalLocalVar
 	case 1239:
@@ -1988,15 +1988,15 @@ func FromNumber(n int) ErrorNumber {
 	case 1273:
 		return ErrUnknownCollation
 	case 1274:
-		return ErrSlaveIgnoredSslParams
+		return ErrSubordinateIgnoredSslParams
 	case 1275:
 		return ErrServerIsInSecureAuthMode
 	case 1276:
 		return ErrWarnFieldResolved
 	case 1277:
-		return ErrBadSlaveUntilCond
+		return ErrBadSubordinateUntilCond
 	case 1278:
-		return ErrMissingSkipSlave
+		return ErrMissingSkipSubordinate
 	case 1279:
 		return ErrUntilCondIgnored
 	case 1280:
@@ -2564,7 +2564,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1609:
 		return ErrNoFormatDescriptionEventBeforeBinlogStatement
 	case 1610:
-		return ErrSlaveCorruptEvent
+		return ErrSubordinateCorruptEvent
 	case 1612:
 		return ErrLogPurgeNoFile
 	case 1613:
@@ -2574,7 +2574,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1615:
 		return ErrNeedReprepare
 	case 1617:
-		return WarnNoMasterrInfo
+		return WarnNoMainrInfo
 	case 1618:
 		return WarnOptionIgnored
 	case 1619:
@@ -2586,7 +2586,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1622:
 		return ErrWarnEngineTransactionRollback
 	case 1624:
-		return ErrSlaveHeartbeatValueOutOfRange
+		return ErrSubordinateHeartbeatValueOutOfRange
 	case 1625:
 		return ErrNdbReplicationSchemaError
 	case 1626:
@@ -2638,7 +2638,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1649:
 		return ErrUnknownLocale
 	case 1650:
-		return ErrSlaveIgnoreServerIds
+		return ErrSubordinateIgnoreServerIds
 	case 1651:
 		return ErrQueryCacheDisabled
 	case 1652:
@@ -2690,9 +2690,9 @@ func FromNumber(n int) ErrorNumber {
 	case 1676:
 		return ErrMessageAndStatement
 	case 1677:
-		return ErrSlaveConversionFailed
+		return ErrSubordinateConversionFailed
 	case 1678:
-		return ErrSlaveCantCreateConversion
+		return ErrSubordinateCantCreateConversion
 	case 1679:
 		return ErrInsideTransactionPreventsSwitchBinlogFormat
 	case 1680:
@@ -2740,9 +2740,9 @@ func FromNumber(n int) ErrorNumber {
 	case 1702:
 		return ErrPluginIsPermanent
 	case 1703:
-		return ErrSlaveHeartbeatValueOutOfRangeMin
+		return ErrSubordinateHeartbeatValueOutOfRangeMin
 	case 1704:
-		return ErrSlaveHeartbeatValueOutOfRangeMax
+		return ErrSubordinateHeartbeatValueOutOfRangeMax
 	case 1705:
 		return ErrStmtCacheFull
 	case 1706:
@@ -2792,7 +2792,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1728:
 		return ErrCannotLoadFromTableV2
 	case 1729:
-		return ErrMasterDelayValueOutOfRange
+		return ErrMainDelayValueOutOfRange
 	case 1730:
 		return ErrOnlyFdAndRbrEventsAllowedInBinlogStatement
 	case 1731:
@@ -2846,13 +2846,13 @@ func FromNumber(n int) ErrorNumber {
 	case 1759:
 		return ErrInsecurePlainText
 	case 1760:
-		return ErrInsecureChangeMaster
+		return ErrInsecureChangeMain
 	case 1761:
 		return ErrForeignDuplicateKeyWithChildInfo
 	case 1762:
 		return ErrForeignDuplicateKeyWithoutChildInfo
 	case 1763:
-		return ErrSqlthreadWithSecureSlave
+		return ErrSqlthreadWithSecureSubordinate
 	case 1764:
 		return ErrTableHasNoFt
 	case 1765:
@@ -2872,7 +2872,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1775:
 		return ErrGnoExhausted
 	case 1776:
-		return ErrBadSlaveAutoPosition
+		return ErrBadSubordinateAutoPosition
 	case 1777:
 		return ErrAutoPositionRequiresGtidModeNotOff
 	case 1778:
@@ -2894,7 +2894,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1788:
 		return ErrGtidModeCanOnlyChangeOneStepAtATime
 	case 1789:
-		return ErrMasterHasPurgedRequiredGtids
+		return ErrMainHasPurgedRequiredGtids
 	case 1790:
 		return ErrCantSetGtidNextWhenOwningGtid
 	case 1791:
@@ -2904,7 +2904,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1793:
 		return ErrTooLongTablePartitionComment
 	case 1794:
-		return ErrSlaveConfiguration
+		return ErrSubordinateConfiguration
 	case 1795:
 		return ErrInnodbFtLimit
 	case 1796:
@@ -2920,7 +2920,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1801:
 		return ErrUnknownAlterLock
 	case 1802:
-		return ErrMtsChangeMasterCantRunWithGaps
+		return ErrMtsChangeMainCantRunWithGaps
 	case 1803:
 		return ErrMtsRecoveryFailure
 	case 1804:
@@ -2928,7 +2928,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1805:
 		return ErrColCountDoesntMatchCorruptedV2
 	case 1806:
-		return ErrSlaveSilentRetryTransaction
+		return ErrSubordinateSilentRetryTransaction
 	case 1807:
 		return ErrDiscardFkChecksRunning
 	case 1808:
@@ -3026,7 +3026,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1857:
 		return ErrAlterOperationNotSupportedReasonFts
 	case 1858:
-		return ErrSqlSlaveSkipCounterNotSettableInGtidMode
+		return ErrSqlSubordinateSkipCounterNotSettableInGtidMode
 	case 1859:
 		return ErrDupUnknownInIndex
 	case 1860:
@@ -3050,17 +3050,17 @@ func FromNumber(n int) ErrorNumber {
 	case 1870:
 		return WarnOnBlockholeInRbr
 	case 1871:
-		return ErrSlaveMiInitRepository
+		return ErrSubordinateMiInitRepository
 	case 1872:
-		return ErrSlaveRliInitRepository
+		return ErrSubordinateRliInitRepository
 	case 1873:
 		return ErrAccessDeniedChangeUserError
 	case 1874:
 		return ErrInnodbReadOnly
 	case 1875:
-		return ErrStopSlaveSqlThreadTimeout
+		return ErrStopSubordinateSqlThreadTimeout
 	case 1876:
-		return ErrStopSlaveIoThreadTimeout
+		return ErrStopSubordinateIoThreadTimeout
 	case 1877:
 		return ErrTableCorrupt
 	case 1878:
@@ -3078,7 +3078,7 @@ func FromNumber(n int) ErrorNumber {
 	case 1884:
 		return ErrGtidUnsafeBinlogSplittableStatementAndGtidGroup
 	case 1885:
-		return ErrSlaveHasMoreGtidsThanMaster
+		return ErrSubordinateHasMoreGtidsThanMain
 	case 1886:
 		return ErrMissingKey
 	case 1887:
@@ -3086,7 +3086,7 @@ func FromNumber(n int) ErrorNumber {
 	case 3000:
 		return ErrFileCorrupt
 	case 3001:
-		return ErrErrorOnMaster
+		return ErrErrorOnMain
 	case 3003:
 		return ErrStorageEngineNotLoaded
 	case 3004:
@@ -3116,7 +3116,7 @@ func FromNumber(n int) ErrorNumber {
 	case 3016:
 		return ErrPasswordExpireAnonymousUser
 	case 3017:
-		return ErrSlaveSqlThreadMustStop
+		return ErrSubordinateSqlThreadMustStop
 	case 3018:
 		return ErrNoFtMaterializedSubquery
 	case 3019:
@@ -3124,11 +3124,11 @@ func FromNumber(n int) ErrorNumber {
 	case 3020:
 		return ErrInvalidArgumentForLogarithm
 	case 3021:
-		return ErrSlaveChannelIoThreadMustStop
+		return ErrSubordinateChannelIoThreadMustStop
 	case 3022:
 		return ErrWarnOpenTempTablesMustBeZero
 	case 3023:
-		return ErrWarnOnlyMasterLogFileNoPos
+		return ErrWarnOnlyMainLogFileNoPos
 	case 3024:
 		return ErrQueryTimeout
 	case 3025:
@@ -3140,9 +3140,9 @@ func FromNumber(n int) ErrorNumber {
 	case 3029:
 		return ErrAggregateOrderNonAggQuery
 	case 3030:
-		return ErrSlaveWorkerStoppedPreviousThdError
+		return ErrSubordinateWorkerStoppedPreviousThdError
 	case 3031:
-		return ErrDontSupportSlavePreserveCommitOrder
+		return ErrDontSupportSubordinatePreserveCommitOrder
 	case 3032:
 		return ErrServerOfflineMode
 	case 3033:
@@ -3192,7 +3192,7 @@ func FromNumber(n int) ErrorNumber {
 	case 3055:
 		return ErrGisDataWrongEndianess
 	case 3056:
-		return ErrChangeMasterPasswordLength
+		return ErrChangeMainPasswordLength
 	case 3057:
 		return ErrUserLockWrongName
 	case 3058:
@@ -3226,27 +3226,27 @@ func FromNumber(n int) ErrorNumber {
 	case 3073:
 		return ErrDimensionUnsupported
 	case 3074:
-		return ErrSlaveChannelDoesNotExist
+		return ErrSubordinateChannelDoesNotExist
 	case 3076:
-		return ErrSlaveChannelNameInvalidOrTooLong
+		return ErrSubordinateChannelNameInvalidOrTooLong
 	case 3077:
-		return ErrSlaveNewChannelWrongRepository
+		return ErrSubordinateNewChannelWrongRepository
 	case 3079:
-		return ErrSlaveMultipleChannelsCmd
+		return ErrSubordinateMultipleChannelsCmd
 	case 3080:
-		return ErrSlaveMaxChannelsExceeded
+		return ErrSubordinateMaxChannelsExceeded
 	case 3081:
-		return ErrSlaveChannelMustStop
+		return ErrSubordinateChannelMustStop
 	case 3082:
-		return ErrSlaveChannelNotRunning
+		return ErrSubordinateChannelNotRunning
 	case 3083:
-		return ErrSlaveChannelWasRunning
+		return ErrSubordinateChannelWasRunning
 	case 3084:
-		return ErrSlaveChannelWasNotRunning
+		return ErrSubordinateChannelWasNotRunning
 	case 3085:
-		return ErrSlaveChannelSqlThreadMustStop
+		return ErrSubordinateChannelSqlThreadMustStop
 	case 3086:
-		return ErrSlaveChannelSqlSkipCounter
+		return ErrSubordinateChannelSqlSkipCounter
 	case 3087:
 		return ErrWrongFieldWithGroupV2
 	case 3088:
@@ -3346,7 +3346,7 @@ func FromNumber(n int) ErrorNumber {
 	case 3138:
 		return ErrCantSetVariableWhenOwningGtid
 	case 3139:
-		return ErrSlaveChannelOperationNotAllowed
+		return ErrSubordinateChannelOperationNotAllowed
 	case 3140:
 		return ErrInvalidJsonText
 	case 3141:
@@ -3424,11 +3424,11 @@ func FromNumber(n int) ErrorNumber {
 	case 3178:
 		return ErrUnsupportedAlterOnlineOnVirtualColumn
 	case 3179:
-		return ErrMasterKeyRotationNotSupportedBySe
+		return ErrMainKeyRotationNotSupportedBySe
 	case 3181:
-		return ErrMasterKeyRotationBinlogFailed
+		return ErrMainKeyRotationBinlogFailed
 	case 3182:
-		return ErrMasterKeyRotationSeUnavailable
+		return ErrMainKeyRotationSeUnavailable
 	case 3183:
 		return ErrTablespaceCannotEncrypt
 	case 3184:
@@ -3444,7 +3444,7 @@ func FromNumber(n int) ErrorNumber {
 	case 3189:
 		return ErrUserColumnOldLength
 	case 3190:
-		return ErrCantResetMaster
+		return ErrCantResetMain
 	case 3191:
 		return ErrGroupReplicationMaxGroupSize
 	case 3192:
@@ -3602,7 +3602,7 @@ func FromNumber(n int) ErrorNumber {
 	case 3566:
 		return ErrNoAccessToNativeFct
 	case 3567:
-		return ErrResetMasterToValueOutOfRange
+		return ErrResetMainToValueOutOfRange
 	case 3568:
 		return ErrUnresolvedTableLock
 	case 3569:
@@ -3918,7 +3918,7 @@ func FromNumber(n int) ErrorNumber {
 	case 3724:
 		return ErrUnableToSetOption
 	case 3725:
-		return ErrSlavePossiblyDivergedAfterDdl
+		return ErrSubordinatePossiblyDivergedAfterDdl
 	case 3726:
 		return ErrSrsNotGeographic
 	case 3727:
@@ -4054,7 +4054,7 @@ func FromNumber(n int) ErrorNumber {
 	case 3793:
 		return ErrRplEncryptionUnableToChangeOption
 	case 3794:
-		return ErrRplEncryptionMasterKeyRecoveryFailed
+		return ErrRplEncryptionMainKeyRecoveryFailed
 	case 3795:
 		return ErrSlowLogModeIgnoredWhenNotLoggingToFile
 	case 3796:
@@ -4076,19 +4076,19 @@ func FromNumber(n int) ErrorNumber {
 	case 3804:
 		return ErrPageTrackingCannotPurge
 	case 3805:
-		return ErrRplEncryptionCannotRotateBinlogMasterKey
+		return ErrRplEncryptionCannotRotateBinlogMainKey
 	case 3806:
-		return ErrBinlogMasterKeyRecoveryOutOfCombination
+		return ErrBinlogMainKeyRecoveryOutOfCombination
 	case 3807:
-		return ErrBinlogMasterKeyRotationFailToOperateKey
+		return ErrBinlogMainKeyRotationFailToOperateKey
 	case 3808:
-		return ErrBinlogMasterKeyRotationFailToRotateLogs
+		return ErrBinlogMainKeyRotationFailToRotateLogs
 	case 3809:
-		return ErrBinlogMasterKeyRotationFailToReencryptLog
+		return ErrBinlogMainKeyRotationFailToReencryptLog
 	case 3810:
-		return ErrBinlogMasterKeyRotationFailToCleanupUnusedKeys
+		return ErrBinlogMainKeyRotationFailToCleanupUnusedKeys
 	case 3811:
-		return ErrBinlogMasterKeyRotationFailToCleanupAuxKey
+		return ErrBinlogMainKeyRotationFailToCleanupAuxKey
 	case 3812:
 		return ErrNonBooleanExprForCheckConstraint
 	case 3813:
@@ -4180,7 +4180,7 @@ func FromNumber(n int) ErrorNumber {
 	case 3856:
 		return ErrWarnDeprecatedFloatAutoIncrement
 	case 3857:
-		return ErrRplCantStopSlaveWhileLockedBackup
+		return ErrRplCantStopSubordinateWhileLockedBackup
 	case 3858:
 		return ErrWarnDeprecatedFloatDigits
 	case 3859:
@@ -4304,15 +4304,15 @@ func FromNumber(n int) ErrorNumber {
 	case 3919:
 		return ErrGrpRplMessageServiceInitFailure
 	case 3920:
-		return ErrChangeMasterWrongCompressionAlgorithmClient
+		return ErrChangeMainWrongCompressionAlgorithmClient
 	case 3921:
-		return ErrChangeMasterWrongCompressionLevelClient
+		return ErrChangeMainWrongCompressionLevelClient
 	case 3922:
 		return ErrWrongCompressionAlgorithmClient
 	case 3923:
 		return ErrWrongCompressionLevelClient
 	case 3924:
-		return ErrChangeMasterWrongCompressionAlgorithmListClient
+		return ErrChangeMainWrongCompressionAlgorithmListClient
 	case 3925:
 		return ErrClientPrivilegeChecksUserCannotBeAnonymous
 	case 3926:
@@ -4802,11 +4802,11 @@ func (en ErrorNumber) String() string {
 		return "ER_ERROR_DURING_FLUSH_LOGS"
 	case ErrNewAbortingConnection:
 		return "ER_NEW_ABORTING_CONNECTION"
-	case ErrMaster:
+	case ErrMain:
 		return "ER_MASTER"
-	case ErrMasterNetRead:
+	case ErrMainNetRead:
 		return "ER_MASTER_NET_READ"
-	case ErrMasterNetWrite:
+	case ErrMainNetWrite:
 		return "ER_MASTER_NET_WRITE"
 	case ErrFtMatchingKeyNotFound:
 		return "ER_FT_MATCHING_KEY_NOT_FOUND"
@@ -4822,13 +4822,13 @@ func (en ErrorNumber) String() string {
 		return "ER_WARNING_NOT_COMPLETE_ROLLBACK"
 	case ErrTransCacheFull:
 		return "ER_TRANS_CACHE_FULL"
-	case ErrSlaveNotRunning:
+	case ErrSubordinateNotRunning:
 		return "ER_SLAVE_NOT_RUNNING"
-	case ErrBadSlave:
+	case ErrBadSubordinate:
 		return "ER_BAD_SLAVE"
-	case ErrMasterInfo:
+	case ErrMainInfo:
 		return "ER_MASTER_INFO"
-	case ErrSlaveThread:
+	case ErrSubordinateThread:
 		return "ER_SLAVE_THREAD"
 	case ErrTooManyUserConnections:
 		return "ER_TOO_MANY_USER_CONNECTIONS"
@@ -4854,7 +4854,7 @@ func (en ErrorNumber) String() string {
 		return "ER_NO_REFERENCED_ROW"
 	case ErrRowIsReferenced:
 		return "ER_ROW_IS_REFERENCED"
-	case ErrConnectToMaster:
+	case ErrConnectToMain:
 		return "ER_CONNECT_TO_MASTER"
 	case ErrErrorWhenExecutingCommand:
 		return "ER_ERROR_WHEN_EXECUTING_COMMAND"
@@ -4888,9 +4888,9 @@ func (en ErrorNumber) String() string {
 		return "ER_CANT_USE_OPTION_HERE"
 	case ErrNotSupportedYet:
 		return "ER_NOT_SUPPORTED_YET"
-	case ErrMasterFatalErrorReadingBinlog:
+	case ErrMainFatalErrorReadingBinlog:
 		return "ER_MASTER_FATAL_ERROR_READING_BINLOG"
-	case ErrSlaveIgnoredTable:
+	case ErrSubordinateIgnoredTable:
 		return "ER_SLAVE_IGNORED_TABLE"
 	case ErrIncorrectGlobalLocalVar:
 		return "ER_INCORRECT_GLOBAL_LOCAL_VAR"
@@ -4956,15 +4956,15 @@ func (en ErrorNumber) String() string {
 		return "ER_VARIABLE_IS_NOT_STRUCT"
 	case ErrUnknownCollation:
 		return "ER_UNKNOWN_COLLATION"
-	case ErrSlaveIgnoredSslParams:
+	case ErrSubordinateIgnoredSslParams:
 		return "ER_SLAVE_IGNORED_SSL_PARAMS"
 	case ErrServerIsInSecureAuthMode:
 		return "ER_SERVER_IS_IN_SECURE_AUTH_MODE"
 	case ErrWarnFieldResolved:
 		return "ER_WARN_FIELD_RESOLVED"
-	case ErrBadSlaveUntilCond:
+	case ErrBadSubordinateUntilCond:
 		return "ER_BAD_SLAVE_UNTIL_COND"
-	case ErrMissingSkipSlave:
+	case ErrMissingSkipSubordinate:
 		return "ER_MISSING_SKIP_SLAVE"
 	case ErrUntilCondIgnored:
 		return "ER_UNTIL_COND_IGNORED"
@@ -5532,7 +5532,7 @@ func (en ErrorNumber) String() string {
 		return "ER_TRG_CANT_OPEN_TABLE"
 	case ErrNoFormatDescriptionEventBeforeBinlogStatement:
 		return "ER_NO_FORMAT_DESCRIPTION_EVENT_BEFORE_BINLOG_STATEMENT"
-	case ErrSlaveCorruptEvent:
+	case ErrSubordinateCorruptEvent:
 		return "ER_SLAVE_CORRUPT_EVENT"
 	case ErrLogPurgeNoFile:
 		return "ER_LOG_PURGE_NO_FILE"
@@ -5542,7 +5542,7 @@ func (en ErrorNumber) String() string {
 		return "ER_XA_RBDEADLOCK"
 	case ErrNeedReprepare:
 		return "ER_NEED_REPREPARE"
-	case WarnNoMasterrInfo:
+	case WarnNoMainrInfo:
 		return "WARN_NO_MASTER_INFO"
 	case WarnOptionIgnored:
 		return "WARN_OPTION_IGNORED"
@@ -5554,7 +5554,7 @@ func (en ErrorNumber) String() string {
 		return "ER_VARIABLE_IS_READONLY"
 	case ErrWarnEngineTransactionRollback:
 		return "ER_WARN_ENGINE_TRANSACTION_ROLLBACK"
-	case ErrSlaveHeartbeatValueOutOfRange:
+	case ErrSubordinateHeartbeatValueOutOfRange:
 		return "ER_SLAVE_HEARTBEAT_VALUE_OUT_OF_RANGE"
 	case ErrNdbReplicationSchemaError:
 		return "ER_NDB_REPLICATION_SCHEMA_ERROR"
@@ -5606,7 +5606,7 @@ func (en ErrorNumber) String() string {
 		return "ER_COND_ITEM_TOO_LONG"
 	case ErrUnknownLocale:
 		return "ER_UNKNOWN_LOCALE"
-	case ErrSlaveIgnoreServerIds:
+	case ErrSubordinateIgnoreServerIds:
 		return "ER_SLAVE_IGNORE_SERVER_IDS"
 	case ErrQueryCacheDisabled:
 		return "ER_QUERY_CACHE_DISABLED"
@@ -5658,9 +5658,9 @@ func (en ErrorNumber) String() string {
 		return "ER_BINLOG_UNSAFE_NONTRANS_AFTER_TRANS"
 	case ErrMessageAndStatement:
 		return "ER_MESSAGE_AND_STATEMENT"
-	case ErrSlaveConversionFailed:
+	case ErrSubordinateConversionFailed:
 		return "ER_SLAVE_CONVERSION_FAILED"
-	case ErrSlaveCantCreateConversion:
+	case ErrSubordinateCantCreateConversion:
 		return "ER_SLAVE_CANT_CREATE_CONVERSION"
 	case ErrInsideTransactionPreventsSwitchBinlogFormat:
 		return "ER_INSIDE_TRANSACTION_PREVENTS_SWITCH_BINLOG_FORMAT"
@@ -5708,9 +5708,9 @@ func (en ErrorNumber) String() string {
 		return "ER_TRUNCATE_ILLEGAL_FK"
 	case ErrPluginIsPermanent:
 		return "ER_PLUGIN_IS_PERMANENT"
-	case ErrSlaveHeartbeatValueOutOfRangeMin:
+	case ErrSubordinateHeartbeatValueOutOfRangeMin:
 		return "ER_SLAVE_HEARTBEAT_VALUE_OUT_OF_RANGE_MIN"
-	case ErrSlaveHeartbeatValueOutOfRangeMax:
+	case ErrSubordinateHeartbeatValueOutOfRangeMax:
 		return "ER_SLAVE_HEARTBEAT_VALUE_OUT_OF_RANGE_MAX"
 	case ErrStmtCacheFull:
 		return "ER_STMT_CACHE_FULL"
@@ -5760,7 +5760,7 @@ func (en ErrorNumber) String() string {
 		return "ER_BINLOG_UNSAFE_AUTOINC_NOT_FIRST"
 	case ErrCannotLoadFromTableV2:
 		return "ER_CANNOT_LOAD_FROM_TABLE_V2"
-	case ErrMasterDelayValueOutOfRange:
+	case ErrMainDelayValueOutOfRange:
 		return "ER_MASTER_DELAY_VALUE_OUT_OF_RANGE"
 	case ErrOnlyFdAndRbrEventsAllowedInBinlogStatement:
 		return "ER_ONLY_FD_AND_RBR_EVENTS_ALLOWED_IN_BINLOG_STATEMENT"
@@ -5814,13 +5814,13 @@ func (en ErrorNumber) String() string {
 		return "ER_DA_INVALID_CONDITION_NUMBER"
 	case ErrInsecurePlainText:
 		return "ER_INSECURE_PLAIN_TEXT"
-	case ErrInsecureChangeMaster:
+	case ErrInsecureChangeMain:
 		return "ER_INSECURE_CHANGE_MASTER"
 	case ErrForeignDuplicateKeyWithChildInfo:
 		return "ER_FOREIGN_DUPLICATE_KEY_WITH_CHILD_INFO"
 	case ErrForeignDuplicateKeyWithoutChildInfo:
 		return "ER_FOREIGN_DUPLICATE_KEY_WITHOUT_CHILD_INFO"
-	case ErrSqlthreadWithSecureSlave:
+	case ErrSqlthreadWithSecureSubordinate:
 		return "ER_SQLTHREAD_WITH_SECURE_SLAVE"
 	case ErrTableHasNoFt:
 		return "ER_TABLE_HAS_NO_FT"
@@ -5840,7 +5840,7 @@ func (en ErrorNumber) String() string {
 		return "ER_MALFORMED_GTID_SPECIFICATION"
 	case ErrGnoExhausted:
 		return "ER_GNO_EXHAUSTED"
-	case ErrBadSlaveAutoPosition:
+	case ErrBadSubordinateAutoPosition:
 		return "ER_BAD_SLAVE_AUTO_POSITION"
 	case ErrAutoPositionRequiresGtidModeNotOff:
 		return "ER_AUTO_POSITION_REQUIRES_GTID_MODE_NOT_OFF"
@@ -5862,7 +5862,7 @@ func (en ErrorNumber) String() string {
 		return "ER_GTID_UNSAFE_CREATE_DROP_TEMPORARY_TABLE_IN_TRANSACTION"
 	case ErrGtidModeCanOnlyChangeOneStepAtATime:
 		return "ER_GTID_MODE_CAN_ONLY_CHANGE_ONE_STEP_AT_A_TIME"
-	case ErrMasterHasPurgedRequiredGtids:
+	case ErrMainHasPurgedRequiredGtids:
 		return "ER_MASTER_HAS_PURGED_REQUIRED_GTIDS"
 	case ErrCantSetGtidNextWhenOwningGtid:
 		return "ER_CANT_SET_GTID_NEXT_WHEN_OWNING_GTID"
@@ -5872,7 +5872,7 @@ func (en ErrorNumber) String() string {
 		return "ER_CANT_EXECUTE_IN_READ_ONLY_TRANSACTION"
 	case ErrTooLongTablePartitionComment:
 		return "ER_TOO_LONG_TABLE_PARTITION_COMMENT"
-	case ErrSlaveConfiguration:
+	case ErrSubordinateConfiguration:
 		return "ER_SLAVE_CONFIGURATION"
 	case ErrInnodbFtLimit:
 		return "ER_INNODB_FT_LIMIT"
@@ -5888,7 +5888,7 @@ func (en ErrorNumber) String() string {
 		return "ER_UNKNOWN_ALTER_ALGORITHM"
 	case ErrUnknownAlterLock:
 		return "ER_UNKNOWN_ALTER_LOCK"
-	case ErrMtsChangeMasterCantRunWithGaps:
+	case ErrMtsChangeMainCantRunWithGaps:
 		return "ER_MTS_CHANGE_MASTER_CANT_RUN_WITH_GAPS"
 	case ErrMtsRecoveryFailure:
 		return "ER_MTS_RECOVERY_FAILURE"
@@ -5896,7 +5896,7 @@ func (en ErrorNumber) String() string {
 		return "ER_MTS_RESET_WORKERS"
 	case ErrColCountDoesntMatchCorruptedV2:
 		return "ER_COL_COUNT_DOESNT_MATCH_CORRUPTED_V2"
-	case ErrSlaveSilentRetryTransaction:
+	case ErrSubordinateSilentRetryTransaction:
 		return "ER_SLAVE_SILENT_RETRY_TRANSACTION"
 	case ErrDiscardFkChecksRunning:
 		return "ER_DISCARD_FK_CHECKS_RUNNING"
@@ -5994,7 +5994,7 @@ func (en ErrorNumber) String() string {
 		return "ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_CHANGE_FTS"
 	case ErrAlterOperationNotSupportedReasonFts:
 		return "ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FTS"
-	case ErrSqlSlaveSkipCounterNotSettableInGtidMode:
+	case ErrSqlSubordinateSkipCounterNotSettableInGtidMode:
 		return "ER_SQL_SLAVE_SKIP_COUNTER_NOT_SETTABLE_IN_GTID_MODE"
 	case ErrDupUnknownInIndex:
 		return "ER_DUP_UNKNOWN_IN_INDEX"
@@ -6018,17 +6018,17 @@ func (en ErrorNumber) String() string {
 		return "ER_AUTO_INCREMENT_CONFLICT"
 	case WarnOnBlockholeInRbr:
 		return "WARN_ON_BLOCKHOLE_IN_RBR"
-	case ErrSlaveMiInitRepository:
+	case ErrSubordinateMiInitRepository:
 		return "ER_SLAVE_MI_INIT_REPOSITORY"
-	case ErrSlaveRliInitRepository:
+	case ErrSubordinateRliInitRepository:
 		return "ER_SLAVE_RLI_INIT_REPOSITORY"
 	case ErrAccessDeniedChangeUserError:
 		return "ER_ACCESS_DENIED_CHANGE_USER_ERROR"
 	case ErrInnodbReadOnly:
 		return "ER_INNODB_READ_ONLY"
-	case ErrStopSlaveSqlThreadTimeout:
+	case ErrStopSubordinateSqlThreadTimeout:
 		return "ER_STOP_SLAVE_SQL_THREAD_TIMEOUT"
-	case ErrStopSlaveIoThreadTimeout:
+	case ErrStopSubordinateIoThreadTimeout:
 		return "ER_STOP_SLAVE_IO_THREAD_TIMEOUT"
 	case ErrTableCorrupt:
 		return "ER_TABLE_CORRUPT"
@@ -6046,7 +6046,7 @@ func (en ErrorNumber) String() string {
 		return "ER_PLUGIN_CANNOT_BE_UNINSTALLED"
 	case ErrGtidUnsafeBinlogSplittableStatementAndGtidGroup:
 		return "ER_GTID_UNSAFE_BINLOG_SPLITTABLE_STATEMENT_AND_GTID_GROUP"
-	case ErrSlaveHasMoreGtidsThanMaster:
+	case ErrSubordinateHasMoreGtidsThanMain:
 		return "ER_SLAVE_HAS_MORE_GTIDS_THAN_MASTER"
 	case ErrMissingKey:
 		return "ER_MISSING_KEY"
@@ -6054,7 +6054,7 @@ func (en ErrorNumber) String() string {
 		return "WARN_NAMED_PIPE_ACCESS_EVERYONE"
 	case ErrFileCorrupt:
 		return "ER_FILE_CORRUPT"
-	case ErrErrorOnMaster:
+	case ErrErrorOnMain:
 		return "ER_ERROR_ON_MASTER"
 	case ErrStorageEngineNotLoaded:
 		return "ER_STORAGE_ENGINE_NOT_LOADED"
@@ -6084,7 +6084,7 @@ func (en ErrorNumber) String() string {
 		return "ER_ENGINE_OUT_OF_MEMORY"
 	case ErrPasswordExpireAnonymousUser:
 		return "ER_PASSWORD_EXPIRE_ANONYMOUS_USER"
-	case ErrSlaveSqlThreadMustStop:
+	case ErrSubordinateSqlThreadMustStop:
 		return "ER_SLAVE_SQL_THREAD_MUST_STOP"
 	case ErrNoFtMaterializedSubquery:
 		return "ER_NO_FT_MATERIALIZED_SUBQUERY"
@@ -6092,11 +6092,11 @@ func (en ErrorNumber) String() string {
 		return "ER_INNODB_UNDO_LOG_FULL"
 	case ErrInvalidArgumentForLogarithm:
 		return "ER_INVALID_ARGUMENT_FOR_LOGARITHM"
-	case ErrSlaveChannelIoThreadMustStop:
+	case ErrSubordinateChannelIoThreadMustStop:
 		return "ER_SLAVE_CHANNEL_IO_THREAD_MUST_STOP"
 	case ErrWarnOpenTempTablesMustBeZero:
 		return "ER_WARN_OPEN_TEMP_TABLES_MUST_BE_ZERO"
-	case ErrWarnOnlyMasterLogFileNoPos:
+	case ErrWarnOnlyMainLogFileNoPos:
 		return "ER_WARN_ONLY_MASTER_LOG_FILE_NO_POS"
 	case ErrQueryTimeout:
 		return "ER_QUERY_TIMEOUT"
@@ -6108,9 +6108,9 @@ func (en ErrorNumber) String() string {
 		return "ER_AGGREGATE_ORDER_FOR_UNION"
 	case ErrAggregateOrderNonAggQuery:
 		return "ER_AGGREGATE_ORDER_NON_AGG_QUERY"
-	case ErrSlaveWorkerStoppedPreviousThdError:
+	case ErrSubordinateWorkerStoppedPreviousThdError:
 		return "ER_SLAVE_WORKER_STOPPED_PREVIOUS_THD_ERROR"
-	case ErrDontSupportSlavePreserveCommitOrder:
+	case ErrDontSupportSubordinatePreserveCommitOrder:
 		return "ER_DONT_SUPPORT_SLAVE_PRESERVE_COMMIT_ORDER"
 	case ErrServerOfflineMode:
 		return "ER_SERVER_OFFLINE_MODE"
@@ -6160,7 +6160,7 @@ func (en ErrorNumber) String() string {
 		return "ER_STD_UNKNOWN_EXCEPTION"
 	case ErrGisDataWrongEndianess:
 		return "ER_GIS_DATA_WRONG_ENDIANESS"
-	case ErrChangeMasterPasswordLength:
+	case ErrChangeMainPasswordLength:
 		return "ER_CHANGE_MASTER_PASSWORD_LENGTH"
 	case ErrUserLockWrongName:
 		return "ER_USER_LOCK_WRONG_NAME"
@@ -6194,27 +6194,27 @@ func (en ErrorNumber) String() string {
 		return "ER_INVALID_GEOJSON_UNSPECIFIED"
 	case ErrDimensionUnsupported:
 		return "ER_DIMENSION_UNSUPPORTED"
-	case ErrSlaveChannelDoesNotExist:
+	case ErrSubordinateChannelDoesNotExist:
 		return "ER_SLAVE_CHANNEL_DOES_NOT_EXIST"
-	case ErrSlaveChannelNameInvalidOrTooLong:
+	case ErrSubordinateChannelNameInvalidOrTooLong:
 		return "ER_SLAVE_CHANNEL_NAME_INVALID_OR_TOO_LONG"
-	case ErrSlaveNewChannelWrongRepository:
+	case ErrSubordinateNewChannelWrongRepository:
 		return "ER_SLAVE_NEW_CHANNEL_WRONG_REPOSITORY"
-	case ErrSlaveMultipleChannelsCmd:
+	case ErrSubordinateMultipleChannelsCmd:
 		return "ER_SLAVE_MULTIPLE_CHANNELS_CMD"
-	case ErrSlaveMaxChannelsExceeded:
+	case ErrSubordinateMaxChannelsExceeded:
 		return "ER_SLAVE_MAX_CHANNELS_EXCEEDED"
-	case ErrSlaveChannelMustStop:
+	case ErrSubordinateChannelMustStop:
 		return "ER_SLAVE_CHANNEL_MUST_STOP"
-	case ErrSlaveChannelNotRunning:
+	case ErrSubordinateChannelNotRunning:
 		return "ER_SLAVE_CHANNEL_NOT_RUNNING"
-	case ErrSlaveChannelWasRunning:
+	case ErrSubordinateChannelWasRunning:
 		return "ER_SLAVE_CHANNEL_WAS_RUNNING"
-	case ErrSlaveChannelWasNotRunning:
+	case ErrSubordinateChannelWasNotRunning:
 		return "ER_SLAVE_CHANNEL_WAS_NOT_RUNNING"
-	case ErrSlaveChannelSqlThreadMustStop:
+	case ErrSubordinateChannelSqlThreadMustStop:
 		return "ER_SLAVE_CHANNEL_SQL_THREAD_MUST_STOP"
-	case ErrSlaveChannelSqlSkipCounter:
+	case ErrSubordinateChannelSqlSkipCounter:
 		return "ER_SLAVE_CHANNEL_SQL_SKIP_COUNTER"
 	case ErrWrongFieldWithGroupV2:
 		return "ER_WRONG_FIELD_WITH_GROUP_V2"
@@ -6314,7 +6314,7 @@ func (en ErrorNumber) String() string {
 		return "ER_VTOKEN_PLUGIN_TOKEN_NOT_FOUND"
 	case ErrCantSetVariableWhenOwningGtid:
 		return "ER_CANT_SET_VARIABLE_WHEN_OWNING_GTID"
-	case ErrSlaveChannelOperationNotAllowed:
+	case ErrSubordinateChannelOperationNotAllowed:
 		return "ER_SLAVE_CHANNEL_OPERATION_NOT_ALLOWED"
 	case ErrInvalidJsonText:
 		return "ER_INVALID_JSON_TEXT"
@@ -6392,11 +6392,11 @@ func (en ErrorNumber) String() string {
 		return "ER_LOCK_REFUSED_BY_ENGINE"
 	case ErrUnsupportedAlterOnlineOnVirtualColumn:
 		return "ER_UNSUPPORTED_ALTER_ONLINE_ON_VIRTUAL_COLUMN"
-	case ErrMasterKeyRotationNotSupportedBySe:
+	case ErrMainKeyRotationNotSupportedBySe:
 		return "ER_MASTER_KEY_ROTATION_NOT_SUPPORTED_BY_SE"
-	case ErrMasterKeyRotationBinlogFailed:
+	case ErrMainKeyRotationBinlogFailed:
 		return "ER_MASTER_KEY_ROTATION_BINLOG_FAILED"
-	case ErrMasterKeyRotationSeUnavailable:
+	case ErrMainKeyRotationSeUnavailable:
 		return "ER_MASTER_KEY_ROTATION_SE_UNAVAILABLE"
 	case ErrTablespaceCannotEncrypt:
 		return "ER_TABLESPACE_CANNOT_ENCRYPT"
@@ -6412,7 +6412,7 @@ func (en ErrorNumber) String() string {
 		return "ER_KEYRING_UDF_KEYRING_SERVICE_ERROR"
 	case ErrUserColumnOldLength:
 		return "ER_USER_COLUMN_OLD_LENGTH"
-	case ErrCantResetMaster:
+	case ErrCantResetMain:
 		return "ER_CANT_RESET_MASTER"
 	case ErrGroupReplicationMaxGroupSize:
 		return "ER_GROUP_REPLICATION_MAX_GROUP_SIZE"
@@ -6570,7 +6570,7 @@ func (en ErrorNumber) String() string {
 		return "ER_WARN_SRS_NOT_FOUND_AXIS_ORDER"
 	case ErrNoAccessToNativeFct:
 		return "ER_NO_ACCESS_TO_NATIVE_FCT"
-	case ErrResetMasterToValueOutOfRange:
+	case ErrResetMainToValueOutOfRange:
 		return "ER_RESET_MASTER_TO_VALUE_OUT_OF_RANGE"
 	case ErrUnresolvedTableLock:
 		return "ER_UNRESOLVED_TABLE_LOCK"
@@ -6886,7 +6886,7 @@ func (en ErrorNumber) String() string {
 		return "ER_RESERVED_TABLESPACE_NAME"
 	case ErrUnableToSetOption:
 		return "ER_UNABLE_TO_SET_OPTION"
-	case ErrSlavePossiblyDivergedAfterDdl:
+	case ErrSubordinatePossiblyDivergedAfterDdl:
 		return "ER_SLAVE_POSSIBLY_DIVERGED_AFTER_DDL"
 	case ErrSrsNotGeographic:
 		return "ER_SRS_NOT_GEOGRAPHIC"
@@ -7022,7 +7022,7 @@ func (en ErrorNumber) String() string {
 		return "ER_RPL_ENCRYPTION_FAILED_TO_REMOVE_KEY"
 	case ErrRplEncryptionUnableToChangeOption:
 		return "ER_RPL_ENCRYPTION_UNABLE_TO_CHANGE_OPTION"
-	case ErrRplEncryptionMasterKeyRecoveryFailed:
+	case ErrRplEncryptionMainKeyRecoveryFailed:
 		return "ER_RPL_ENCRYPTION_MASTER_KEY_RECOVERY_FAILED"
 	case ErrSlowLogModeIgnoredWhenNotLoggingToFile:
 		return "ER_SLOW_LOG_MODE_IGNORED_WHEN_NOT_LOGGING_TO_FILE"
@@ -7044,19 +7044,19 @@ func (en ErrorNumber) String() string {
 		return "ER_PAGE_TRACKING_RANGE_NOT_TRACKED"
 	case ErrPageTrackingCannotPurge:
 		return "ER_PAGE_TRACKING_CANNOT_PURGE"
-	case ErrRplEncryptionCannotRotateBinlogMasterKey:
+	case ErrRplEncryptionCannotRotateBinlogMainKey:
 		return "ER_RPL_ENCRYPTION_CANNOT_ROTATE_BINLOG_MASTER_KEY"
-	case ErrBinlogMasterKeyRecoveryOutOfCombination:
+	case ErrBinlogMainKeyRecoveryOutOfCombination:
 		return "ER_BINLOG_MASTER_KEY_RECOVERY_OUT_OF_COMBINATION"
-	case ErrBinlogMasterKeyRotationFailToOperateKey:
+	case ErrBinlogMainKeyRotationFailToOperateKey:
 		return "ER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_OPERATE_KEY"
-	case ErrBinlogMasterKeyRotationFailToRotateLogs:
+	case ErrBinlogMainKeyRotationFailToRotateLogs:
 		return "ER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_ROTATE_LOGS"
-	case ErrBinlogMasterKeyRotationFailToReencryptLog:
+	case ErrBinlogMainKeyRotationFailToReencryptLog:
 		return "ER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_REENCRYPT_LOG"
-	case ErrBinlogMasterKeyRotationFailToCleanupUnusedKeys:
+	case ErrBinlogMainKeyRotationFailToCleanupUnusedKeys:
 		return "ER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_CLEANUP_UNUSED_KEYS"
-	case ErrBinlogMasterKeyRotationFailToCleanupAuxKey:
+	case ErrBinlogMainKeyRotationFailToCleanupAuxKey:
 		return "ER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_CLEANUP_AUX_KEY"
 	case ErrNonBooleanExprForCheckConstraint:
 		return "ER_NON_BOOLEAN_EXPR_FOR_CHECK_CONSTRAINT"
@@ -7148,7 +7148,7 @@ func (en ErrorNumber) String() string {
 		return "ER_DEPENDENT_BY_PARTITION_FUNC"
 	case ErrWarnDeprecatedFloatAutoIncrement:
 		return "ER_WARN_DEPRECATED_FLOAT_AUTO_INCREMENT"
-	case ErrRplCantStopSlaveWhileLockedBackup:
+	case ErrRplCantStopSubordinateWhileLockedBackup:
 		return "ER_RPL_CANT_STOP_SLAVE_WHILE_LOCKED_BACKUP"
 	case ErrWarnDeprecatedFloatDigits:
 		return "ER_WARN_DEPRECATED_FLOAT_DIGITS"
@@ -7272,15 +7272,15 @@ func (en ErrorNumber) String() string {
 		return "ER_GLOBSTAT_CHANGE_DURING_QUERY"
 	case ErrGrpRplMessageServiceInitFailure:
 		return "ER_GRP_RPL_MESSAGE_SERVICE_INIT_FAILURE"
-	case ErrChangeMasterWrongCompressionAlgorithmClient:
+	case ErrChangeMainWrongCompressionAlgorithmClient:
 		return "ER_CHANGE_MASTER_WRONG_COMPRESSION_ALGORITHM_CLIENT"
-	case ErrChangeMasterWrongCompressionLevelClient:
+	case ErrChangeMainWrongCompressionLevelClient:
 		return "ER_CHANGE_MASTER_WRONG_COMPRESSION_LEVEL_CLIENT"
 	case ErrWrongCompressionAlgorithmClient:
 		return "ER_WRONG_COMPRESSION_ALGORITHM_CLIENT"
 	case ErrWrongCompressionLevelClient:
 		return "ER_WRONG_COMPRESSION_LEVEL_CLIENT"
-	case ErrChangeMasterWrongCompressionAlgorithmListClient:
+	case ErrChangeMainWrongCompressionAlgorithmListClient:
 		return "ER_CHANGE_MASTER_WRONG_COMPRESSION_ALGORITHM_LIST_CLIENT"
 	case ErrClientPrivilegeChecksUserCannotBeAnonymous:
 		return "ER_CLIENT_PRIVILEGE_CHECKS_USER_CANNOT_BE_ANONYMOUS"
@@ -7771,12 +7771,12 @@ func (en ErrorNumber) Description() string {
 		return "Message: Got error %d during FLUSH_LOGS"
 	case ErrNewAbortingConnection:
 		return "Message: Aborted connection %u to db: '%s' user: '%s' host: '%s' (%s)"
-	case ErrMaster:
-		return "Message: Error from master: '%s'"
-	case ErrMasterNetRead:
-		return "Message: Net error reading from master"
-	case ErrMasterNetWrite:
-		return "Message: Net error writing to master"
+	case ErrMain:
+		return "Message: Error from main: '%s'"
+	case ErrMainNetRead:
+		return "Message: Net error reading from main"
+	case ErrMainNetWrite:
+		return "Message: Net error writing to main"
 	case ErrFtMatchingKeyNotFound:
 		return "Message: Can't find FULLTEXT index matching the column list"
 	case ErrLockOrActiveTransaction:
@@ -7791,14 +7791,14 @@ func (en ErrorNumber) Description() string {
 		return "Message: Some non-transactional changed tables couldn't be rolled back"
 	case ErrTransCacheFull:
 		return "Message: Multi-statement transaction required more than 'max_binlog_cache_size' bytes of storage; increase this mysqld variable and try again"
-	case ErrSlaveNotRunning:
-		return "Message: This operation requires a running slave; configure slave and do START SLAVE"
-	case ErrBadSlave:
-		return "Message: The server is not configured as slave; fix in config file or with CHANGE MASTER TO"
-	case ErrMasterInfo:
-		return "Message: Could not initialize master info structure; more error messages can be found in the MySQL error log"
-	case ErrSlaveThread:
-		return "Message: Could not create slave thread; check system resources"
+	case ErrSubordinateNotRunning:
+		return "Message: This operation requires a running subordinate; configure subordinate and do START SLAVE"
+	case ErrBadSubordinate:
+		return "Message: The server is not configured as subordinate; fix in config file or with CHANGE MASTER TO"
+	case ErrMainInfo:
+		return "Message: Could not initialize main info structure; more error messages can be found in the MySQL error log"
+	case ErrSubordinateThread:
+		return "Message: Could not create subordinate thread; check system resources"
 	case ErrTooManyUserConnections:
 		return "Message: User %s already has more than 'max_user_connections' active connections"
 	case ErrSetConstantsOnly:
@@ -7823,8 +7823,8 @@ func (en ErrorNumber) Description() string {
 		return "InnoDB reports this error when you try to add a row but there is no parent row, and a foreign key constraint fails. Add the parent row first."
 	case ErrRowIsReferenced:
 		return "InnoDB reports this error when you try to delete a parent row that has children, and a foreign key constraint fails. Delete the children first."
-	case ErrConnectToMaster:
-		return "Message: Error connecting to master: %s"
+	case ErrConnectToMain:
+		return "Message: Error connecting to main: %s"
 	case ErrErrorWhenExecutingCommand:
 		return "Message: Error when executing command %s: %s"
 	case ErrWrongUsage:
@@ -7857,10 +7857,10 @@ func (en ErrorNumber) Description() string {
 		return "Message: Incorrect usage/placement of '%s'"
 	case ErrNotSupportedYet:
 		return "Message: This version of MySQL doesn't yet support '%s'"
-	case ErrMasterFatalErrorReadingBinlog:
-		return "Message: Got fatal error %d from master when reading data from binary log: '%s'"
-	case ErrSlaveIgnoredTable:
-		return "Message: Slave SQL thread ignored the query because of replicate-*-table rules"
+	case ErrMainFatalErrorReadingBinlog:
+		return "Message: Got fatal error %d from main when reading data from binary log: '%s'"
+	case ErrSubordinateIgnoredTable:
+		return "Message: Subordinate SQL thread ignored the query because of replicate-*-table rules"
 	case ErrIncorrectGlobalLocalVar:
 		return "Message: Variable '%s' is a %s variable"
 	case ErrWrongFkDef:
@@ -7925,16 +7925,16 @@ func (en ErrorNumber) Description() string {
 		return "Message: Variable '%s' is not a variable component (can't be used as XXXX.variable_name)"
 	case ErrUnknownCollation:
 		return "Message: Unknown collation: '%s'"
-	case ErrSlaveIgnoredSslParams:
-		return "Message: SSL parameters in CHANGE MASTER are ignored because this MySQL slave was compiled without SSL support; they can be used later if MySQL slave with SSL is started"
+	case ErrSubordinateIgnoredSslParams:
+		return "Message: SSL parameters in CHANGE MASTER are ignored because this MySQL subordinate was compiled without SSL support; they can be used later if MySQL subordinate with SSL is started"
 	case ErrServerIsInSecureAuthMode:
 		return "ER_SERVER_IS_IN_SECURE_AUTH_MODE was removed after 8.0.15."
 	case ErrWarnFieldResolved:
 		return "Message: Field or reference '%s%s%s%s%s' of SELECT #%d was resolved in SELECT #%d"
-	case ErrBadSlaveUntilCond:
+	case ErrBadSubordinateUntilCond:
 		return "Message: Incorrect parameter or combination of parameters for START SLAVE UNTIL"
-	case ErrMissingSkipSlave:
-		return "Message: It is recommended to use --skip-slave-start when doing step-by-step replication with START SLAVE UNTIL; otherwise, you will get problems if you get an unexpected slave's mysqld restart"
+	case ErrMissingSkipSubordinate:
+		return "Message: It is recommended to use --skip-subordinate-start when doing step-by-step replication with START SLAVE UNTIL; otherwise, you will get problems if you get an unexpected subordinate's mysqld restart"
 	case ErrUntilCondIgnored:
 		return "Message: SQL thread is not to be started so UNTIL options are ignored"
 	case ErrWrongNameForIndex:
@@ -8501,7 +8501,7 @@ func (en ErrorNumber) Description() string {
 		return "Message: Cannot open table for trigger `%s`.`%s`"
 	case ErrNoFormatDescriptionEventBeforeBinlogStatement:
 		return "Message: The BINLOG statement of type `%s` was not preceded by a format description BINLOG statement."
-	case ErrSlaveCorruptEvent:
+	case ErrSubordinateCorruptEvent:
 		return "Message: Corrupted replication event was detected"
 	case ErrLogPurgeNoFile:
 		return "Message: Being purged log %s was not found"
@@ -8511,8 +8511,8 @@ func (en ErrorNumber) Description() string {
 		return "Message: XA_RBDEADLOCK: Transaction branch was rolled back: deadlock was detected"
 	case ErrNeedReprepare:
 		return "Message: Prepared statement needs to be re-prepared"
-	case WarnNoMasterrInfo:
-		return "Message: The master info structure does not exist"
+	case WarnNoMainrInfo:
+		return "Message: The main info structure does not exist"
 	case WarnOptionIgnored:
 		return "Message: <%s> option ignored"
 	case ErrPluginDeleteBuiltin:
@@ -8523,7 +8523,7 @@ func (en ErrorNumber) Description() string {
 		return "Message: %s variable '%s' is read-only. Use SET %s to assign the value"
 	case ErrWarnEngineTransactionRollback:
 		return "Message: Storage engine %s does not support rollback for this statement. Transaction rolled back and must be restarted"
-	case ErrSlaveHeartbeatValueOutOfRange:
+	case ErrSubordinateHeartbeatValueOutOfRange:
 		return "Message: The requested value for the heartbeat period is either negative or exceeds the maximum allowed (%s seconds)."
 	case ErrNdbReplicationSchemaError:
 		return "Message: Bad schema for mysql.ndb_replication table. Message: %s"
@@ -8575,8 +8575,8 @@ func (en ErrorNumber) Description() string {
 		return "Message: Data too long for condition item '%s'"
 	case ErrUnknownLocale:
 		return "Message: Unknown locale: '%s'"
-	case ErrSlaveIgnoreServerIds:
-		return "Message: The requested server id %d clashes with the slave startup option --replicate-same-server-id"
+	case ErrSubordinateIgnoreServerIds:
+		return "Message: The requested server id %d clashes with the subordinate startup option --replicate-same-server-id"
 	case ErrQueryCacheDisabled:
 		return "ER_QUERY_CACHE_DISABLED was removed after 8.0.2."
 	case ErrSameNamePartitionField:
@@ -8614,22 +8614,22 @@ func (en ErrorNumber) Description() string {
 	case ErrBinlogUnsafeLimit:
 		return "Message: The statement is unsafe because it uses a LIMIT clause. This is unsafe because the set of rows included cannot be predicted."
 	case ErrBinlogUnsafeSystemTable:
-		return "Message: The statement is unsafe because it uses the general log, slow query log, or performance_schema table(s). This is unsafe because system tables may differ on slaves."
+		return "Message: The statement is unsafe because it uses the general log, slow query log, or performance_schema table(s). This is unsafe because system tables may differ on subordinates."
 	case ErrBinlogUnsafeAutoincColumns:
 		return "Message: Statement is unsafe because it invokes a trigger or a stored function that inserts into an AUTO_INCREMENT column. Inserted values cannot be logged correctly."
 	case ErrBinlogUnsafeUdf:
-		return "Message: Statement is unsafe because it uses a UDF which may not return the same value on the slave."
+		return "Message: Statement is unsafe because it uses a UDF which may not return the same value on the subordinate."
 	case ErrBinlogUnsafeSystemVariable:
-		return "Message: Statement is unsafe because it uses a system variable that may have a different value on the slave."
+		return "Message: Statement is unsafe because it uses a system variable that may have a different value on the subordinate."
 	case ErrBinlogUnsafeSystemFunction:
-		return "Message: Statement is unsafe because it uses a system function that may return a different value on the slave."
+		return "Message: Statement is unsafe because it uses a system function that may return a different value on the subordinate."
 	case ErrBinlogUnsafeNontransAfterTrans:
 		return "Message: Statement is unsafe because it accesses a non-transactional table after accessing a transactional table within the same transaction."
 	case ErrMessageAndStatement:
 		return "Message: %s Statement: %s"
-	case ErrSlaveConversionFailed:
+	case ErrSubordinateConversionFailed:
 		return "ER_SLAVE_CONVERSION_FAILED was removed after 8.0.4."
-	case ErrSlaveCantCreateConversion:
+	case ErrSubordinateCantCreateConversion:
 		return "Message: Can't create conversion table for table '%s.%s'"
 	case ErrInsideTransactionPreventsSwitchBinlogFormat:
 		return "Message: Cannot modify @@session.binlog_format inside a transaction"
@@ -8677,10 +8677,10 @@ func (en ErrorNumber) Description() string {
 		return "Message: Cannot truncate a table referenced in a foreign key constraint (%s)"
 	case ErrPluginIsPermanent:
 		return "Message: Plugin '%s' is force_plus_permanent and can not be unloaded"
-	case ErrSlaveHeartbeatValueOutOfRangeMin:
+	case ErrSubordinateHeartbeatValueOutOfRangeMin:
 		return "Message: The requested value for the heartbeat period is less than 1 millisecond. The value is reset to 0, meaning that heartbeating will effectively be disabled."
-	case ErrSlaveHeartbeatValueOutOfRangeMax:
-		return "Message: The requested value for the heartbeat period exceeds the value of `slave_net_timeout' seconds. A sensible value for the period should be less than the timeout."
+	case ErrSubordinateHeartbeatValueOutOfRangeMax:
+		return "Message: The requested value for the heartbeat period exceeds the value of `subordinate_net_timeout' seconds. A sensible value for the period should be less than the timeout."
 	case ErrStmtCacheFull:
 		return "Message: Multi-row statements required more than 'max_binlog_stmt_cache_size' bytes of storage; increase this mysqld variable and try again"
 	case ErrMultiUpdateKeyConflict:
@@ -8700,25 +8700,25 @@ func (en ErrorNumber) Description() string {
 	case ErrUndoRecordTooBig:
 		return "Message: Undo log record is too big."
 	case ErrBinlogUnsafeInsertIgnoreSelect:
-		return "Message: INSERT IGNORE... SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are ignored. This order cannot be predicted and may differ on master and the slave."
+		return "Message: INSERT IGNORE... SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are ignored. This order cannot be predicted and may differ on main and the subordinate."
 	case ErrBinlogUnsafeInsertSelectUpdate:
-		return "Message: INSERT... SELECT... ON DUPLICATE KEY UPDATE is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are updated. This order cannot be predicted and may differ on master and the slave."
+		return "Message: INSERT... SELECT... ON DUPLICATE KEY UPDATE is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are updated. This order cannot be predicted and may differ on main and the subordinate."
 	case ErrBinlogUnsafeReplaceSelect:
-		return "Message: REPLACE... SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are replaced. This order cannot be predicted and may differ on master and the slave."
+		return "Message: REPLACE... SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are replaced. This order cannot be predicted and may differ on main and the subordinate."
 	case ErrBinlogUnsafeCreateIgnoreSelect:
-		return "Message: CREATE... IGNORE SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are ignored. This order cannot be predicted and may differ on master and the slave."
+		return "Message: CREATE... IGNORE SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are ignored. This order cannot be predicted and may differ on main and the subordinate."
 	case ErrBinlogUnsafeCreateReplaceSelect:
-		return "Message: CREATE... REPLACE SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are replaced. This order cannot be predicted and may differ on master and the slave."
+		return "Message: CREATE... REPLACE SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are replaced. This order cannot be predicted and may differ on main and the subordinate."
 	case ErrBinlogUnsafeUpdateIgnore:
-		return "Message: UPDATE IGNORE is unsafe because the order in which rows are updated determines which (if any) rows are ignored. This order cannot be predicted and may differ on master and the slave."
+		return "Message: UPDATE IGNORE is unsafe because the order in which rows are updated determines which (if any) rows are ignored. This order cannot be predicted and may differ on main and the subordinate."
 	case ErrPluginNoUninstall:
 		return "Message: Plugin '%s' is marked as not dynamically uninstallable. You have to stop the server to uninstall it."
 	case ErrPluginNoInstall:
 		return "Message: Plugin '%s' is marked as not dynamically installable. You have to stop the server to install it."
 	case ErrBinlogUnsafeWriteAutoincSelect:
-		return "Message: Statements writing to a table with an auto-increment column after selecting from another table are unsafe because the order in which rows are retrieved determines what (if any) rows will be written. This order cannot be predicted and may differ on master and the slave."
+		return "Message: Statements writing to a table with an auto-increment column after selecting from another table are unsafe because the order in which rows are retrieved determines what (if any) rows will be written. This order cannot be predicted and may differ on main and the subordinate."
 	case ErrBinlogUnsafeCreateSelectAutoinc:
-		return "Message: CREATE TABLE... SELECT... on a table with an auto-increment column is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are inserted. This order cannot be predicted and may differ on master and the slave."
+		return "Message: CREATE TABLE... SELECT... on a table with an auto-increment column is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are inserted. This order cannot be predicted and may differ on main and the subordinate."
 	case ErrBinlogUnsafeInsertTwoKeys:
 		return "Message: INSERT... ON DUPLICATE KEY UPDATE on a table with more than one UNIQUE KEY is unsafe"
 	case ErrTableInFkCheck:
@@ -8729,8 +8729,8 @@ func (en ErrorNumber) Description() string {
 		return "Message: INSERT into autoincrement field which is not the first part in the composed primary key is unsafe."
 	case ErrCannotLoadFromTableV2:
 		return "Message: Cannot load from %s.%s. The table is probably corrupted"
-	case ErrMasterDelayValueOutOfRange:
-		return "Message: The requested value %s for the master delay exceeds the maximum %u"
+	case ErrMainDelayValueOutOfRange:
+		return "Message: The requested value %s for the main delay exceeds the maximum %u"
 	case ErrOnlyFdAndRbrEventsAllowedInBinlogStatement:
 		return "Message: Only Format_description_log_event and row events are allowed in BINLOG statements (but %s was provided)"
 	case ErrPartitionExchangeDifferentOption:
@@ -8770,7 +8770,7 @@ func (en ErrorNumber) Description() string {
 	case ErrWarningNotCompleteRollbackWithDroppedTempTable:
 		return "Message: Some temporary tables were dropped, but these operations could not be rolled back."
 	case ErrMtsFeatureIsNotSupported:
-		return "Message: %s is not supported in multi-threaded slave mode. %s"
+		return "Message: %s is not supported in multi-threaded subordinate mode. %s"
 	case ErrMtsUpdatedDbsGreaterMax:
 		return "Message: The number of modified databases exceeds the maximum %d; the database names will not be included in the replication event metadata."
 	case ErrMtsCantParallel:
@@ -8783,14 +8783,14 @@ func (en ErrorNumber) Description() string {
 		return "Message: Invalid condition number"
 	case ErrInsecurePlainText:
 		return "Message: Sending passwords in plain text without SSL/TLS is extremely insecure."
-	case ErrInsecureChangeMaster:
-		return "Message: Storing MySQL user name or password information in the master info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information."
+	case ErrInsecureChangeMain:
+		return "Message: Storing MySQL user name or password information in the main info repository is not secure and is therefore not recommended. Please consider using the USER and PASSWORD connection options for START SLAVE; see the 'START SLAVE Syntax' in the MySQL Manual for more information."
 	case ErrForeignDuplicateKeyWithChildInfo:
 		return "Message: Foreign key constraint for table '%s', record '%s' would lead to a duplicate entry in table '%s', key '%s'"
 	case ErrForeignDuplicateKeyWithoutChildInfo:
 		return "Message: Foreign key constraint for table '%s', record '%s' would lead to a duplicate entry in a child table"
-	case ErrSqlthreadWithSecureSlave:
-		return "Message: Setting authentication options is not possible when only the Slave SQL Thread is being started."
+	case ErrSqlthreadWithSecureSubordinate:
+		return "Message: Setting authentication options is not possible when only the Subordinate SQL Thread is being started."
 	case ErrTableHasNoFt:
 		return "Message: The table does not have FULLTEXT index to support this query"
 	case ErrVariableNotSettableInSfOrTrigger:
@@ -8809,7 +8809,7 @@ func (en ErrorNumber) Description() string {
 		return "Message: Malformed GTID specification '%s'."
 	case ErrGnoExhausted:
 		return "Message: Impossible to generate Global Transaction Identifier: the integer component reached the maximal value. Restart the server with a new server_uuid."
-	case ErrBadSlaveAutoPosition:
+	case ErrBadSubordinateAutoPosition:
 		return "Message: Parameters MASTER_LOG_FILE, MASTER_LOG_POS, RELAY_LOG_FILE and RELAY_LOG_POS cannot be set when MASTER_AUTO_POSITION is active."
 	case ErrAutoPositionRequiresGtidModeNotOff:
 		return "Message: CHANGE MASTER TO MASTER_AUTO_POSITION = 1 cannot be executed because @@GLOBAL.GTID_MODE = OFF."
@@ -8831,8 +8831,8 @@ func (en ErrorNumber) Description() string {
 		return "ER_GTID_UNSAFE_CREATE_DROP_TEMPORARY_TABLE_IN_TRANSACTION was removed after 8.0.12."
 	case ErrGtidModeCanOnlyChangeOneStepAtATime:
 		return "Message: The value of @@GLOBAL.GTID_MODE can only be changed one step at a time: OFF <-> OFF_PERMISSIVE <-> ON_PERMISSIVE <-> ON. Also note that this value must be stepped up or down simultaneously on all servers. See the Manual for instructions."
-	case ErrMasterHasPurgedRequiredGtids:
-		return "Message: Cannot replicate because the master purged required binary logs. Replicate the missing transactions from elsewhere, or provision a new slave from backup. Consider increasing the master's binary log expiration period. %s"
+	case ErrMainHasPurgedRequiredGtids:
+		return "Message: Cannot replicate because the main purged required binary logs. Replicate the missing transactions from elsewhere, or provision a new subordinate from backup. Consider increasing the main's binary log expiration period. %s"
 	case ErrCantSetGtidNextWhenOwningGtid:
 		return "Message: @@SESSION.GTID_NEXT cannot be changed by a client that owns a GTID. The client owns %s. Ownership is released on COMMIT or ROLLBACK."
 	case ErrUnknownExplainFormat:
@@ -8841,8 +8841,8 @@ func (en ErrorNumber) Description() string {
 		return "Message: Cannot execute statement in a READ ONLY transaction."
 	case ErrTooLongTablePartitionComment:
 		return "Message: Comment for table partition '%s' is too long (max = %lu)"
-	case ErrSlaveConfiguration:
-		return "Message: Slave is not configured or failed to initialize properly. You must at least set --server-id to enable either a master or a slave. Additional error messages can be found in the MySQL error log."
+	case ErrSubordinateConfiguration:
+		return "Message: Subordinate is not configured or failed to initialize properly. You must at least set --server-id to enable either a main or a subordinate. Additional error messages can be found in the MySQL error log."
 	case ErrInnodbFtLimit:
 		return "Message: InnoDB presently supports one FULLTEXT index creation at a time"
 	case ErrInnodbNoFtTempTable:
@@ -8857,16 +8857,16 @@ func (en ErrorNumber) Description() string {
 		return "Message: Unknown ALGORITHM '%s'"
 	case ErrUnknownAlterLock:
 		return "Message: Unknown LOCK type '%s'"
-	case ErrMtsChangeMasterCantRunWithGaps:
-		return "Message: CHANGE MASTER cannot be executed when the slave was stopped with an error or killed in MTS mode. Consider using RESET SLAVE or START SLAVE UNTIL."
+	case ErrMtsChangeMainCantRunWithGaps:
+		return "Message: CHANGE MASTER cannot be executed when the subordinate was stopped with an error or killed in MTS mode. Consider using RESET SLAVE or START SLAVE UNTIL."
 	case ErrMtsRecoveryFailure:
 		return "Message: Cannot recover after SLAVE errored out in parallel execution mode. Additional error messages can be found in the MySQL error log."
 	case ErrMtsResetWorkers:
 		return "Message: Cannot clean up worker info tables. Additional error messages can be found in the MySQL error log."
 	case ErrColCountDoesntMatchCorruptedV2:
 		return "Message: Column count of %s.%s is wrong. Expected %d, found %d. The table is probably corrupted"
-	case ErrSlaveSilentRetryTransaction:
-		return "Message: Slave must silently retry current transaction"
+	case ErrSubordinateSilentRetryTransaction:
+		return "Message: Subordinate must silently retry current transaction"
 	case ErrDiscardFkChecksRunning:
 		return "Message: There is a foreign key check running on table '%s'. Cannot discard the table."
 	case ErrTableSchemaMismatch:
@@ -8963,8 +8963,8 @@ func (en ErrorNumber) Description() string {
 		return "Message: Cannot drop or rename FTS_DOC_ID"
 	case ErrAlterOperationNotSupportedReasonFts:
 		return "Message: Fulltext index creation requires a lock"
-	case ErrSqlSlaveSkipCounterNotSettableInGtidMode:
-		return "Message: sql_slave_skip_counter can not be set when the server is running with @@GLOBAL.GTID_MODE = ON. Instead, for each transaction that you want to skip, generate an empty transaction with the same GTID as the transaction"
+	case ErrSqlSubordinateSkipCounterNotSettableInGtidMode:
+		return "Message: sql_subordinate_skip_counter can not be set when the server is running with @@GLOBAL.GTID_MODE = ON. Instead, for each transaction that you want to skip, generate an empty transaction with the same GTID as the transaction"
 	case ErrDupUnknownInIndex:
 		return "Message: Duplicate entry for key '%s'"
 	case ErrIdentCausesTooLongPath:
@@ -8976,7 +8976,7 @@ func (en ErrorNumber) Description() string {
 	case ErrRowInWrongPartition:
 		return "Message: Found a row in wrong partition %s"
 	case ErrMtsEventBiggerPendingJobsSizeMax:
-		return "Message: Cannot schedule event %s, relay-log name %s, position %s to Worker thread because its size %lu exceeds %lu of slave_pending_jobs_size_max."
+		return "Message: Cannot schedule event %s, relay-log name %s, position %s to Worker thread because its size %lu exceeds %lu of subordinate_pending_jobs_size_max."
 	case ErrBinlogLogicalCorruption:
 		return "Message: The binary log file '%s' is logically corrupted: %s"
 	case ErrWarnPurgeLogInUse:
@@ -8987,18 +8987,18 @@ func (en ErrorNumber) Description() string {
 		return "Message: Auto-increment value in UPDATE conflicts with internally generated values"
 	case WarnOnBlockholeInRbr:
 		return "Message: Row events are not logged for %s statements that modify BLACKHOLE tables in row format. Table(s): '%s'"
-	case ErrSlaveMiInitRepository:
-		return "Message: Slave failed to initialize master info structure from the repository"
-	case ErrSlaveRliInitRepository:
-		return "Message: Slave failed to initialize relay log info structure from the repository"
+	case ErrSubordinateMiInitRepository:
+		return "Message: Subordinate failed to initialize main info structure from the repository"
+	case ErrSubordinateRliInitRepository:
+		return "Message: Subordinate failed to initialize relay log info structure from the repository"
 	case ErrAccessDeniedChangeUserError:
 		return "Message: Access denied trying to change to user '%s'@'%s' (using password: %s). Disconnecting."
 	case ErrInnodbReadOnly:
 		return "Message: InnoDB is in read only mode."
-	case ErrStopSlaveSqlThreadTimeout:
-		return "Message: STOP SLAVE command execution is incomplete: Slave SQL thread got the stop signal, thread is busy, SQL thread will stop once the current task is complete."
-	case ErrStopSlaveIoThreadTimeout:
-		return "Message: STOP SLAVE command execution is incomplete: Slave IO thread got the stop signal, thread is busy, IO thread will stop once the current task is complete."
+	case ErrStopSubordinateSqlThreadTimeout:
+		return "Message: STOP SLAVE command execution is incomplete: Subordinate SQL thread got the stop signal, thread is busy, SQL thread will stop once the current task is complete."
+	case ErrStopSubordinateIoThreadTimeout:
+		return "Message: STOP SLAVE command execution is incomplete: Subordinate IO thread got the stop signal, thread is busy, IO thread will stop once the current task is complete."
 	case ErrTableCorrupt:
 		return "Message: Operation cannot be performed. The table '%s.%s' is missing, corrupt or contains bad data."
 	case ErrTempFileWriteFailure:
@@ -9015,16 +9015,16 @@ func (en ErrorNumber) Description() string {
 		return "Message: Plugin '%s' cannot be uninstalled now. %s"
 	case ErrGtidUnsafeBinlogSplittableStatementAndGtidGroup:
 		return "ER_GTID_UNSAFE_BINLOG_SPLITTABLE_STATEMENT_AND_GTID_GROUP was removed after 8.0.4."
-	case ErrSlaveHasMoreGtidsThanMaster:
-		return "Message: Slave has more GTIDs than the master has, using the master's SERVER_UUID. This may indicate that the end of the binary log was truncated or that the last binary log file was lost, e.g., after a power or disk failure when sync_binlog != 1. The master may or may not have rolled back transactions that were already replicated to the slave. Suggest to replicate any transactions that master has rolled back from slave to master, and/or commit empty transactions on master to account for transactions that have been committed on master but are not included in GTID_EXECUTED."
+	case ErrSubordinateHasMoreGtidsThanMain:
+		return "Message: Subordinate has more GTIDs than the main has, using the main's SERVER_UUID. This may indicate that the end of the binary log was truncated or that the last binary log file was lost, e.g., after a power or disk failure when sync_binlog != 1. The main may or may not have rolled back transactions that were already replicated to the subordinate. Suggest to replicate any transactions that main has rolled back from subordinate to main, and/or commit empty transactions on main to account for transactions that have been committed on main but are not included in GTID_EXECUTED."
 	case ErrMissingKey:
 		return "ER_MISSING_KEY was added in 8.0.4."
 	case WarnNamedPipeAccessEverryone:
 		return "WARN_NAMED_PIPE_ACCESS_EVERYONE was added in 8.0.17."
 	case ErrFileCorrupt:
 		return "Message: File %s is corrupted"
-	case ErrErrorOnMaster:
-		return "Message: Query partially completed on the master (error on master: %d) and was aborted. There is a chance that your master is inconsistent at this point. If you are sure that your master is ok, run this query manually on the slave and then restart the slave with SET GLOBAL SQL_SLAVE_SKIP_COUNTER=1; START SLAVE;. Query:'%s'"
+	case ErrErrorOnMain:
+		return "Message: Query partially completed on the main (error on main: %d) and was aborted. There is a chance that your main is inconsistent at this point. If you are sure that your main is ok, run this query manually on the subordinate and then restart the subordinate with SET GLOBAL SQL_SLAVE_SKIP_COUNTER=1; START SLAVE;. Query:'%s'"
 	case ErrStorageEngineNotLoaded:
 		return "Message: Storage engine for table '%s'.'%s' is not loaded."
 	case ErrGetStackedDaWithoutActiveHandler:
@@ -9032,7 +9032,7 @@ func (en ErrorNumber) Description() string {
 	case ErrWarnLegacySyntaxConverted:
 		return "Message: %s is no longer supported. The statement was converted to %s."
 	case ErrBinlogUnsafeFulltextPlugin:
-		return "Message: Statement is unsafe because it uses a fulltext parser plugin which may not return the same value on the slave."
+		return "Message: Statement is unsafe because it uses a fulltext parser plugin which may not return the same value on the subordinate."
 	case ErrCannotDiscardTemporaryTable:
 		return "Message: Cannot DISCARD/IMPORT tablespace associated with temporary table"
 	case ErrFkDepthExceeded:
@@ -9053,19 +9053,19 @@ func (en ErrorNumber) Description() string {
 		return "Message: Out of memory in storage engine '%s'."
 	case ErrPasswordExpireAnonymousUser:
 		return "Message: The password for anonymous user cannot be expired."
-	case ErrSlaveSqlThreadMustStop:
-		return "Message: This operation cannot be performed with a running slave sql thread; run STOP SLAVE SQL_THREAD first"
+	case ErrSubordinateSqlThreadMustStop:
+		return "Message: This operation cannot be performed with a running subordinate sql thread; run STOP SLAVE SQL_THREAD first"
 	case ErrNoFtMaterializedSubquery:
 		return "Message: Cannot create FULLTEXT index on materialized subquery"
 	case ErrInnodbUndoLogFull:
 		return "Message: Undo Log error: %s"
 	case ErrInvalidArgumentForLogarithm:
 		return "Message: Invalid argument for logarithm"
-	case ErrSlaveChannelIoThreadMustStop:
-		return "Message: This operation cannot be performed with a running slave io thread; run STOP SLAVE IO_THREAD FOR CHANNEL '%s' first."
+	case ErrSubordinateChannelIoThreadMustStop:
+		return "Message: This operation cannot be performed with a running subordinate io thread; run STOP SLAVE IO_THREAD FOR CHANNEL '%s' first."
 	case ErrWarnOpenTempTablesMustBeZero:
-		return "Message: This operation may not be safe when the slave has temporary tables. The tables will be kept open until the server restarts or until the tables are deleted by any replicated DROP statement. Suggest to wait until slave_open_temp_tables = 0."
-	case ErrWarnOnlyMasterLogFileNoPos:
+		return "Message: This operation may not be safe when the subordinate has temporary tables. The tables will be kept open until the server restarts or until the tables are deleted by any replicated DROP statement. Suggest to wait until subordinate_open_temp_tables = 0."
+	case ErrWarnOnlyMainLogFileNoPos:
 		return "Message: CHANGE MASTER TO with a MASTER_LOG_FILE clause but no MASTER_LOG_POS clause may not be safe. The old position value may not be valid for the new binary log file."
 	case ErrQueryTimeout:
 		return "Message: Query execution was interrupted, maximum statement execution time exceeded"
@@ -9077,10 +9077,10 @@ func (en ErrorNumber) Description() string {
 		return "Message: Expression #%u of ORDER BY contains aggregate function and applies to a UNION"
 	case ErrAggregateOrderNonAggQuery:
 		return "Message: Expression #%u of ORDER BY contains aggregate function and applies to the result of a non-aggregated query"
-	case ErrSlaveWorkerStoppedPreviousThdError:
-		return "Message: Slave worker has stopped after at least one previous worker encountered an error when slave-preserve-commit-order was enabled. To preserve commit order, the last transaction executed by this thread has not been committed. When restarting the slave after fixing any failed threads, you should fix this worker as well."
-	case ErrDontSupportSlavePreserveCommitOrder:
-		return "Message: slave_preserve_commit_order is not supported %s."
+	case ErrSubordinateWorkerStoppedPreviousThdError:
+		return "Message: Subordinate worker has stopped after at least one previous worker encountered an error when subordinate-preserve-commit-order was enabled. To preserve commit order, the last transaction executed by this thread has not been committed. When restarting the subordinate after fixing any failed threads, you should fix this worker as well."
+	case ErrDontSupportSubordinatePreserveCommitOrder:
+		return "Message: subordinate_preserve_commit_order is not supported %s."
 	case ErrServerOfflineMode:
 		return "Message: The server is currently in offline mode"
 	case ErrGisDifferentSrids:
@@ -9129,7 +9129,7 @@ func (en ErrorNumber) Description() string {
 		return "Message: Unknown exception: %s in function %s."
 	case ErrGisDataWrongEndianess:
 		return "Message: Geometry byte string must be little endian."
-	case ErrChangeMasterPasswordLength:
+	case ErrChangeMainPasswordLength:
 		return "Message: The password provided for the replication user exceeds the maximum length of 32 characters"
 	case ErrUserLockWrongName:
 		return "Message: Incorrect user-level lock name '%s'."
@@ -9163,28 +9163,28 @@ func (en ErrorNumber) Description() string {
 		return "Message: Invalid GeoJSON data provided to function %s"
 	case ErrDimensionUnsupported:
 		return "Message: Unsupported number of coordinate dimensions in function %s: Found %u, expected %u"
-	case ErrSlaveChannelDoesNotExist:
-		return "Message: Slave channel '%s' does not exist."
-	case ErrSlaveChannelNameInvalidOrTooLong:
+	case ErrSubordinateChannelDoesNotExist:
+		return "Message: Subordinate channel '%s' does not exist."
+	case ErrSubordinateChannelNameInvalidOrTooLong:
 		return "Message: Couldn't create channel: Channel name is either invalid or too long."
-	case ErrSlaveNewChannelWrongRepository:
+	case ErrSubordinateNewChannelWrongRepository:
 		return "Message: To have multiple channels, repository cannot be of type FILE; Please check the repository configuration and convert them to TABLE."
-	case ErrSlaveMultipleChannelsCmd:
-		return "Message: Multiple channels exist on the slave. Please provide channel name as an argument."
-	case ErrSlaveMaxChannelsExceeded:
+	case ErrSubordinateMultipleChannelsCmd:
+		return "Message: Multiple channels exist on the subordinate. Please provide channel name as an argument."
+	case ErrSubordinateMaxChannelsExceeded:
 		return "Message: Maximum number of replication channels allowed exceeded."
-	case ErrSlaveChannelMustStop:
+	case ErrSubordinateChannelMustStop:
 		return "Message: This operation cannot be performed with running replication threads; run STOP SLAVE FOR CHANNEL '%s' first"
-	case ErrSlaveChannelNotRunning:
-		return "Message: This operation requires running replication threads; configure slave and run START SLAVE FOR CHANNEL '%s'"
-	case ErrSlaveChannelWasRunning:
+	case ErrSubordinateChannelNotRunning:
+		return "Message: This operation requires running replication threads; configure subordinate and run START SLAVE FOR CHANNEL '%s'"
+	case ErrSubordinateChannelWasRunning:
 		return "Message: Replication thread(s) for channel '%s' are already runnning."
-	case ErrSlaveChannelWasNotRunning:
+	case ErrSubordinateChannelWasNotRunning:
 		return "Message: Replication thread(s) for channel '%s' are already stopped."
-	case ErrSlaveChannelSqlThreadMustStop:
-		return "Message: This operation cannot be performed with a running slave sql thread; run STOP SLAVE SQL_THREAD FOR CHANNEL '%s' first."
-	case ErrSlaveChannelSqlSkipCounter:
-		return "Message: When sql_slave_skip_counter > 0, it is not allowed to start more than one SQL thread by using 'START SLAVE [SQL_THREAD]'. Value of sql_slave_skip_counter can only be used by one SQL thread at a time. Please use 'START SLAVE [SQL_THREAD] FOR CHANNEL' to start the SQL thread which will use the value of sql_slave_skip_counter."
+	case ErrSubordinateChannelSqlThreadMustStop:
+		return "Message: This operation cannot be performed with a running subordinate sql thread; run STOP SLAVE SQL_THREAD FOR CHANNEL '%s' first."
+	case ErrSubordinateChannelSqlSkipCounter:
+		return "Message: When sql_subordinate_skip_counter > 0, it is not allowed to start more than one SQL thread by using 'START SLAVE [SQL_THREAD]'. Value of sql_subordinate_skip_counter can only be used by one SQL thread at a time. Please use 'START SLAVE [SQL_THREAD] FOR CHANNEL' to start the SQL thread which will use the value of sql_subordinate_skip_counter."
 	case ErrWrongFieldWithGroupV2:
 		return "Message: Expression #%u of %s is not in GROUP BY clause and contains nonaggregated column '%s' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by"
 	case ErrMixOfGroupFuncAndFieldsV2:
@@ -9283,7 +9283,7 @@ func (en ErrorNumber) Description() string {
 		return "The client has set its version_tokens_session system variable to the list of tokens it requires the server to match, but the server token list is missing at least one of those tokens. See Section 5.6.6, “Version Tokens”."
 	case ErrCantSetVariableWhenOwningGtid:
 		return "Message: Variable %s cannot be changed by a client that owns a GTID. The client owns %s. Ownership is released on COMMIT or ROLLBACK."
-	case ErrSlaveChannelOperationNotAllowed:
+	case ErrSubordinateChannelOperationNotAllowed:
 		return "Message: %s cannot be performed on channel '%s'."
 	case ErrInvalidJsonText:
 		return "Message: Invalid JSON text: \"%s\" at position %u in value for column '%s'."
@@ -9361,18 +9361,18 @@ func (en ErrorNumber) Description() string {
 		return "Message: Lock acquisition refused by storage engine."
 	case ErrUnsupportedAlterOnlineOnVirtualColumn:
 		return "Message: ADD COLUMN col...VIRTUAL, ADD INDEX(col)"
-	case ErrMasterKeyRotationNotSupportedBySe:
-		return "Message: Master key rotation is not supported by storage engine."
-	case ErrMasterKeyRotationBinlogFailed:
-		return "Message: Write to binlog failed. However, master key rotation has been completed successfully."
-	case ErrMasterKeyRotationSeUnavailable:
+	case ErrMainKeyRotationNotSupportedBySe:
+		return "Message: Main key rotation is not supported by storage engine."
+	case ErrMainKeyRotationBinlogFailed:
+		return "Message: Write to binlog failed. However, main key rotation has been completed successfully."
+	case ErrMainKeyRotationSeUnavailable:
 		return "Message: Storage engine is not available."
 	case ErrTablespaceCannotEncrypt:
 		return "Message: This tablespace can't be encrypted."
 	case ErrInvalidEncryptionOption:
 		return "Message: Invalid encryption option."
 	case ErrCannotFindKeyInKeyring:
-		return "Message: Can't find master key from keyring, please check in the server log if a keyring plugin is loaded and initialized successfully."
+		return "Message: Can't find main key from keyring, please check in the server log if a keyring plugin is loaded and initialized successfully."
 	case ErrCapacityExceededInParser:
 		return "Message: Parser bailed out for this query."
 	case ErrUnsupportedAlterEncryptionInplace:
@@ -9381,7 +9381,7 @@ func (en ErrorNumber) Description() string {
 		return "Message: Function '%s' failed because underlying keyring service returned an error. Please check if a keyring plugin is installed and that provided arguments are valid for the keyring you are using."
 	case ErrUserColumnOldLength:
 		return "Message: It seems that your db schema is old. The %s column is 77 characters long and should be 93 characters long. Please perform the MySQL upgrade procedure."
-	case ErrCantResetMaster:
+	case ErrCantResetMain:
 		return "Message: RESET MASTER is not allowed because %s."
 	case ErrGroupReplicationMaxGroupSize:
 		return "Message: The START GROUP_REPLICATION command failed since the group already has 9 members."
@@ -9539,7 +9539,7 @@ func (en ErrorNumber) Description() string {
 		return "ER_WARN_SRS_NOT_FOUND_AXIS_ORDER was added in 8.0.1."
 	case ErrNoAccessToNativeFct:
 		return "ER_NO_ACCESS_TO_NATIVE_FCT was added in 8.0.1."
-	case ErrResetMasterToValueOutOfRange:
+	case ErrResetMainToValueOutOfRange:
 		return "ER_RESET_MASTER_TO_VALUE_OUT_OF_RANGE was added in 8.0.1."
 	case ErrUnresolvedTableLock:
 		return "ER_UNRESOLVED_TABLE_LOCK was added in 8.0.1."
@@ -9855,7 +9855,7 @@ func (en ErrorNumber) Description() string {
 		return "ER_RESERVED_TABLESPACE_NAME was added in 8.0.11."
 	case ErrUnableToSetOption:
 		return "ER_UNABLE_TO_SET_OPTION was added in 8.0.11."
-	case ErrSlavePossiblyDivergedAfterDdl:
+	case ErrSubordinatePossiblyDivergedAfterDdl:
 		return "ER_SLAVE_POSSIBLY_DIVERGED_AFTER_DDL was added in 8.0.11."
 	case ErrSrsNotGeographic:
 		return "ER_SRS_NOT_GEOGRAPHIC was added in 8.0.12."
@@ -9991,7 +9991,7 @@ func (en ErrorNumber) Description() string {
 		return "ER_RPL_ENCRYPTION_FAILED_TO_REMOVE_KEY was added in 8.0.14."
 	case ErrRplEncryptionUnableToChangeOption:
 		return "ER_RPL_ENCRYPTION_UNABLE_TO_CHANGE_OPTION was added in 8.0.14."
-	case ErrRplEncryptionMasterKeyRecoveryFailed:
+	case ErrRplEncryptionMainKeyRecoveryFailed:
 		return "ER_RPL_ENCRYPTION_MASTER_KEY_RECOVERY_FAILED was added in 8.0.14."
 	case ErrSlowLogModeIgnoredWhenNotLoggingToFile:
 		return "ER_SLOW_LOG_MODE_IGNORED_WHEN_NOT_LOGGING_TO_FILE was added in 8.0.14."
@@ -10013,19 +10013,19 @@ func (en ErrorNumber) Description() string {
 		return "ER_PAGE_TRACKING_RANGE_NOT_TRACKED was added in 8.0.16."
 	case ErrPageTrackingCannotPurge:
 		return "ER_PAGE_TRACKING_CANNOT_PURGE was added in 8.0.16."
-	case ErrRplEncryptionCannotRotateBinlogMasterKey:
+	case ErrRplEncryptionCannotRotateBinlogMainKey:
 		return "ER_RPL_ENCRYPTION_CANNOT_ROTATE_BINLOG_MASTER_KEY was added in 8.0.16."
-	case ErrBinlogMasterKeyRecoveryOutOfCombination:
+	case ErrBinlogMainKeyRecoveryOutOfCombination:
 		return "ER_BINLOG_MASTER_KEY_RECOVERY_OUT_OF_COMBINATION was added in 8.0.16."
-	case ErrBinlogMasterKeyRotationFailToOperateKey:
+	case ErrBinlogMainKeyRotationFailToOperateKey:
 		return "ER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_OPERATE_KEY was added in 8.0.16."
-	case ErrBinlogMasterKeyRotationFailToRotateLogs:
+	case ErrBinlogMainKeyRotationFailToRotateLogs:
 		return "ER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_ROTATE_LOGS was added in 8.0.16."
-	case ErrBinlogMasterKeyRotationFailToReencryptLog:
+	case ErrBinlogMainKeyRotationFailToReencryptLog:
 		return "ER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_REENCRYPT_LOG was added in 8.0.16."
-	case ErrBinlogMasterKeyRotationFailToCleanupUnusedKeys:
+	case ErrBinlogMainKeyRotationFailToCleanupUnusedKeys:
 		return "ER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_CLEANUP_UNUSED_KEYS was added in 8.0.16."
-	case ErrBinlogMasterKeyRotationFailToCleanupAuxKey:
+	case ErrBinlogMainKeyRotationFailToCleanupAuxKey:
 		return "ER_BINLOG_MASTER_KEY_ROTATION_FAIL_TO_CLEANUP_AUX_KEY was added in 8.0.16."
 	case ErrNonBooleanExprForCheckConstraint:
 		return "ER_NON_BOOLEAN_EXPR_FOR_CHECK_CONSTRAINT was added in 8.0.16."
@@ -10117,7 +10117,7 @@ func (en ErrorNumber) Description() string {
 		return "ER_DEPENDENT_BY_PARTITION_FUNC was added in 8.0.17."
 	case ErrWarnDeprecatedFloatAutoIncrement:
 		return "ER_WARN_DEPRECATED_FLOAT_AUTO_INCREMENT was added in 8.0.17."
-	case ErrRplCantStopSlaveWhileLockedBackup:
+	case ErrRplCantStopSubordinateWhileLockedBackup:
 		return "ER_RPL_CANT_STOP_SLAVE_WHILE_LOCKED_BACKUP was added in 8.0.17."
 	case ErrWarnDeprecatedFloatDigits:
 		return "ER_WARN_DEPRECATED_FLOAT_DIGITS was added in 8.0.17."
@@ -10241,15 +10241,15 @@ func (en ErrorNumber) Description() string {
 		return "ER_GLOBSTAT_CHANGE_DURING_QUERY was added in 8.0.18."
 	case ErrGrpRplMessageServiceInitFailure:
 		return "ER_GRP_RPL_MESSAGE_SERVICE_INIT_FAILURE was added in 8.0.18."
-	case ErrChangeMasterWrongCompressionAlgorithmClient:
+	case ErrChangeMainWrongCompressionAlgorithmClient:
 		return "ER_CHANGE_MASTER_WRONG_COMPRESSION_ALGORITHM_CLIENT was added in 8.0.18."
-	case ErrChangeMasterWrongCompressionLevelClient:
+	case ErrChangeMainWrongCompressionLevelClient:
 		return "ER_CHANGE_MASTER_WRONG_COMPRESSION_LEVEL_CLIENT was added in 8.0.18."
 	case ErrWrongCompressionAlgorithmClient:
 		return "ER_WRONG_COMPRESSION_ALGORITHM_CLIENT was added in 8.0.18."
 	case ErrWrongCompressionLevelClient:
 		return "ER_WRONG_COMPRESSION_LEVEL_CLIENT was added in 8.0.18."
-	case ErrChangeMasterWrongCompressionAlgorithmListClient:
+	case ErrChangeMainWrongCompressionAlgorithmListClient:
 		return "ER_CHANGE_MASTER_WRONG_COMPRESSION_ALGORITHM_LIST_CLIENT was added in 8.0.18."
 	case ErrClientPrivilegeChecksUserCannotBeAnonymous:
 		return "ER_CLIENT_PRIVILEGE_CHECKS_USER_CANNOT_BE_ANONYMOUS was added in 8.0.18."
