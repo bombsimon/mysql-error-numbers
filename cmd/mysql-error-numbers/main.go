@@ -16,11 +16,8 @@ import (
 	"github.com/iancoleman/strcase"
 )
 
-// URLs to the MySQL documentation for the error numbers.
-const (
-	MySQL57URL = "https://dev.mysql.com/doc/refman/5.7/en/server-error-reference.html"
-	MySQL80URL = "https://dev.mysql.com/doc/refman/8.0/en/server-error-reference.html"
-)
+// URL to the MySQL documentation for the error numbers.
+const MySQL80URL = "https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html"
 
 // Literal representsa a found literal from the MySQL documentation.
 type Literal struct {
