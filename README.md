@@ -1,7 +1,7 @@
 # MySQL Error Numbers
 
 [![](https://godoc.org/github.com/bombsimon/mysql-error-numbers?status.svg)](http://godoc.org/github.com/bombsimon/mysql-error-numbers)
-[![Build Status](https://travis-ci.org/bombsimon/mysql-error-numbers.svg?branch=master)](https://travis-ci.org/bombsimon/mysql-error-numbers)
+[![Go](https://github.com/bombsimon/mysql-error-numbers/actions/workflows/go.yml/badge.svg)](https://github.com/bombsimon/mysql-error-numbers/actions/workflows/go.yml)
 
 This is a generated package defining all MySQL errors from the documentation as
 constants. The reasone for this is to make the code more readable and

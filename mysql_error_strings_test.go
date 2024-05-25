@@ -17,14 +17,14 @@ func TestFromErrorString(t *testing.T) {
 			errString:          "MY-010000",
 			expects:            ErrParserTrace,
 			expectsString:      "ER_PARSER_TRACE",
-			expectsDescription: "ER_PARSER_TRACE was added in 8.0.2.",
+			expectsDescription: "Message: Parser saw: %s",
 		},
 		{
 			name:               "Error scheduler killing",
 			errString:          "MY-010054",
 			expects:            ErrSchedulerKilling,
 			expectsString:      "ER_SCHEDULER_KILLING",
-			expectsDescription: "ER_SCHEDULER_KILLING was added in 8.0.2.",
+			expectsDescription: "Message: Event Scheduler: Killing the scheduler thread, thread id %u",
 		},
 	}
 
@@ -33,15 +33,15 @@ func TestFromErrorString(t *testing.T) {
 			r := FromErrorString(tc.errString)
 
 			if r != tc.expects {
-				t.Fatal("Expected other string")
+				t.Fatalf("Expected '%s', got '%s'", tc.expects, r)
 			}
 
 			if r.String() != tc.expectsString {
-				t.Fatal("Expected other string")
+				t.Fatalf("Expected '%s', got '%s'", tc.expectsString, r.String())
 			}
 
 			if r.Description() != tc.expectsDescription {
-				t.Fatal("Expected other description")
+				t.Fatalf("Expected '%s', got '%s'", tc.expectsDescription, r.Description())
 			}
 		})
 	}
