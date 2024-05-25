@@ -17,7 +17,7 @@ import (
 )
 
 // URL to the MySQL documentation for the error numbers.
-const MySQL80URL = "https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html"
+const MySQL80URL = "https://dev.mysql.com/doc/mysql-errors/8.4/en/server-error-reference.html"
 
 // Literal representsa a found literal from the MySQL documentation.
 type Literal struct {
@@ -117,7 +117,10 @@ func main() {
 				text    = strings.TrimSpace(element.Text())
 				fields  = strings.Fields(text)
 				extra   = strings.Join(fields, " ")
-				escaped = strings.Replace(extra, "\"", "\\\"", -1)
+				escaped = strings.ReplaceAll(
+					strings.ReplaceAll(extra, "\"", "\\\""),
+					"\\'", "'",
+				)
 			)
 
 			literal.Extra = escaped
