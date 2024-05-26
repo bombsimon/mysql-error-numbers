@@ -1,4 +1,4 @@
-module github.com/bombsimon/mysql-error-numbers
+module github.com/bombsimon/mysql-error-numbers/v2
 
 go 1.22
 
