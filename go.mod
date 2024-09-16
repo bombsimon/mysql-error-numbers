@@ -1,11 +1,11 @@
 module github.com/bombsimon/mysql-error-numbers/v2
 
-go 1.23
+go 1.22
 
-toolchain go1.23.1
+toolchain go1.22.7
 
 require (
-	github.com/PuerkitoBio/goquery v1.10.0
+	github.com/PuerkitoBio/goquery v1.9.3
 	github.com/go-sql-driver/mysql v1.8.1
 	github.com/iancoleman/strcase v0.3.0
 )
