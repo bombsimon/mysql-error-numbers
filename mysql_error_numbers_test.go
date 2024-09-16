@@ -2,6 +2,7 @@ package mysqlerrnum
 
 import (
 	"errors"
+	"fmt"
 	"testing"
 
 	"github.com/go-sql-driver/mysql"
@@ -29,6 +30,16 @@ func TestFromError(t *testing.T) {
 			err: &mysql.MySQLError{
 				Number: 1216,
 			},
+			expects:            ErrNoReferencedRow,
+			expectsString:      "ER_NO_REFERENCED_ROW",
+			expectsDescription: "InnoDB reports this error when you try to add a row but there is no parent row, and a foreign key constraint fails. Add the parent row first.",
+		},
+		{
+			name: "Extract from wrapped error",
+			err: fmt.Errorf("wrapped error %w",
+				&mysql.MySQLError{
+					Number: 1216,
+				}),
 			expects:            ErrNoReferencedRow,
 			expectsString:      "ER_NO_REFERENCED_ROW",
 			expectsDescription: "InnoDB reports this error when you try to add a row but there is no parent row, and a foreign key constraint fails. Add the parent row first.",
