@@ -1,6 +1,7 @@
 package mysqlerrnum
 
 import (
+	"errors"
 	"regexp"
 	"strconv"
 
@@ -25,7 +26,8 @@ func FromError(err error) ErrorNumber {
 		return ErrUnknownMySQLError
 	}
 
-	if e, ok := err.(*mysql.MySQLError); ok {
+	var e *mysql.MySQLError
+	if errors.As(err, &e) {
 		return FromNumber(int(e.Number))
 	}
 
