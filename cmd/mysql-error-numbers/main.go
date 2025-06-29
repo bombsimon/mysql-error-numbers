@@ -17,7 +17,7 @@ import (
 )
 
 // URL to the MySQL documentation for the error numbers.
-const MySQL80URL = "https://dev.mysql.com/doc/mysql-errors/8.4/en/server-error-reference.html"
+const MySQLURL = "https://dev.mysql.com/doc/mysql-errors/9.3/en/server-error-reference.html"
 
 // Literal representsa a found literal from the MySQL documentation.
 type Literal struct {
@@ -34,7 +34,7 @@ func main() {
 		Timeout: 10 * time.Second,
 	}
 
-	response, err := client.Get(MySQL80URL)
+	response, err := client.Get(MySQLURL)
 	if err != nil {
 		panic(err)
 	}

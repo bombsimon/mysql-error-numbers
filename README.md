@@ -7,8 +7,8 @@ This is a generated package defining all MySQL errors from the documentation as
 constants. The reasone for this is to make the code more readable and
 potentially help describe the errors.
 
-The name and number are fetched from version 8.0 of the [MySQL
-documentation](https://dev.mysql.com/doc/refman/8.0/en/server-error-reference.html).
+The name and number are fetched from version 9.3 of the [MySQL
+documentation](https://dev.mysql.com/doc/mysql-errors/9.3/en/server-error-reference.html).
 
 ## Motivation
 
@@ -28,7 +28,7 @@ import (
     "database/sql"
     _ "github.com/go-sql-driver/mysql"
 
-    "github.com/bombsimon/mysql-error-numbers/v2"
+    "github.com/bombsimon/mysql-error-numbers/v3"
 )
 
 func main() {
